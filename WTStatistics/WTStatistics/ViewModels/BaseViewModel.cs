@@ -6,14 +6,11 @@ using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 
 using WTStatistics.Models;
-using WTStatistics.Services;
 
 namespace WTStatistics.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
-
         bool isBusy = false;
         public bool IsBusy
         {

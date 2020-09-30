@@ -1,7 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using WTStatistics.Services;
 using WTStatistics.Views;
 
 namespace WTStatistics
@@ -12,8 +11,6 @@ namespace WTStatistics
         public App()
         {
             InitializeComponent();
-
-            DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
         }
 
