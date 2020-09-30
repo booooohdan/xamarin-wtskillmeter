@@ -10,6 +10,8 @@ namespace WTStatistics
 
         public App()
         {
+            //Register Syncfusion license
+            //Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("YOUR LICENSE KEY");
             InitializeComponent();
             MainPage = new AppShell();
         }

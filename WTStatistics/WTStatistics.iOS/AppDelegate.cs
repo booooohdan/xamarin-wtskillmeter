@@ -1,4 +1,5 @@
-﻿using System;
+using Syncfusion.SfGauge.XForms.iOS;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -23,7 +24,8 @@ namespace WTStatistics.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
-            global::Xamarin.Forms.Forms.Init();
+global::Xamarin.Forms.Forms.Init();
+SfGaugeRenderer.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

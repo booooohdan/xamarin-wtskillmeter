@@ -1,18 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WTStatistics.Views.AboutPage"
              xmlns:vm="clr-namespace:WTStatistics.ViewModels"
              Shell.NavBarIsVisible="False">
-    
+
     <ContentPage.BindingContext>
         <vm:AboutViewModel />
     </ContentPage.BindingContext>
-    
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Color x:Key="Accent">#96d1ff</Color>
-        </ResourceDictionary>
-    </ContentPage.Resources>
+
+    <StackLayout Orientation="Horizontal">
+        <gauge:SfCircularGauge WidthRequest="110">
+            
+            <gauge:SfCircularGauge.Headers>
+                <gauge:Header Text="AB" Position="0.5,0.65" TextSize="25" ForegroundColor="SlateGray" FontAttributes = "Bold"/>
+            </gauge:SfCircularGauge.Headers>
+
+            <gauge:SfCircularGauge.Scales>
+
+                <gauge:Scale  StartValue = "0" EndValue = "100" StartAngle = "180" SweepAngle = "180" Interval = "20"
+			                ShowRim = "False" ShowLabels="False" RimThickness = "20"  EnableAutoAngle="True" LabelOffset="0.5"
+							RadiusFactor = "0.9" RimColor = "#e0e0e0">
+                    <gauge:Scale.MinorTickSettings>
+                        <gauge:TickSettings Length="0"/>
+                    </gauge:Scale.MinorTickSettings>
+                    <gauge:Scale.Pointers>
+                        <gauge:NeedlePointer  Value="70" KnobRadius="0" KnobStrokeColor = "#0682F6" KnobStrokeWidth = "6"
+                                    Color="SlateGray" KnobColor="White" LengthFactor="0.66" Type="Triangle" Thickness = "5"/>
+                    </gauge:Scale.Pointers>
+                    <gauge:Scale.Ranges>
+                        <gauge:Range StartValue = "0" EndValue = "20" Color = "#F03E3E" Thickness = "15" Offset = "0.9" />
+                        <gauge:Range StartValue = "20" EndValue = "50" Color = "#ff8d00" Thickness = "15" Offset = "0.9" />
+                        <gauge:Range StartValue = "50" EndValue = "60" Color = "#FFDD00" Thickness = "15" Offset = "0.9" />
+                        <gauge:Range StartValue = "60" EndValue = "70" Color = "#92f03e" Thickness = "15" Offset = "0.9" />
+                        <gauge:Range StartValue = "70" EndValue = "80" Color = "#27beb7" Thickness = "15" Offset = "0.9" />
+                        <gauge:Range StartValue = "80" EndValue = "100" Color = "#9152e7" Thickness = "15" Offset = "0.9" />
+                    </gauge:Scale.Ranges>
+                </gauge:Scale>
+            </gauge:SfCircularGauge.Scales>
+        </gauge:SfCircularGauge>
+    </StackLayout>
 
 </ContentPage>
