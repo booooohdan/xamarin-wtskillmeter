@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using WTStatistics.ViewModels;
 using WTStatistics.Views;
 using Xamarin.Forms;
 

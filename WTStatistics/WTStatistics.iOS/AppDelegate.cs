@@ -1,3 +1,4 @@
+using Syncfusion.XForms.iOS.Border;
 using Syncfusion.SfGauge.XForms.iOS;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,7 @@ namespace WTStatistics.iOS
         {
             global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
 global::Xamarin.Forms.Forms.Init();
+SfBorderRenderer.Init();
 SfGaugeRenderer.Init();
             LoadApplication(new App());
 
