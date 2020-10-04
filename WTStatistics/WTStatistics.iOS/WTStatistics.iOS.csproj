@@ -163,4 +163,16 @@
   <ItemGroup>
     <BundleResource Include="Resources\battle.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\lion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\time.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tab_feedback.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tab_statistics.png" />
+  </ItemGroup>
 </Project>

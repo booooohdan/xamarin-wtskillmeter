@@ -7,7 +7,7 @@
     -->
     <Application.Resources>
         <ResourceDictionary>
-            <Color x:Key="Primary">#dc3546</Color>
+            <Color x:Key="Primary">#2a2a2a</Color>
         </ResourceDictionary>        
     </Application.Resources>
 </Application>

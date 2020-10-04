@@ -12,10 +12,10 @@ using WTStatistics.Views;
 
 namespace WTStatistics.Views
 {
-    public partial class ItemsPage : ContentPage
+    public partial class FeedbackPage : ContentPage
     {
 
-        public ItemsPage()
+        public FeedbackPage()
         {
             InitializeComponent();
 

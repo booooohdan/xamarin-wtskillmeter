@@ -5,9 +5,9 @@ using Xamarin.Forms.Xaml;
 
 namespace WTStatistics.Views
 {
-    public partial class AboutPage : ContentPage
+    public partial class MainPage : ContentPage
     {
-        public AboutPage()
+        public MainPage()
         {
             InitializeComponent();
         }
