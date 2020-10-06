@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 using System.Windows.Input;
+using WTStatistics.Models;
+using WTStatistics.Views;
 using Xamarin.Forms;
 
 namespace WTStatistics.ViewModels
@@ -11,7 +13,9 @@ namespace WTStatistics.ViewModels
     {
         #region Private property
         string searchBatText;
-        int lionEarned;
+        bool busy;
+        string url;
+        public Player Player;
         #endregion
 
         #region Property Change event and commands
@@ -28,6 +32,7 @@ namespace WTStatistics.ViewModels
         public MainPageViewModel()
         {
             SearchButtonPressed = new Command<string>(HandleSearchPressed);
+            Player = new Player();
         }
         #endregion
 
@@ -35,6 +40,28 @@ namespace WTStatistics.ViewModels
         private void HandleSearchPressed(string searchText)
         {
             SearchBarText = searchText;
+            IsBusy = true;
+            URL = "https://warthunder.ru/ru/community/userinfo/?nick=" + searchText;
+        }
+
+        public bool IsBusy
+        {
+            get { return busy; }
+            set
+            {
+                busy = value;
+                OnPropertyChanged("IsBusy");
+            }
+        }
+
+        public string URL
+        {
+            get { return url; }
+            set
+            {
+                url = value;
+                OnPropertyChanged("URL");               
+            }
         }
 
         public string SearchBarText
@@ -42,18 +69,22 @@ namespace WTStatistics.ViewModels
             get { return searchBatText; }
             set
             {
+                if (!string.IsNullOrEmpty(value))
+                {
                 searchBatText = value;
+                }
                 //Load statistics
+
             }
         }
         #endregion
 
         public int LionEarned
         {
-            get { return lionEarned; }
+            get { return Player.LionEarned; }
             set
             {
-                lionEarned = value;
+                Player.LionEarned = value;
                 OnPropertyChanged("LionEarned");
             }
         }

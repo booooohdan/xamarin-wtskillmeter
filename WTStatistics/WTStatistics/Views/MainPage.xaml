@@ -26,6 +26,7 @@ xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
                 <StackLayout Grid.Column="0">
@@ -42,7 +43,10 @@ xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge
                     <Label  Text="20.02.2020"
                    TextColor="LightGray"/>
                 </StackLayout>
-                <StackLayout Grid.Column="1">
+                <ActivityIndicator IsRunning="{Binding IsBusy}"
+                               Grid.Column="1"
+                               Color="White" />
+                <StackLayout Grid.Column="2">
                     <StackLayout Orientation="Horizontal" HorizontalOptions="End">
                         <Label Text="{Binding LionEarned}" TextColor="White" FontSize="Medium"/>
                         <Image Source="lion.png" HeightRequest="20"/>
@@ -71,6 +75,7 @@ xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge
                                FontAttributes="Bold" />
             </StackLayout>
         </StackLayout>
+        <WebView Source="{Binding URL}" x:Name="theWebView"  Navigating="LoadingStarted" Navigated="LoadingFinished" HeightRequest="200"/>
 
         <StackLayout Padding="20, -40, 20, 0">
             <Frame CornerRadius="20" BackgroundColor="White">
