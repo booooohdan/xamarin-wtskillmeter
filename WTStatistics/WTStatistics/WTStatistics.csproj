@@ -23,8 +23,4 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Helpers\" />
-  </ItemGroup>
 </Project>

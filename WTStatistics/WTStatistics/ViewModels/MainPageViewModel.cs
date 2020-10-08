@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
+using WTStatistics.Helpers;
 using WTStatistics.Models;
 using WTStatistics.Views;
 using Xamarin.Forms;
@@ -11,38 +14,25 @@ namespace WTStatistics.ViewModels
 {
     public class MainPageViewModel : INotifyPropertyChanged
     {
-        #region Private property
+        #region Propertys, events and commands
+
         string searchBatText;
         bool busy;
         string url;
-        public Player Player;
-        #endregion
+        Player player;
 
-        #region Property Change event and commands
         public event PropertyChangedEventHandler PropertyChanged;
-        public ICommand SearchButtonPressed { private set; get; }
-
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        public ICommand SearchButtonPressed { get; }
         #endregion
 
         #region Constructor
+
         public MainPageViewModel()
         {
             SearchButtonPressed = new Command<string>(HandleSearchPressed);
-            Player = new Player();
+            player = new Player();
         }
         #endregion
-
-        #region SearchBar handler
-        private void HandleSearchPressed(string searchText)
-        {
-            SearchBarText = searchText;
-            IsBusy = true;
-            URL = "https://warthunder.ru/ru/community/userinfo/?nick=" + searchText;
-        }
 
         public bool IsBusy
         {
@@ -50,7 +40,7 @@ namespace WTStatistics.ViewModels
             set
             {
                 busy = value;
-                OnPropertyChanged("IsBusy");
+                OnPropertyChanged();
             }
         }
 
@@ -60,7 +50,7 @@ namespace WTStatistics.ViewModels
             set
             {
                 url = value;
-                OnPropertyChanged("URL");               
+                OnPropertyChanged();               
             }
         }
 
@@ -69,26 +59,51 @@ namespace WTStatistics.ViewModels
             get { return searchBatText; }
             set
             {
-                if (!string.IsNullOrEmpty(value))
-                {
                 searchBatText = value;
-                }
-                //Load statistics
-
+                OnPropertyChanged();
             }
         }
-        #endregion
 
         public int LionEarned
         {
-            get { return Player.LionEarned; }
+            get { return player.LionEarned; }
             set
             {
-                Player.LionEarned = value;
-                OnPropertyChanged("LionEarned");
+                player.LionEarned = value;
+                OnPropertyChanged();
             }
         }
 
+        /// <summary>
+        /// OnPropertyChanged (syntactic sugar)
+        /// </summary>
+        /// <param name="propertyName">Name of binding property</param>
+        private void OnPropertyChanged([CallerMemberName] string propertyName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
+        /// <summary>
+        /// SearchBar command handler
+        /// </summary>
+        /// <param name="searchText">Nickname</param>
+        private void HandleSearchPressed(string searchText)
+        {
+            IsBusy = true;
+            SearchBarText = searchText;
+            URL = "https://warthunder.ru/ru/community/userinfo/?nick=" + searchText;
+        }
+
+        /// <summary>
+        /// Get data drom HTML string and set property values
+        /// </summary>
+        /// <param name="htmlString">HTML string from webview</param>
+        public void StartExtractData(string htmlString)
+        {
+            IsBusy = false;
+            DataFromHtmlString data = new DataFromHtmlString(htmlString);
+
+            LionEarned = data.PlayerInfo().LionEarned;
+        }
     }
 }

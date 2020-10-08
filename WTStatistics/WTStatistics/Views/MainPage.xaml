@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
 xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:WTStatistics.ViewModels"
@@ -22,6 +21,7 @@ xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge
                           Offset="1.0"/>
                 </LinearGradientBrush>
             </StackLayout.Background>
+
             <Grid Padding="20, 20, 20, -10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -31,7 +31,7 @@ xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge
 
                 <StackLayout Grid.Column="0">
                     <Frame CornerRadius="50" 
-                   BorderColor="White"
+                       BorderColor="White"
                        HeightRequest="70"
                        WidthRequest="70"
                        Padding="0"
@@ -43,13 +43,19 @@ xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge
                     <Label  Text="20.02.2020"
                    TextColor="LightGray"/>
                 </StackLayout>
-                <ActivityIndicator IsRunning="{Binding IsBusy}"
-                               Grid.Column="1"
+
+                <ActivityIndicator Grid.Column="1"
+                               IsRunning="{Binding IsBusy}"
                                Color="White" />
+
                 <StackLayout Grid.Column="2">
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-                        <Label Text="{Binding LionEarned}" TextColor="White" FontSize="Medium"/>
-                        <Image Source="lion.png" HeightRequest="20"/>
+                    <StackLayout Orientation="Horizontal" 
+                                 HorizontalOptions="End">
+                        <Label Text="{Binding LionEarned}" 
+                               TextColor="White" 
+                               FontSize="Medium"/>
+                        <Image Source="lion.png" 
+                               HeightRequest="20"/>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal" HorizontalOptions="End">
                         <Label Text="1526" TextColor="White" FontSize="Medium"/>
@@ -75,7 +81,11 @@ xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge
                                FontAttributes="Bold" />
             </StackLayout>
         </StackLayout>
-        <WebView Source="{Binding URL}" x:Name="theWebView"  Navigating="LoadingStarted" Navigated="LoadingFinished" HeightRequest="200"/>
+             
+        <WebView Source="{Binding URL}" 
+                 x:Name="theWebView" 
+                 Navigating="LoadingStarted"  
+                 HeightRequest="200"/>
 
         <StackLayout Padding="20, -40, 20, 0">
             <Frame CornerRadius="20" BackgroundColor="White">

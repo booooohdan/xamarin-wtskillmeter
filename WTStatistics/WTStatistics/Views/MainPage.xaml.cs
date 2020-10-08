@@ -1,48 +1,56 @@
-﻿using System;
-using System.ComponentModel;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using WTStatistics.ViewModels;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace WTStatistics.Views
 {
     public partial class MainPage : ContentPage
     {
         MainPageViewModel model;
-        CancellationTokenSource source;
 
         public MainPage()
         {
             InitializeComponent();
-
             model = new MainPageViewModel();
-            this.BindingContext = model;
-            source = new CancellationTokenSource();
+            BindingContext = model;
         }
 
+        /// <summary>
+        /// Get HTML string from webview and pass it to viewmodel
+        /// </summary>
         private async void LoadingStarted(object sender, WebNavigatingEventArgs e)
         {
-            model.LionEarned = 1;
-            model.IsBusy = true;
-            await Task.Delay(15000, source.Token);
-            CheckIfLoadingComplete();
+            for (int i = 0; i <= 30; i++)
+            {
+                var stringHTML = await theWebView.EvaluateJavaScriptAsync("document.body.innerHTML");
+
+                if (!string.IsNullOrEmpty(stringHTML)
+                    & stringHTML.Contains(searchBar.Text)
+                    & stringHTML.Contains("AviationTable-TableData"))
+                {
+                    model.StartExtractData(stringHTML);
+                    break;
+                }
+                else
+                {
+                    await Task.Delay(1000);
+                    if (i == 30)
+                        ErrorHandler(stringHTML);
+                }
+            }
         }
 
-        private void CheckIfLoadingComplete()
+        /// <summary>
+        /// Handle most common error
+        /// </summary>
+        /// <param name="stringHTML">HTML string from webview</param>
+        private void ErrorHandler(string stringHTML)
         {
-            model.IsBusy = false;
-            model.LionEarned = 666;
-        }
-
-        private void LoadingFinished(object sender, WebNavigatedEventArgs e)
-        {
-            source.Cancel();
-            model.LionEarned = 55;
-            model.IsBusy = false;
-            string s = model.URL;
-
+            IsBusy = false;
+            if (stringHTML.Contains("Информации о пользователе недоступна"))
+                Application.Current.MainPage.DisplayAlert("Incorrect nickname", "Nickname doesn\'t exist.\nPlease enter correct nickname", "OK");
+            else
+                Application.Current.MainPage.DisplayAlert("Timeout", "Something went wrong.\nPlease try again later.", "OK");
         }
     }
 }
