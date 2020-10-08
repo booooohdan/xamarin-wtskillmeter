@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using WTStatistics.Views;
+﻿using WTStatistics.Views;
 using Xamarin.Forms;
 
 namespace WTStatistics
 {
-    public partial class AppShell : Xamarin.Forms.Shell
+    public partial class AppShell : Shell
     {
         public AppShell()
         {

@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using WTStatistics.Helpers;
 using WTStatistics.Models;
-using WTStatistics.Views;
 using Xamarin.Forms;
 
 namespace WTStatistics.ViewModels
@@ -64,12 +59,53 @@ namespace WTStatistics.ViewModels
             }
         }
 
+
         public int LionEarned
         {
             get { return player.LionEarned; }
             set
             {
                 player.LionEarned = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public int BattleFinished
+        {
+            get { return player.BattleFinished; }
+            set
+            {
+                player.BattleFinished = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public double TotalTimeSpended
+        {
+            get { return player.TotalTimeSpended; }
+            set
+            {
+                player.TotalTimeSpended = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string SignUpDate
+        {
+            get { return player.SignUpDate; }
+            set
+            {
+                player.SignUpDate = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string Squadron
+        {
+            get { return player.Squadron; }
+            set
+            {
+                player.Squadron = value;
                 OnPropertyChanged();
             }
         }
@@ -104,6 +140,10 @@ namespace WTStatistics.ViewModels
             DataFromHtmlString data = new DataFromHtmlString(htmlString);
 
             LionEarned = data.PlayerInfo().LionEarned;
+            BattleFinished = data.PlayerInfo().BattleFinished;
+            TotalTimeSpended = data.PlayerInfo().TotalTimeSpended;
+            SignUpDate = data.PlayerInfo().SignUpDate;
+            Squadron = data.PlayerInfo().Squadron;
         }
     }
 }

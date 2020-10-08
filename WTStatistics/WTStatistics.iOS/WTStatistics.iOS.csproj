@@ -112,15 +112,63 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <BundleResource Include="Resources\tab_about.png" />
-    <BundleResource Include="Resources\tab_about%402x.png" />
-    <BundleResource Include="Resources\tab_about%403x.png" />
-    <BundleResource Include="Resources\tab_feed.png" />
-    <BundleResource Include="Resources\tab_feed%402x.png" />
-    <BundleResource Include="Resources\tab_feed%403x.png" />
-    <BundleResource Include="Resources\xamarin_logo.png" />
-    <BundleResource Include="Resources\xamarin_logo%402x.png" />
-    <BundleResource Include="Resources\xamarin_logo%403x.png" />
+    <ImageAsset Include="AssetsIcon.xcassets\AppIcons.appiconset\1024.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="AssetsIcon.xcassets\AppIcons.appiconset\120.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="AssetsIcon.xcassets\AppIcons.appiconset\1201.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="AssetsIcon.xcassets\AppIcons.appiconset\152.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="AssetsIcon.xcassets\AppIcons.appiconset\167.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="AssetsIcon.xcassets\AppIcons.appiconset\180.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="AssetsIcon.xcassets\AppIcons.appiconset\20.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="AssetsIcon.xcassets\AppIcons.appiconset\29.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="AssetsIcon.xcassets\AppIcons.appiconset\40.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="AssetsIcon.xcassets\AppIcons.appiconset\401.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="AssetsIcon.xcassets\AppIcons.appiconset\402.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="AssetsIcon.xcassets\AppIcons.appiconset\58.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="AssetsIcon.xcassets\AppIcons.appiconset\581.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="AssetsIcon.xcassets\AppIcons.appiconset\60.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="AssetsIcon.xcassets\AppIcons.appiconset\76.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="AssetsIcon.xcassets\AppIcons.appiconset\80.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="AssetsIcon.xcassets\AppIcons.appiconset\801.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="AssetsIcon.xcassets\AppIcons.appiconset\87.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="AssetsIcon.xcassets\AppIcons.appiconset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
   </ItemGroup>
   <ItemGroup>
@@ -158,15 +206,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\pilot.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\sailor.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\tankman.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\battle.png" />
   </ItemGroup>
   <ItemGroup>
@@ -176,9 +215,6 @@
     <BundleResource Include="Resources\time.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\tab_feedback.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\tab_statistics.png" />
+    <BundleResource Include="Resources\pilot.png" />
   </ItemGroup>
 </Project>

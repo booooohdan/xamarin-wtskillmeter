@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
              xmlns:local="clr-namespace:WTStatistics.ViewModels"
              x:Class="WTStatistics.Views.MainPage"
              Shell.NavBarIsVisible="False">
@@ -15,60 +15,73 @@ xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge
             <StackLayout.Background>
                 <LinearGradientBrush StartPoint="0,0"
                              EndPoint="0,1">
-                    <GradientStop Color="#36c386"
+                    <GradientStop Color="#16a48c"
                           Offset="0.1"/>
-                    <GradientStop Color="#249e86"
+                    <GradientStop Color="#33e47f"
                           Offset="1.0"/>
                 </LinearGradientBrush>
             </StackLayout.Background>
 
             <Grid Padding="20, 20, 20, -10">
+                <!--Grid column definition-->
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="40*" />
+                    <ColumnDefinition Width="20*" />
+                    <ColumnDefinition Width="40*" />
                 </Grid.ColumnDefinitions>
-
-                <StackLayout Grid.Column="0">
-                    <Frame CornerRadius="50" 
-                       BorderColor="White"
-                       HeightRequest="70"
-                       WidthRequest="70"
-                       Padding="0"
+                
+                <!--Avatar image-->
+                <Image Grid.Column="0"
                        HorizontalOptions="Start"
                        VerticalOptions="Start"
-                       IsClippedToBounds="True">
-                        <Image Source="pilot.png"/>
-                    </Frame>
-                    <Label  Text="20.02.2020"
-                   TextColor="LightGray"/>
-                </StackLayout>
+                       WidthRequest="90"
+                       HeightRequest="90"    
+                       Source="pilot.png">
+                </Image>
 
-                <ActivityIndicator Grid.Column="1"
-                               IsRunning="{Binding IsBusy}"
-                               Color="White" />
+                <!--Activity Indicator-->
+                <ActivityIndicator IsRunning="{Binding IsBusy}" 
+                                   Grid.Column="1"
+                                   Color="White" />
 
+                <!--Right value. Lion, Battle and Time-->
                 <StackLayout Grid.Column="2">
-                    <StackLayout Orientation="Horizontal" 
-                                 HorizontalOptions="End">
-                        <Label Text="{Binding LionEarned}" 
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                        <Label Text= "{Binding LionEarned}" 
                                TextColor="White" 
                                FontSize="Medium"/>
                         <Image Source="lion.png" 
                                HeightRequest="20"/>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-                        <Label Text="1526" TextColor="White" FontSize="Medium"/>
-                        <Image Source="battle.png" HeightRequest="20"/>
+                        <Label Text= "{Binding BattleFinished}" 
+                               TextColor="White" 
+                               FontSize="Medium"/>
+                        <Image Source="battle.png" 
+                               HeightRequest="20"/>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-                        <Label Text="15 d" TextColor="White" FontSize="Medium"/>
-                        <Image Source="time.png" HeightRequest="20"/>
+                        <Label Text="{Binding TotalTimeSpended}" 
+                               TextColor="White" 
+                               FontSize="Medium"/>
+                        <Image Source="time.png" 
+                               HeightRequest="20"/>
                     </StackLayout>
                 </StackLayout>
             </Grid>
-            <StackLayout Orientation="Horizontal" Padding="20, 0, 0, 40">
-                <Label  Text="[WAVE]" TextColor="White" FontSize="Medium" FontAttributes="Bold" VerticalOptions="Center"/>
+            
+            <!--Sign up date-->
+            <Label Text="{Binding SignUpDate}" 
+                Padding="20, 10, 0, 0"
+                TextColor="WhiteSmoke"/>
+
+            <!--Searchview Nickname and Squadron-->
+            <StackLayout Orientation="Horizontal" Padding="20, -10, 0, 40">
+                <Label  Text="{Binding Squadron}" 
+                        TextColor="White" 
+                        FontSize="Medium" 
+                        FontAttributes="Bold" 
+                        VerticalOptions="Center"/>
                 <SearchBar x:Name="searchBar"
                                SearchCommand="{Binding SearchButtonPressed}"
                                SearchCommandParameter="{Binding Source={x:Reference searchBar}, Path=Text}"
@@ -81,11 +94,13 @@ xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge
                                FontAttributes="Bold" />
             </StackLayout>
         </StackLayout>
-             
+
+        <!--WebView elements-->
         <WebView Source="{Binding URL}" 
                  x:Name="theWebView" 
                  Navigating="LoadingStarted"  
-                 HeightRequest="200"/>
+                 HeightRequest="200"
+                 IsVisible="false"/>
 
         <StackLayout Padding="20, -40, 20, 0">
             <Frame CornerRadius="20" BackgroundColor="White">

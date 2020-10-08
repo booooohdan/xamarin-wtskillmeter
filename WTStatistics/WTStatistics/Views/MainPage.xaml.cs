@@ -25,7 +25,7 @@ namespace WTStatistics.Views
                 var stringHTML = await theWebView.EvaluateJavaScriptAsync("document.body.innerHTML");
 
                 if (!string.IsNullOrEmpty(stringHTML)
-                    & stringHTML.Contains(searchBar.Text)
+                    && stringHTML.Contains(searchBar.Text)
                     & stringHTML.Contains("AviationTable-TableData"))
                 {
                     model.StartExtractData(stringHTML);
