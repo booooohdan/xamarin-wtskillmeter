@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
-             xmlns:local="clr-namespace:WTStatistics.ViewModels"
+             xmlns:local="clr-namespace:WTStatistics.ViewModels" xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
              x:Class="WTStatistics.Views.MainPage"
              Shell.NavBarIsVisible="False">
 
@@ -11,6 +11,7 @@
     </ContentPage.BindingContext>
 
     <StackLayout Padding="0" BackgroundColor="WhiteSmoke">
+        <!--Gradient section-->
         <StackLayout>
             <StackLayout.Background>
                 <LinearGradientBrush StartPoint="0,0"
@@ -29,7 +30,7 @@
                     <ColumnDefinition Width="20*" />
                     <ColumnDefinition Width="40*" />
                 </Grid.ColumnDefinitions>
-                
+
                 <!--Avatar image-->
                 <Image Grid.Column="0"
                        HorizontalOptions="Start"
@@ -47,29 +48,32 @@
                 <!--Right value. Lion, Battle and Time-->
                 <StackLayout Grid.Column="2">
                     <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-                        <Label Text= "{Binding LionEarned}" 
+                        <Label Text= "{Binding LionEarned, StringFormat='{0:#,#}'}"
                                TextColor="White" 
                                FontSize="Medium"/>
                         <Image Source="lion.png" 
-                               HeightRequest="20"/>
+                               VerticalOptions="Center"
+                               HeightRequest="15"/>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-                        <Label Text= "{Binding BattleFinished}" 
+                        <Label Text= "{Binding BattleFinished, StringFormat='{0:#,#}'}" 
                                TextColor="White" 
                                FontSize="Medium"/>
                         <Image Source="battle.png" 
-                               HeightRequest="20"/>
+                               VerticalOptions="Center"
+                               HeightRequest="15"/>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-                        <Label Text="{Binding TotalTimeSpended}" 
+                        <Label Text="{Binding TotalTimeSpended, StringFormat='{0:#,#}'}"
                                TextColor="White" 
                                FontSize="Medium"/>
                         <Image Source="time.png" 
-                               HeightRequest="20"/>
+                               VerticalOptions="Center"
+                               HeightRequest="15"/>
                     </StackLayout>
                 </StackLayout>
             </Grid>
-            
+
             <!--Sign up date-->
             <Label Text="{Binding SignUpDate}" 
                 Padding="20, 10, 0, 0"
@@ -102,39 +106,321 @@
                  HeightRequest="200"
                  IsVisible="false"/>
 
-        <StackLayout Padding="20, -40, 20, 0">
-            <Frame CornerRadius="20" BackgroundColor="White">
-                <StackLayout>
-                    <Label Text="Winrate" FontSize="Title" FontAttributes="Bold" Margin="0, -10, 0, 0"/>
-                    <gauge:SfCircularGauge HeightRequest="70" Margin="0, 0, 0, -15">
+        <!--Main section below gradient section-->
+        <ScrollView  Margin="20, -40, 20, 0">
+            <StackLayout Spacing="10">
 
-                        <gauge:SfCircularGauge.Headers>
-                            <gauge:Header Text="AB" Position="0.5,0.65" TextSize="25" ForegroundColor="SlateGray" FontAttributes = "Bold"/>
-                        </gauge:SfCircularGauge.Headers>
+                <!--Winrate Frame-->
+                <Frame CornerRadius="20"  Padding="0"
+                   BackgroundColor="White">
 
-                        <gauge:SfCircularGauge.Scales>
+                    <!--Grid column definition-->
+                    <StackLayout>
 
-                            <gauge:Scale  StartValue = "0" EndValue = "100" StartAngle = "180" SweepAngle = "180" Interval = "20"
-			                ShowRim = "False" ShowLabels="False" RimThickness = "20"  EnableAutoAngle="True" LabelOffset="0.5"
-							RadiusFactor = "0.9" RimColor = "#e0e0e0">
-                                <gauge:Scale.MinorTickSettings>
-                                    <gauge:TickSettings Length="0"/>
-                                </gauge:Scale.MinorTickSettings>
-                                <gauge:Scale.Pointers>
-                                    <gauge:NeedlePointer  Value="70" KnobRadius="0" KnobStrokeColor = "#0682F6" KnobStrokeWidth = "6"
-                                    Color="SlateGray" KnobColor="White" LengthFactor="0.66" Type="Triangle" Thickness = "5"/>
-                                </gauge:Scale.Pointers>
-                                <gauge:Scale.Ranges>
-                                    <gauge:Range StartValue = "0" EndValue = "40" Color = "#F03E3E" Thickness = "15" Offset = "0.9" />
-                                    <gauge:Range StartValue = "40" EndValue = "50" Color = "#FFDD00" Thickness = "15" Offset = "0.9" />
-                                    <gauge:Range StartValue = "50" EndValue = "75" Color = "#92f03e" Thickness = "15" Offset = "0.9" />
-                                    <gauge:Range StartValue = "75" EndValue = "100" Color = "#9152e7" Thickness = "15" Offset = "0.9" />
-                                </gauge:Scale.Ranges>
-                            </gauge:Scale>
-                        </gauge:SfCircularGauge.Scales>
-                    </gauge:SfCircularGauge>
-                </StackLayout>
-            </Frame>
-        </StackLayout>
+                        <!--Winrate Label-->
+                        <Label 
+                           Padding="20,10,0,0"
+                           Text="Winrate (AB/RB/SB)"
+                           FontSize="Medium" 
+                           FontAttributes="Bold" />
+
+                        <!--Grid definition-->
+                        <Grid Padding="0, 0, 0, -20" RowSpacing="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="90"/>
+                            </Grid.RowDefinitions>
+
+                            <!--AB Winrate circular gauge-->
+                            <gauge:SfCircularGauge Grid.Column="0">
+
+                                <!--Text-->
+                                <gauge:SfCircularGauge.Headers>
+                                    <gauge:Header Text="{Binding WinRateAB, StringFormat='{0}%'}" 
+                                        Position="0.5,0.43" 
+                                        TextSize="17" 
+                                        ForegroundColor="SlateGray"/>
+                                </gauge:SfCircularGauge.Headers>
+                                <!--Round scale-->
+                                <gauge:SfCircularGauge.Scales>
+                                    <gauge:Scale  StartValue = "0" 
+                                          EndValue = "100" 
+                                          StartAngle = "180" 
+                                          SweepAngle = "180"        
+                                          ShowRim = "False" 
+                                          ShowTicks="False"
+                                          ShowLabels="False">
+                                        <!--Triangle pointers-->
+                                        <gauge:Scale.Pointers>
+                                            <gauge:MarkerPointer  Value="{Binding WinRateAB}" 
+                                                          Offset="0.8"
+                                                          MarkerHeight="6"
+                                                          MarkerShape="InvertedTriangle"/>
+                                        </gauge:Scale.Pointers>
+
+                                        <!--Scale colors-->
+                                        <gauge:Scale.Ranges>
+                                            <gauge:Range StartValue = "0" EndValue = "32" Color = "#ee3a2f" Thickness = "11" Offset = "0.8" />
+                                            <gauge:Range StartValue = "34" EndValue = "66" Color = "#fbd01a" Thickness = "11" Offset = "0.8" />
+                                            <gauge:Range StartValue = "68" EndValue = "100" Color = "#32e280" Thickness = "11" Offset = "0.8" />
+                                        </gauge:Scale.Ranges>
+                                    </gauge:Scale>
+                                </gauge:SfCircularGauge.Scales>
+                            </gauge:SfCircularGauge>
+
+                            <!--RB Winrate circular gauge-->
+                            <gauge:SfCircularGauge Grid.Column="1">
+
+                                <!--Text-->
+                                <gauge:SfCircularGauge.Headers>
+                                    <gauge:Header Text="{Binding WinRateRB, StringFormat='{0}%'}" 
+                                          Position="0.5,0.43" 
+                                          TextSize="17" 
+                                          ForegroundColor="SlateGray"/>
+                                </gauge:SfCircularGauge.Headers>
+
+                                <!--Round scale-->
+                                <gauge:SfCircularGauge.Scales>
+                                    <gauge:Scale  StartValue = "0" 
+                                          EndValue = "100" 
+                                          StartAngle = "180" 
+                                          SweepAngle = "180"                                     
+                                          ShowRim = "False" 
+                                          ShowTicks="False"
+                                          ShowLabels="False">
+                                        <!--Triangle pointers-->
+                                        <gauge:Scale.Pointers>
+                                            <gauge:MarkerPointer  Value="{Binding WinRateRB}" 
+                                                          Offset="0.8"
+                                                          MarkerHeight="6"
+                                                          MarkerShape="InvertedTriangle"/>
+                                        </gauge:Scale.Pointers>
+
+                                        <!--Scale colors-->
+                                        <gauge:Scale.Ranges>
+                                            <gauge:Range StartValue = "0" EndValue = "32" Color = "#ee3a2f" Thickness = "11" Offset = "0.8" />
+                                            <gauge:Range StartValue = "34" EndValue = "66" Color = "#fbd01a" Thickness = "11" Offset = "0.8" />
+                                            <gauge:Range StartValue = "68" EndValue = "100" Color = "#32e280" Thickness = "11" Offset = "0.8" />
+                                        </gauge:Scale.Ranges>
+                                    </gauge:Scale>
+                                </gauge:SfCircularGauge.Scales>
+                            </gauge:SfCircularGauge>
+
+                            <!--SB Winrate circular gauge-->
+                            <gauge:SfCircularGauge Grid.Column="2">
+
+                                <!--Text-->
+                                <gauge:SfCircularGauge.Headers>
+                                    <gauge:Header Text="{Binding WinRateSB, StringFormat='{0}%'}" 
+                                          Position="0.5,0.43" 
+                                          TextSize="17" 
+                                          ForegroundColor="SlateGray"/>
+                                </gauge:SfCircularGauge.Headers>
+
+                                <!--Round scale-->
+                                <gauge:SfCircularGauge.Scales>
+                                    <gauge:Scale  StartValue = "0" 
+                                          EndValue = "100" 
+                                          StartAngle = "180" 
+                                          SweepAngle = "180"                                     
+                                          ShowRim = "False" 
+                                          ShowTicks="False"
+                                          ShowLabels="False">
+                                        <!--Triangle pointers-->
+                                        <gauge:Scale.Pointers>
+                                            <gauge:MarkerPointer  Value="{Binding WinRateSB}" 
+                                                          Offset="0.8"
+                                                          MarkerHeight="6"
+                                                          MarkerShape="InvertedTriangle"/>
+                                        </gauge:Scale.Pointers>
+
+                                        <!--Scale colors-->
+                                        <gauge:Scale.Ranges>
+                                            <gauge:Range StartValue = "0" EndValue = "32" Color = "#ee3a2f" Thickness = "11" Offset = "0.8" />
+                                            <gauge:Range StartValue = "34" EndValue = "66" Color = "#fbd01a" Thickness = "11" Offset = "0.8" />
+                                            <gauge:Range StartValue = "68" EndValue = "100" Color = "#32e280" Thickness = "11" Offset = "0.8" />
+                                        </gauge:Scale.Ranges>
+                                    </gauge:Scale>
+                                </gauge:SfCircularGauge.Scales>
+                            </gauge:SfCircularGauge>
+
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+
+                <!--Effeciency Frame-->
+                <Frame CornerRadius="20"  Padding="0"
+                   BackgroundColor="White">
+
+                    <!--Grid column definition-->
+                    <StackLayout>
+
+                        <!--Winrate Label-->
+                        <Label 
+                           Padding="20,10,0,0"
+                           Text="Kill/battle ratio"
+                           FontSize="Medium" 
+                           FontAttributes="Bold" />
+
+                        <!--Grid definition-->
+                        <Grid Padding="10, 0, 0, 10" RowSpacing="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="2*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <!--AB/RB/SB label row-->
+                            <Label Grid.Column="2" Grid.Row="0" 
+                               HorizontalOptions="Center"
+                               Text="AB"/>
+                            <Label Grid.Column="3" Grid.Row="0" 
+                               HorizontalOptions="Center"
+                               Text="RB"/>
+                            <Label Grid.Column="4" Grid.Row="0" 
+                               HorizontalOptions="Center"
+                               Text="SB"/>
+
+                            <!--Air row-->
+                            <Image Grid.Column="0" Grid.Row="1"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               HeightRequest="25"
+                               WidthRequest="25"
+                               Source="planeeff"/>
+                            <Label Grid.Column="1" Grid.Row="1" 
+                               FontSize="Medium"
+                               Text="Air"/>
+                            <Label Grid.Column="2" Grid.Row="1" 
+                               HorizontalOptions="Center"
+                               FontAttributes="Bold"
+                               FontSize="Medium"
+                               Text="{Binding KD_AAB}"/>
+                            <Label Grid.Column="3" Grid.Row="1" 
+                               HorizontalOptions="Center"
+                               FontAttributes="Bold"
+                               FontSize="Medium"
+                               Text="{Binding KD_ARB}"/>
+                            <Label Grid.Column="4" Grid.Row="1" 
+                               HorizontalOptions="Center"
+                               FontAttributes="Bold"
+                               FontSize="Medium"
+                               Text="{Binding KD_ASB}"/>
+
+                            <!--Tank row-->
+                            <Image Grid.Column="0" Grid.Row="2"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               HeightRequest="25"
+                               WidthRequest="25"
+                               Source="tankeff"/>
+                            <Label Grid.Column="1" Grid.Row="2" 
+                               FontSize="Medium"
+                               Text="Ground"/>
+                            <Label Grid.Column="2" Grid.Row="2" 
+                               HorizontalOptions="Center"
+                               FontAttributes="Bold"
+                               FontSize="Medium"
+                               Text="{Binding KD_TAB}"/>
+                            <Label Grid.Column="3" Grid.Row="2" 
+                               HorizontalOptions="Center"
+                               FontAttributes="Bold"
+                               FontSize="Medium"
+                               Text="{Binding KD_TRB}"/>
+                            <Label Grid.Column="4" Grid.Row="2" 
+                               HorizontalOptions="Center"
+                               FontAttributes="Bold"
+                               FontSize="Medium"
+                               Text="{Binding KD_TSB}"/>
+
+                            <!--Ship row-->
+                            <Image Grid.Column="0" Grid.Row="3"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               HeightRequest="25"
+                               WidthRequest="25"
+                               Source="shipeff"/>
+                            <Label Grid.Column="1" Grid.Row="3" 
+                               FontSize="Medium"
+                               Text="Sea"/>
+                            <Label Grid.Column="2" Grid.Row="3" 
+                               HorizontalOptions="Center"
+                               FontAttributes="Bold"
+                               FontSize="Medium"
+                               Text="{Binding KD_SAB}"/>
+                            <Label Grid.Column="3" Grid.Row="3" 
+                               HorizontalOptions="Center"
+                               FontAttributes="Bold"
+                               FontSize="Medium"
+                               Text="{Binding KD_SRB}"/>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+
+                <!--Preference Frame-->
+                <Frame CornerRadius="20"  Padding="0"
+                   BackgroundColor="White">
+
+                    <!--Grid column definition-->
+                    <StackLayout>
+
+                        <!--Winrate Label-->
+                        <Label 
+                           Padding="20,10,0,0"
+                           Text="Favorite game modes"
+                           FontSize="Medium" 
+                           FontAttributes="Bold" />
+
+                        <!--Favorite game modes charts-->
+                        <chart:SfChart x:Name="Chart" HorizontalOptions="Center" VerticalOptions="Center">
+                            <chart:SfChart.Title>
+                                <chart:ChartTitle Text="Project Cost Breakdown"  />
+                            </chart:SfChart.Title>
+                            <chart:SfChart.BindingContext>
+                                <local:MainPageViewModel />
+                            </chart:SfChart.BindingContext>
+                            <chart:SfChart.Legend>
+                                <chart:ChartLegend IconHeight="14" IconWidth="14" OverflowMode="Wrap" DockPosition="Left" />
+                            </chart:SfChart.Legend>
+                            <chart:SfChart.Series>
+                                <chart:DoughnutSeries  ExplodeIndex="{Binding SelectedIndex}" x:Name="doughnutSeries" ItemsSource="{Binding DoughnutSeriesData}" XBindingPath="Name" YBindingPath="Value" LegendIcon="Circle" EnableAnimation="true" StrokeWidth="1" StrokeColor="White" ExplodeOnTouch="true" EnableDataPointSelection="true">
+                                    <chart:DoughnutSeries.DataMarker>
+                                        <chart:ChartDataMarker ShowLabel="True">
+                                            <chart:ChartDataMarker.LabelStyle>
+                                                <chart:DataMarkerLabelStyle LabelFormat="##'M'"/>
+                                            </chart:ChartDataMarker.LabelStyle>
+                                        </chart:ChartDataMarker>
+                                    </chart:DoughnutSeries.DataMarker>
+                                    <chart:DoughnutSeries.ColorModel>
+                                        <chart:ChartColorModel Palette="Natural" />
+                                    </chart:DoughnutSeries.ColorModel>
+                                    <!--<chart:DoughnutSeries.CenterView>
+                                    <StackLayout x:Name="stack" Orientation ="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <Label Text="{Binding BindingContext.SelectedItemName}" TextColor="Black" FontAttributes="Bold" FontSize="12" FontFamily="Helvetica"  HorizontalTextAlignment="Center"/>
+                                        <Label Text="{Binding BindingContext.SelectedItemsPercentage,StringFormat='{0}%'}" TextColor="Black" FontAttributes="Bold" FontSize="12" FontFamily="Helvetica"  HorizontalTextAlignment="Center"/>
+                                    </StackLayout>
+                                </chart:DoughnutSeries.CenterView>-->
+                                </chart:DoughnutSeries>
+                            </chart:SfChart.Series>
+                        </chart:SfChart>
+
+                    </StackLayout>
+                </Frame>
+
+
+            </StackLayout>
+        </ScrollView>
     </StackLayout>
 </ContentPage>

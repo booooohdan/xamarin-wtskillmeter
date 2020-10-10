@@ -22,7 +22,7 @@ namespace WTStatistics.Views
         {
             for (int i = 0; i <= 30; i++)
             {
-                var stringHTML = await theWebView.EvaluateJavaScriptAsync("document.body.innerHTML");
+                 string stringHTML = await theWebView.EvaluateJavaScriptAsync("document.body.innerHTML");
 
                 if (!string.IsNullOrEmpty(stringHTML)
                     && stringHTML.Contains(searchBar.Text)
