@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
-             xmlns:local="clr-namespace:WTStatistics.ViewModels" xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+             xmlns:local="clr-namespace:WTStatistics.ViewModels" 
              x:Class="WTStatistics.Views.MainPage"
              Shell.NavBarIsVisible="False">
 
@@ -384,42 +385,44 @@
                            FontAttributes="Bold" />
 
                         <!--Favorite game modes charts-->
-                        <chart:SfChart x:Name="Chart" HorizontalOptions="Center" VerticalOptions="Center">
-                            <chart:SfChart.Title>
-                                <chart:ChartTitle Text="Project Cost Breakdown"  />
-                            </chart:SfChart.Title>
-                            <chart:SfChart.BindingContext>
-                                <local:MainPageViewModel />
-                            </chart:SfChart.BindingContext>
+                        <chart:SfChart x:Name="Chart" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                             <chart:SfChart.Legend>
-                                <chart:ChartLegend IconHeight="14" IconWidth="14" OverflowMode="Wrap" DockPosition="Left" />
+                                <chart:ChartLegend IconHeight="14" IconWidth="14" OverflowMode="Wrap" DockPosition="Bottom" />
                             </chart:SfChart.Legend>
                             <chart:SfChart.Series>
-                                <chart:DoughnutSeries  ExplodeIndex="{Binding SelectedIndex}" x:Name="doughnutSeries" ItemsSource="{Binding DoughnutSeriesData}" XBindingPath="Name" YBindingPath="Value" LegendIcon="Circle" EnableAnimation="true" StrokeWidth="1" StrokeColor="White" ExplodeOnTouch="true" EnableDataPointSelection="true">
+                                <chart:DoughnutSeries x:Name="Nut" ListenPropertyChange="True" CircularCoefficient="0.80" ItemsSource="{Binding DoughnutSeriesData}" XBindingPath="currency" YBindingPath="fia_balance" ExplodeOnTouch="True" LegendIcon="Circle" EnableAnimation="true" StrokeWidth="0" StrokeColor="Black">
                                     <chart:DoughnutSeries.DataMarker>
-                                        <chart:ChartDataMarker ShowLabel="True">
-                                            <chart:ChartDataMarker.LabelStyle>
-                                                <chart:DataMarkerLabelStyle LabelFormat="##'M'"/>
-                                            </chart:ChartDataMarker.LabelStyle>
+                                        <chart:ChartDataMarker LabelContent="YValue"  ShowLabel="True" MarkerColor="Black">
                                         </chart:ChartDataMarker>
                                     </chart:DoughnutSeries.DataMarker>
                                     <chart:DoughnutSeries.ColorModel>
-                                        <chart:ChartColorModel Palette="Natural" />
+                                        <chart:ChartColorModel Palette="Metro" />
                                     </chart:DoughnutSeries.ColorModel>
-                                    <!--<chart:DoughnutSeries.CenterView>
-                                    <StackLayout x:Name="stack" Orientation ="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                                        <Label Text="{Binding BindingContext.SelectedItemName}" TextColor="Black" FontAttributes="Bold" FontSize="12" FontFamily="Helvetica"  HorizontalTextAlignment="Center"/>
-                                        <Label Text="{Binding BindingContext.SelectedItemsPercentage,StringFormat='{0}%'}" TextColor="Black" FontAttributes="Bold" FontSize="12" FontFamily="Helvetica"  HorizontalTextAlignment="Center"/>
-                                    </StackLayout>
-                                </chart:DoughnutSeries.CenterView>-->
                                 </chart:DoughnutSeries>
                             </chart:SfChart.Series>
                         </chart:SfChart>
-
                     </StackLayout>
                 </Frame>
-
-
+                <chart:SfChart>
+                    <chart:SfChart.Title>
+                        <chart:ChartTitle Text="Chart" />
+                    </chart:SfChart.Title>
+                    <chart:SfChart.PrimaryAxis>
+                        <chart:NumericalAxis>
+                            <chart:NumericalAxis.Title>
+                                <chart:ChartAxisTitle Text="X Axis" />
+                            </chart:NumericalAxis.Title>
+                        </chart:NumericalAxis>
+                    </chart:SfChart.PrimaryAxis>
+                    <chart:SfChart.SecondaryAxis>
+                        <chart:NumericalAxis>
+                            <chart:NumericalAxis.Title>
+                                <chart:ChartAxisTitle Text="Y Axis" />
+                            </chart:NumericalAxis.Title>
+                        </chart:NumericalAxis>
+                    </chart:SfChart.SecondaryAxis>
+                    <chart:ColumnSeries ItemsSource="{Binding DoughnutSeriesData}" YBindingPath="YValue" XBindingPath="XValue" />
+                </chart:SfChart>
             </StackLayout>
         </ScrollView>
     </StackLayout>

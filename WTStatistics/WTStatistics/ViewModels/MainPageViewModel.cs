@@ -247,7 +247,7 @@ namespace WTStatistics.ViewModels
             set
             {
                 _selectedItemName = value;
-                OnPropertyChanged();
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SelectedItemName"));
             }
         }
 
@@ -257,7 +257,7 @@ namespace WTStatistics.ViewModels
             set
             {
                 _selectedItemsPercentage = value;
-                OnPropertyChanged();
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SelectedItemsPercentage"));
             }
         }
 

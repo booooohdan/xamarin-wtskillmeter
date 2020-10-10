@@ -35,7 +35,10 @@ namespace WTStatistics.Views
                 {
                     await Task.Delay(1000);
                     if (i == 30)
+                    {
+                        IsBusy = false;
                         ErrorHandler(stringHTML);
+                    }
                 }
             }
         }
@@ -46,7 +49,6 @@ namespace WTStatistics.Views
         /// <param name="stringHTML">HTML string from webview</param>
         private void ErrorHandler(string stringHTML)
         {
-            IsBusy = false;
             if (stringHTML.Contains("Информации о пользователе недоступна"))
                 Application.Current.MainPage.DisplayAlert("Incorrect nickname", "Nickname doesn\'t exist.\nPlease enter correct nickname", "OK");
             else
