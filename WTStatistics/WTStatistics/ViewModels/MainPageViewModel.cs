@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Globalization;
@@ -19,10 +20,11 @@ namespace WTStatistics.ViewModels
         bool busy;
         string url;
         Player player;
+        Color colorTop;
+        Color colorBottom;
 
         public event PropertyChangedEventHandler PropertyChanged;
         public ICommand SearchButtonPressed { get; }
-        public ObservableCollection<ChartDataModel> DoughnutSeriesData { get; set; }
         #endregion
 
         #region Constructor
@@ -31,17 +33,6 @@ namespace WTStatistics.ViewModels
         {
             SearchButtonPressed = new Command<string>(HandleSearchPressed);
             player = new Player();
-
-            DoughnutSeriesData = new ObservableCollection<ChartDataModel>
-            {
-                new ChartDataModel("Labour", 10),
-                new ChartDataModel("Legal", 8),
-                new ChartDataModel("Production", 7),
-                new ChartDataModel("License", 5),
-                new ChartDataModel("Facilities", 10),
-                new ChartDataModel("Taxes", 6),
-                new ChartDataModel("Insurance", 18)
-           };
         }
         #endregion
 
@@ -237,45 +228,43 @@ namespace WTStatistics.ViewModels
             }
         }
 
-        private int selectedIndex;
-        private string _selectedItemName;
-        private double _selectedItemsPercentage;
-
-        public string SelectedItemName
+        public double Skill
         {
-            get { return _selectedItemName; }
+            get { return player.TotalSkillBackground; }
             set
             {
-                _selectedItemName = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SelectedItemName"));
+                player.TotalSkillBackground = value;
+                if (value > 0 & value <= 0.9)
+                {
+                    GradientTop = Color.FromHex("#fbd21a");
+                    GradientBottom = Color.FromHex("#330c19");
+                }
+                if (value > 0.9 & value <= 1.5)
+                {
+                    GradientTop = Color.FromHex("#4caf50");
+                    GradientBottom = Color.FromHex("#163418");
+                }
+                OnPropertyChanged();
             }
         }
 
-        public double SelectedItemsPercentage
+        public Color GradientTop
         {
-            get { return _selectedItemsPercentage; }
+            get { return colorTop; }
             set
             {
-                _selectedItemsPercentage = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SelectedItemsPercentage"));
+                colorTop = value;
+                OnPropertyChanged();
             }
         }
 
-        public int SelectedIndex
+        public Color GradientBottom
         {
-            get { return selectedIndex; }
+            get { return colorBottom; }
             set
             {
-                selectedIndex = value;
-                if (selectedIndex == -1) return;
-
-                SelectedItemName = DoughnutSeriesData[selectedIndex].Name;
-
-                var sum = DoughnutSeriesData.Sum(item => item.Value);
-                var selectedValue = DoughnutSeriesData[selectedIndex].Value;
-
-                SelectedItemsPercentage = (selectedValue / sum) * 100;
-                SelectedItemsPercentage = Math.Floor(SelectedItemsPercentage * 100) / 100;
+                colorBottom = value;
+                OnPropertyChanged();
             }
         }
 
@@ -326,6 +315,8 @@ namespace WTStatistics.ViewModels
             KD_TSB = data.PlayerInfo().KD_TSB;
             KD_SAB = data.PlayerInfo().KD_SAB;
             KD_SRB = data.PlayerInfo().KD_SRB;
+
+            Skill = data.PlayerInfo().TotalSkillBackground;
         }
     }
 }

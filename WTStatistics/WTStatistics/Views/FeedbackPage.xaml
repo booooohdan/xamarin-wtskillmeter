@@ -1,59 +1,130 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:rating="clr-namespace:Syncfusion.SfRating.XForms;assembly=Syncfusion.SfRating.XForms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms" 
              xmlns:local="clr-namespace:WTStatistics.ViewModels"
              x:Class="WTStatistics.Views.FeedbackPage"
-
              x:Name="BrowseItemsPage"
              Shell.NavBarIsVisible="False">
 
-    <ContentPage.ToolbarItems>
-    </ContentPage.ToolbarItems>
     <ContentPage.BindingContext>
-        <local:MainPageViewModel/>
+        <local:FeedbackViewModel/>
     </ContentPage.BindingContext>
-    <StackLayout>
-    <chart:SfChart x:Name="Chart" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-        <chart:SfChart.Title>
-            <chart:ChartTitle Text="Project Cost Breakdown"  />
-        </chart:SfChart.Title>
-        <chart:SfChart.BindingContext>
-            <local:MainPageViewModel />
-        </chart:SfChart.BindingContext>
-        <chart:SfChart.Legend>
-            <chart:ChartLegend IconHeight="14" IconWidth="14" OverflowMode="Wrap" DockPosition="Bottom" />
-        </chart:SfChart.Legend>
-        <chart:SfChart.Series>
-                <chart:DoughnutSeries  ExplodeIndex="{Binding SelectedIndex}" 
-                                       x:Name="doughnutSeries" 
-                                       ItemsSource="{Binding DoughnutSeriesData}" 
-                                       XBindingPath="Name" 
-                                       YBindingPath="Value" 
-                                       LegendIcon="Circle" 
-                                       EnableAnimation="true" 
-                                       StrokeWidth="1" 
-                                       StrokeColor="Red" 
-                                       ExplodeOnTouch="true" 
-                                       EnableDataPointSelection="true">
-                <chart:DoughnutSeries.DataMarker>
-                    <chart:ChartDataMarker ShowLabel="True">
-                        <chart:ChartDataMarker.LabelStyle>
-                            <chart:DataMarkerLabelStyle LabelFormat="##'M'"/>
-                        </chart:ChartDataMarker.LabelStyle>
-                    </chart:ChartDataMarker>
-                </chart:DoughnutSeries.DataMarker>
-                <chart:DoughnutSeries.ColorModel>
-                    <chart:ChartColorModel Palette="Metro" />
-                </chart:DoughnutSeries.ColorModel>
-                <chart:DoughnutSeries.CenterView>
-                    <StackLayout x:Name="stack" Orientation ="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                        <Label Text="{Binding BindingContext.SelectedItemName}" TextColor="Black" FontAttributes="Bold" FontSize="12" FontFamily="Helvetica"  HorizontalTextAlignment="Center"/>
-                        <Label Text="{Binding BindingContext.SelectedItemsPercentage,StringFormat='{0}%'}" TextColor="Black" FontAttributes="Bold" FontSize="12" FontFamily="Helvetica"  HorizontalTextAlignment="Center"/>
-                    </StackLayout>
-                </chart:DoughnutSeries.CenterView>
-            </chart:DoughnutSeries>
-        </chart:SfChart.Series>
-    </chart:SfChart>
+
+    <StackLayout Padding="20" BackgroundColor="WhiteSmoke">
+
+        <Label
+            FontSize="Title"
+            TextColor="#2a2a2a"
+               Text="Contact us:" />
+        <StackLayout Orientation="Horizontal">
+            <Button Command="{Binding RedditCommand}"
+                    Text="Reddit" 
+                    TextColor="OrangeRed"
+                    BorderColor="OrangeRed"
+                    Style="{StaticResource buttonStyle}"/>
+
+            <Button Command="{Binding VKCommand}"
+                    Text="VK" 
+                    TextColor="RoyalBlue"
+                    BorderColor="RoyalBlue"
+                    Style="{StaticResource buttonStyle}"/>
+
+            <Button Command="{Binding GMailCommand}"
+                    Text="GMail" 
+                    TextColor="DarkRed"
+                    BorderColor="DarkRed"
+                    Style="{StaticResource buttonStyle}"/>
+        </StackLayout>
+
+        <Label
+            Padding="0, 20, 0,0"
+            FontSize="Title"
+            TextColor="#2a2a2a"
+               Text="Rate us in Google Play:" />
+
+        <rating:SfRating  
+            ValueChanged="SfRating_ValueChanged"
+            Value="4"
+            ItemSize="35">
+            <rating:SfRating.RatingSettings>
+                <rating:SfRatingSettings 
+                    RatedFill="Gold" 
+                    UnRatedFill="Wheat" 
+                    RatedStrokeWidth="0" 
+                    UnRatedStrokeWidth="0" />
+            </rating:SfRating.RatingSettings>
+        </rating:SfRating>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="60" />
+            </Grid.RowDefinitions>
+
+
+        <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3"
+            Padding="0, 20, 0,0"
+            FontSize="Title"
+            TextColor="#2a2a2a"
+               Text="Try our apps:" />
+            <Image Grid.Column="0" Grid.Row="1"
+                   WidthRequest="75"
+                   HeightRequest="75"
+                Source="Versus"/>
+            <Image Grid.Column="1" Grid.Row="1"
+                   WidthRequest="75"
+                   HeightRequest="75"
+                Source="Charts"/>
+
+            <Button Command="{Binding VersusCommand}"
+                    Grid.Column="0" Grid.Row="2"
+                    Style="{StaticResource buttonStyle}"
+                    TextColor="Red"
+                    BorderColor="Red"
+                Text="Download Versus"/>
+            <Button Command="{Binding ChartsCommand}"
+                    Grid.Column="1" Grid.Row="2"
+                    Style="{StaticResource buttonStyle}"
+                    TextColor="Red"
+                    BorderColor="Red"
+                Text="Download Charts"/>
+
+            <Label Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3"
+                               Padding="0, 20, 0,0"
+            FontSize="Title"
+            TextColor="#2a2a2a"
+               Text="Try our games:" />
+            <Image Grid.Column="0" Grid.Row="4"
+                   WidthRequest="75"
+                   HeightRequest="75"
+                Source="WTQuiz"/>
+            <Image Grid.Column="1" Grid.Row="4"
+                   WidthRequest="75"
+                   HeightRequest="75"
+                Source="WoTQuiz"/>
+
+            <Button Command="{Binding WTQuizCommand}"
+                    Grid.Column="0" Grid.Row="5"
+                    Style="{StaticResource buttonStyle}"
+                    TextColor="Red"
+                    BorderColor="Red"
+                Text="Download WT Quiz"/>
+            <Button Command="{Binding WoTQuizCommand}"
+                    Grid.Column="1" Grid.Row="5"
+                    Style="{StaticResource buttonStyle}"
+                    TextColor="Red"
+                    BorderColor="Red"
+                Text="Download WoT Quiz"/>
+        </Grid>
     </StackLayout>
 </ContentPage>

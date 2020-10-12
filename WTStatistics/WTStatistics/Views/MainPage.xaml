@@ -13,23 +13,22 @@
 
     <StackLayout Padding="0" BackgroundColor="WhiteSmoke">
         <!--Gradient section-->
-        <StackLayout>
-            <StackLayout.Background>
+        <StackLayout BackgroundColor="{Binding GradientTop}">
+            
+            <!--<StackLayout.Background>
                 <LinearGradientBrush StartPoint="0,0"
                              EndPoint="0,1">
-                    <GradientStop Color="#16a48c"
+                    <GradientStop Color="{Binding GradientTop}"
                           Offset="0.1"/>
-                    <GradientStop Color="#33e47f"
+                    <GradientStop Color="{Binding GradientBottom}"
                           Offset="1.0"/>
                 </LinearGradientBrush>
-            </StackLayout.Background>
+            </StackLayout.Background>-->
 
             <Grid Padding="20, 20, 20, -10">
                 <!--Grid column definition-->
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="40*" />
-                    <ColumnDefinition Width="20*" />
-                    <ColumnDefinition Width="40*" />
+                    <ColumnDefinition Width="40*, 20, 40" />
                 </Grid.ColumnDefinitions>
 
                 <!--Avatar image-->
@@ -120,10 +119,8 @@
 
                         <!--Winrate Label-->
                         <Label 
-                           Padding="20,10,0,0"
                            Text="Winrate (AB/RB/SB)"
-                           FontSize="Medium" 
-                           FontAttributes="Bold" />
+                           Style="{StaticResource labelStyle}"/>
 
                         <!--Grid definition-->
                         <Grid Padding="0, 0, 0, -20" RowSpacing="0">
@@ -260,12 +257,10 @@
                     <!--Grid column definition-->
                     <StackLayout>
 
-                        <!--Winrate Label-->
+                        <!--Kill/battle ratio Label-->
                         <Label 
-                           Padding="20,10,0,0"
                            Text="Kill/battle ratio"
-                           FontSize="Medium" 
-                           FontAttributes="Bold" />
+                           Style="{StaticResource labelStyle}"/>
 
                         <!--Grid definition-->
                         <Grid Padding="10, 0, 0, 10" RowSpacing="0">
@@ -296,76 +291,51 @@
 
                             <!--Air row-->
                             <Image Grid.Column="0" Grid.Row="1"
-                               HorizontalOptions="Center"
-                               VerticalOptions="Center"
-                               HeightRequest="25"
-                               WidthRequest="25"
-                               Source="planeeff"/>
+                                   Style="{StaticResource imageKDStyle}"
+                                   Source="planeeff"/>
                             <Label Grid.Column="1" Grid.Row="1" 
                                FontSize="Medium"
                                Text="Air"/>
-                            <Label Grid.Column="2" Grid.Row="1" 
-                               HorizontalOptions="Center"
-                               FontAttributes="Bold"
-                               FontSize="Medium"
-                               Text="{Binding KD_AAB}"/>
+                            <Label Grid.Column="2" Grid.Row="1"                                    
+                                   Style="{StaticResource labelKDStyle}"
+                                   Text="{Binding KD_AAB}"/>
                             <Label Grid.Column="3" Grid.Row="1" 
-                               HorizontalOptions="Center"
-                               FontAttributes="Bold"
-                               FontSize="Medium"
-                               Text="{Binding KD_ARB}"/>
+                                   Style="{StaticResource labelKDStyle}"
+                                   Text="{Binding KD_ARB}"/>
                             <Label Grid.Column="4" Grid.Row="1" 
-                               HorizontalOptions="Center"
-                               FontAttributes="Bold"
-                               FontSize="Medium"
-                               Text="{Binding KD_ASB}"/>
+                                   Style="{StaticResource labelKDStyle}"
+                                   Text="{Binding KD_ASB}"/>
 
                             <!--Tank row-->
                             <Image Grid.Column="0" Grid.Row="2"
-                               HorizontalOptions="Center"
-                               VerticalOptions="Center"
-                               HeightRequest="25"
-                               WidthRequest="25"
-                               Source="tankeff"/>
+                                   Style="{StaticResource imageKDStyle}"
+                                   Source="tankeff"/>
                             <Label Grid.Column="1" Grid.Row="2" 
                                FontSize="Medium"
                                Text="Ground"/>
-                            <Label Grid.Column="2" Grid.Row="2" 
-                               HorizontalOptions="Center"
-                               FontAttributes="Bold"
-                               FontSize="Medium"
-                               Text="{Binding KD_TAB}"/>
-                            <Label Grid.Column="3" Grid.Row="2" 
-                               HorizontalOptions="Center"
-                               FontAttributes="Bold"
-                               FontSize="Medium"
-                               Text="{Binding KD_TRB}"/>
+                            <Label Grid.Column="2" Grid.Row="2"                                    
+                                   Style="{StaticResource labelKDStyle}"
+                                   Text="{Binding KD_TAB}"/>
+                            <Label Grid.Column="3" Grid.Row="2"                                    
+                                   Style="{StaticResource labelKDStyle}"
+                                   Text="{Binding KD_TRB}"/>
                             <Label Grid.Column="4" Grid.Row="2" 
-                               HorizontalOptions="Center"
-                               FontAttributes="Bold"
-                               FontSize="Medium"
-                               Text="{Binding KD_TSB}"/>
+                                   Style="{StaticResource labelKDStyle}"
+                                   Text="{Binding KD_TSB}"/>
 
                             <!--Ship row-->
                             <Image Grid.Column="0" Grid.Row="3"
-                               HorizontalOptions="Center"
-                               VerticalOptions="Center"
-                               HeightRequest="25"
-                               WidthRequest="25"
-                               Source="shipeff"/>
+                                   Style="{StaticResource imageKDStyle}"
+                                   Source="shipeff"/>
                             <Label Grid.Column="1" Grid.Row="3" 
                                FontSize="Medium"
                                Text="Sea"/>
                             <Label Grid.Column="2" Grid.Row="3" 
-                               HorizontalOptions="Center"
-                               FontAttributes="Bold"
-                               FontSize="Medium"
-                               Text="{Binding KD_SAB}"/>
+                                   Style="{StaticResource labelKDStyle}"
+                                   Text="{Binding KD_SAB}"/>
                             <Label Grid.Column="3" Grid.Row="3" 
-                               HorizontalOptions="Center"
-                               FontAttributes="Bold"
-                               FontSize="Medium"
-                               Text="{Binding KD_SRB}"/>
+                                   Style="{StaticResource labelKDStyle}"
+                                   Text="{Binding KD_SRB}"/>
                         </Grid>
                     </StackLayout>
                 </Frame>
@@ -374,55 +344,95 @@
                 <Frame CornerRadius="20"  Padding="0"
                    BackgroundColor="White">
 
-                    <!--Grid column definition-->
                     <StackLayout>
 
-                        <!--Winrate Label-->
+                        <!--Preference Label-->
                         <Label 
-                           Padding="20,10,0,0"
                            Text="Favorite game modes"
-                           FontSize="Medium" 
-                           FontAttributes="Bold" />
+                           Style="{StaticResource labelStyle}"/>
 
                         <!--Favorite game modes charts-->
-                        <chart:SfChart x:Name="Chart" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                            <chart:SfChart.Legend>
-                                <chart:ChartLegend IconHeight="14" IconWidth="14" OverflowMode="Wrap" DockPosition="Bottom" />
-                            </chart:SfChart.Legend>
-                            <chart:SfChart.Series>
-                                <chart:DoughnutSeries x:Name="Nut" ListenPropertyChange="True" CircularCoefficient="0.80" ItemsSource="{Binding DoughnutSeriesData}" XBindingPath="currency" YBindingPath="fia_balance" ExplodeOnTouch="True" LegendIcon="Circle" EnableAnimation="true" StrokeWidth="0" StrokeColor="Black">
-                                    <chart:DoughnutSeries.DataMarker>
-                                        <chart:ChartDataMarker LabelContent="YValue"  ShowLabel="True" MarkerColor="Black">
-                                        </chart:ChartDataMarker>
-                                    </chart:DoughnutSeries.DataMarker>
-                                    <chart:DoughnutSeries.ColorModel>
-                                        <chart:ChartColorModel Palette="Metro" />
-                                    </chart:DoughnutSeries.ColorModel>
-                                </chart:DoughnutSeries>
-                            </chart:SfChart.Series>
-                        </chart:SfChart>
+                        <Label 
+                            Padding="20,10,0,10"
+                            Text="In development"/>
                     </StackLayout>
                 </Frame>
-                <chart:SfChart>
-                    <chart:SfChart.Title>
-                        <chart:ChartTitle Text="Chart" />
-                    </chart:SfChart.Title>
-                    <chart:SfChart.PrimaryAxis>
-                        <chart:NumericalAxis>
-                            <chart:NumericalAxis.Title>
-                                <chart:ChartAxisTitle Text="X Axis" />
-                            </chart:NumericalAxis.Title>
-                        </chart:NumericalAxis>
-                    </chart:SfChart.PrimaryAxis>
-                    <chart:SfChart.SecondaryAxis>
-                        <chart:NumericalAxis>
-                            <chart:NumericalAxis.Title>
-                                <chart:ChartAxisTitle Text="Y Axis" />
-                            </chart:NumericalAxis.Title>
-                        </chart:NumericalAxis>
-                    </chart:SfChart.SecondaryAxis>
-                    <chart:ColumnSeries ItemsSource="{Binding DoughnutSeriesData}" YBindingPath="YValue" XBindingPath="XValue" />
-                </chart:SfChart>
+                
+                <!--Top planes/tanks Frame-->
+                <StackLayout Orientation="Horizontal">
+                    <Frame CornerRadius="20"  Padding="0" HorizontalOptions="FillAndExpand"
+                       BackgroundColor="White">
+
+                        <!--Grid column definition-->
+                        <StackLayout>
+
+                            <!--Planes Label-->
+                            <Label 
+                               Text="Top planes"
+                               Style="{StaticResource labelStyle}"/>
+
+                            <!--Favorite game modes charts-->
+                            <Label 
+                                Padding="20,10,0,10"
+                                Text="In development"/>
+                        </StackLayout>
+                    </Frame>
+
+                    <Frame CornerRadius="20"  Padding="0" HorizontalOptions="FillAndExpand"
+                       BackgroundColor="White">
+
+                        <!--Grid column definition-->
+                        <StackLayout>
+
+                            <!--Planes Label-->
+                            <Label 
+                               Text="Top tanks"
+                               Style="{StaticResource labelStyle}"/>
+
+                            <!--Favorite game modes charts-->
+                            <Label 
+                                Padding="20,10,0,10"
+                                Text="In development"/>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+
+                <!--Preference Frame-->
+                <Frame CornerRadius="20"  Padding="0"
+                   BackgroundColor="White">
+
+                    <StackLayout>
+
+                        <!--Preference Label-->
+                        <Label 
+                           Text="Favorite type of vehicle"
+                           Style="{StaticResource labelStyle}"/>
+
+                        <!--Favorite game modes charts-->
+                        <Label 
+                            Padding="20,10,0,10"
+                            Text="In development"/>
+                    </StackLayout>
+                </Frame>
+
+                <!--Preference Frame-->
+                <Frame CornerRadius="20"  Padding="0"
+                   BackgroundColor="White">
+
+                    <StackLayout>
+
+                        <!--Preference Label-->
+                        <Label 
+                           Text="Researched vehicle"
+                           Style="{StaticResource labelStyle}"/>
+
+                        <!--Favorite game modes charts-->
+                        <Label 
+                            Padding="20,10,0,10"
+                            Text="In development"/>
+                    </StackLayout>
+                </Frame>
+
             </StackLayout>
         </ScrollView>
     </StackLayout>

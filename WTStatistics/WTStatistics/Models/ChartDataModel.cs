@@ -1,4 +1,4 @@
-﻿namespace WTStatistics.ViewModels
+﻿namespace WTStatistics.Models
 {
     public class ChartDataModel
     {

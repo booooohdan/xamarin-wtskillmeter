@@ -26,7 +26,7 @@ namespace WTStatistics.Views
 
                 if (!string.IsNullOrEmpty(stringHTML)
                     && stringHTML.Contains(searchBar.Text)
-                    & stringHTML.Contains("AviationTable-TableData"))
+                    && stringHTML.Contains("AllStatTable-TableData"))
                 {
                     model.StartExtractData(stringHTML);
                     break;

@@ -11,8 +11,10 @@ namespace WTStatistics.Models
         public int BattleFinished { get; set; }
         public int LionEarned { get; set; }
         public double TotalTimeSpended { get; set; }
-        public int TotalSkillBackground { get; set; }
+        public double TotalSkillBackground { get; set; }
         public int Preference { get; set; }
+        public string GradientTop { get; set; }
+        public string GradientBottom { get; set; }
 
         public int WinRateAB { get; set; }
         public int WinRateRB { get; set; }

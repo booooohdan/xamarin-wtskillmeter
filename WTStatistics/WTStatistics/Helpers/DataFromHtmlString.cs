@@ -82,6 +82,20 @@ namespace WTStatistics.Helpers
             return Math.Round(KD, 1);
         }
 
+        private double CalculateTotalSkill()
+        {
+            List<double> efficiency = new List<double>();
+            efficiency.Add(player.KD_AAB);
+            efficiency.Add(player.KD_ARB);
+            efficiency.Add(player.KD_ASB);
+            efficiency.Add(player.KD_TAB);
+            efficiency.Add(player.KD_TRB);
+            efficiency.Add(player.KD_TSB);
+            efficiency.Add(player.KD_SAB);
+            efficiency.Add(player.KD_SRB);
+
+            return efficiency.Average();
+        }
 
         /// <summary>
         /// Return players data
@@ -111,6 +125,7 @@ namespace WTStatistics.Helpers
             player.KD_SAB = KDCalculate(ToInt(listTableShips[81]), ToInt(listTableShips[5]));
             player.KD_SRB = KDCalculate(ToInt(listTableShips[82]), ToInt(listTableShips[6]));
 
+            player.TotalSkillBackground = CalculateTotalSkill();
             return player;
         }
     }

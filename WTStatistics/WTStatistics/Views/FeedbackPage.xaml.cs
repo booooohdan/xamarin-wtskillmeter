@@ -9,6 +9,7 @@ using Xamarin.Forms.Xaml;
 
 using WTStatistics.Models;
 using WTStatistics.Views;
+using Xamarin.Essentials;
 
 namespace WTStatistics.Views
 {
@@ -24,6 +25,11 @@ namespace WTStatistics.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
+        }
+
+        private void SfRating_ValueChanged(object sender, Syncfusion.SfRating.XForms.ValueEventArgs e)
+        {
+            Launcher.OpenAsync(new Uri("https://www.reddit.com/r/wtversus/"));
         }
     }
 }
