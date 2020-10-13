@@ -13,7 +13,7 @@
 
     <StackLayout Padding="0" BackgroundColor="WhiteSmoke">
         <!--Gradient section-->
-        <StackLayout BackgroundColor="{Binding GradientTop}">
+        <StackLayout BackgroundColor="{Binding HeaderColor}">
             
             <!--<StackLayout.Background>
                 <LinearGradientBrush StartPoint="0,0"
@@ -28,7 +28,9 @@
             <Grid Padding="20, 20, 20, -10">
                 <!--Grid column definition-->
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="40*, 20, 40" />
+                    <ColumnDefinition Width="40*" />
+                    <ColumnDefinition Width="20*" />
+                    <ColumnDefinition Width="40*" />
                 </Grid.ColumnDefinitions>
 
                 <!--Avatar image-->

@@ -76,7 +76,7 @@ namespace WTStatistics.Helpers
             }
         }
 
-        private double KDCalculate (int kills, int battles)
+        private double KDCalculate(int kills, int battles)
         {
             double KD = battles > 0 ? (double)kills / (double)battles : 0;
             return Math.Round(KD, 1);
@@ -85,14 +85,37 @@ namespace WTStatistics.Helpers
         private double CalculateTotalSkill()
         {
             List<double> efficiency = new List<double>();
-            efficiency.Add(player.KD_AAB);
-            efficiency.Add(player.KD_ARB);
-            efficiency.Add(player.KD_ASB);
-            efficiency.Add(player.KD_TAB);
-            efficiency.Add(player.KD_TRB);
-            efficiency.Add(player.KD_TSB);
-            efficiency.Add(player.KD_SAB);
-            efficiency.Add(player.KD_SRB);
+            if (ToInt(listTableAvia[5]) > 100) {
+                efficiency.Add(player.KD_AAB);
+            }
+            if (ToInt(listTableAvia[6]) > 100)
+            {
+                efficiency.Add(player.KD_ARB);
+            }
+            if (ToInt(listTableAvia[7]) > 100)
+            {
+                efficiency.Add(player.KD_ASB);
+            }
+            if (ToInt(listTableTanks[5]) > 100)
+            {
+                efficiency.Add(player.KD_TAB);
+            }
+            if (ToInt(listTableTanks[6]) > 100)
+            {
+                efficiency.Add(player.KD_TRB);
+            }
+            if (ToInt(listTableTanks[7]) > 100)
+            {
+                efficiency.Add(player.KD_TSB);
+            }
+            if (ToInt(listTableShips[5]) > 100)
+            {
+                efficiency.Add(player.KD_SAB);
+            }
+            if (ToInt(listTableShips[6]) > 100)
+            {
+                efficiency.Add(player.KD_SRB);
+            }
 
             return efficiency.Average();
         }
@@ -103,7 +126,7 @@ namespace WTStatistics.Helpers
         /// <returns>Players data</returns>
         public Player PlayerInfo()
         {
-            DateConverter date= new DateConverter();
+            DateConverter date = new DateConverter();
             var totalTime = date.GetSpendTime(listTableMain[29]) + date.GetSpendTime(listTableMain[30]) + date.GetSpendTime(listTableMain[31]);
 
             player.LionEarned = ToInt(listTableMain[21]) + ToInt(listTableMain[22]) + ToInt(listTableMain[23]);

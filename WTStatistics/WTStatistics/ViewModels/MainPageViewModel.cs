@@ -20,8 +20,6 @@ namespace WTStatistics.ViewModels
         bool busy;
         string url;
         Player player;
-        Color colorTop;
-        Color colorBottom;
 
         public event PropertyChangedEventHandler PropertyChanged;
         public ICommand SearchButtonPressed { get; }
@@ -33,6 +31,7 @@ namespace WTStatistics.ViewModels
         {
             SearchButtonPressed = new Command<string>(HandleSearchPressed);
             player = new Player();
+            HeaderColor = "#574d55";
         }
         #endregion
 
@@ -52,7 +51,7 @@ namespace WTStatistics.ViewModels
             set
             {
                 url = value;
-                OnPropertyChanged();               
+                OnPropertyChanged();
             }
         }
 
@@ -69,7 +68,7 @@ namespace WTStatistics.ViewModels
 
         public int LionEarned
         {
-            get { return  player.LionEarned; }
+            get { return player.LionEarned; }
             set
             {
                 player.LionEarned = value;
@@ -234,36 +233,37 @@ namespace WTStatistics.ViewModels
             set
             {
                 player.TotalSkillBackground = value;
-                if (value > 0 & value <= 0.9)
+
+                if (value >= 0 & value <= 0.6)
                 {
-                    GradientTop = Color.FromHex("#fbd21a");
-                    GradientBottom = Color.FromHex("#330c19");
+                    HeaderColor = "#e31670";
                 }
-                if (value > 0.9 & value <= 1.5)
+                if (value > 0.6 & value <= 0.9)
                 {
-                    GradientTop = Color.FromHex("#4caf50");
-                    GradientBottom = Color.FromHex("#163418");
+                    HeaderColor = "#f19411";
+                }
+                if (value > 0.9 & value <= 1.4)
+                {
+                    HeaderColor = "#16a58c";
+                }
+                if (value > 1.4 & value <= 2.0)
+                {
+                    HeaderColor = "#28a3da";
+                }
+                if (value > 2.0)
+                {
+                    HeaderColor = "#a11887";
                 }
                 OnPropertyChanged();
             }
         }
 
-        public Color GradientTop
+        public string HeaderColor
         {
-            get { return colorTop; }
+            get { return player.HeaderColor; }
             set
             {
-                colorTop = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public Color GradientBottom
-        {
-            get { return colorBottom; }
-            set
-            {
-                colorBottom = value;
+                player.HeaderColor = value;
                 OnPropertyChanged();
             }
         }
