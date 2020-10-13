@@ -236,23 +236,23 @@ namespace WTStatistics.ViewModels
 
                 if (value >= 0 & value <= 0.6)
                 {
-                    HeaderColor = "#e31670";
+                    HeaderColor = "#e82652";
                 }
                 if (value > 0.6 & value <= 0.9)
                 {
                     HeaderColor = "#f19411";
                 }
-                if (value > 0.9 & value <= 1.4)
+                if (value > 0.9 & value <= 1.1)
                 {
-                    HeaderColor = "#16a58c";
+                    HeaderColor = "#2dd782";
                 }
-                if (value > 1.4 & value <= 2.0)
+                if (value > 1.1 & value <= 1.5)
                 {
                     HeaderColor = "#28a3da";
                 }
-                if (value > 2.0)
+                if (value > 1.5)
                 {
-                    HeaderColor = "#a11887";
+                    HeaderColor = "#9c39a3";
                 }
                 OnPropertyChanged();
             }

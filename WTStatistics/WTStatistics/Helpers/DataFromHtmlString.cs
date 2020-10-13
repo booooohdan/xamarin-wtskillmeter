@@ -117,6 +117,10 @@ namespace WTStatistics.Helpers
                 efficiency.Add(player.KD_SRB);
             }
 
+            efficiency.Add((double)player.WinRateAB*2/100);
+            efficiency.Add((double)player.WinRateRB*2/100);
+            efficiency.Add((double)player.WinRateSB*2/100);
+
             return efficiency.Average();
         }
 
