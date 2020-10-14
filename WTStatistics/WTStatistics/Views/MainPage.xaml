@@ -24,7 +24,16 @@
                           Offset="1.0"/>
                 </LinearGradientBrush>
             </StackLayout.Background>-->
-
+            <SearchBar x:Name="searchBar"
+                               SearchCommand="{Binding SearchButtonPressed}"
+                               SearchCommandParameter="{Binding Source={x:Reference searchBar}, Path=Text}"
+                               Placeholder="Enter nickname"
+                               PlaceholderColor="LightGray"
+                               MaxLength="16"
+                               HorizontalOptions="Fill"
+                               TextColor="White" 
+                               FontSize="Medium" 
+                               FontAttributes="Bold" />
             <Grid Padding="20, 20, 20, -10">
                 <!--Grid column definition-->
                 <Grid.ColumnDefinitions>
@@ -88,16 +97,11 @@
                         FontSize="Medium" 
                         FontAttributes="Bold" 
                         VerticalOptions="Center"/>
-                <SearchBar x:Name="searchBar"
-                               SearchCommand="{Binding SearchButtonPressed}"
-                               SearchCommandParameter="{Binding Source={x:Reference searchBar}, Path=Text}"
-                               Placeholder="Enter nickname"
-                               PlaceholderColor="LightGray"
-                               MaxLength="16"
-                               WidthRequest="250"
-                               TextColor="White" 
-                               FontSize="Medium" 
-                               FontAttributes="Bold" />
+                <Label  Text="{Binding SearchBarText}" 
+                        TextColor="White" 
+                        FontSize="Medium" 
+                        FontAttributes="Bold" 
+                        VerticalOptions="Center"/>
             </StackLayout>
         </StackLayout>
 
@@ -113,7 +117,7 @@
             <StackLayout Spacing="10">
 
                 <!--Winrate Frame-->
-                <Frame CornerRadius="20"  Padding="0"
+                <Frame CornerRadius="20"  Padding="0" HasShadow="False"
                    BackgroundColor="White">
 
                     <!--Grid column definition-->
@@ -253,7 +257,7 @@
                 </Frame>
 
                 <!--Effeciency Frame-->
-                <Frame CornerRadius="20"  Padding="0"
+                <Frame CornerRadius="20"  Padding="0" HasShadow="False"
                    BackgroundColor="White">
 
                     <!--Grid column definition-->
@@ -343,7 +347,7 @@
                 </Frame>
 
                 <!--Preference Frame-->
-                <Frame CornerRadius="20"  Padding="0"
+                <Frame CornerRadius="20"  Padding="0" HasShadow="False"
                    BackgroundColor="White">
 
                     <StackLayout>
@@ -354,16 +358,36 @@
                            Style="{StaticResource labelStyle}"/>
 
                         <!--Favorite game modes charts-->
-                        <Label 
-                            Padding="20,10,0,10"
-                            Text="In development"/>
+                        <chart:SfChart>
+                            <chart:SfChart.Legend>
+                                <chart:ChartLegend IconHeight="14" IconWidth="14" OverflowMode="Scroll" DockPosition="Left" />
+                            </chart:SfChart.Legend>
+                            <chart:SfChart.Series>
+                                <chart:DoughnutSeries  ExplodeIndex="{Binding SelectedIndex}" 
+                                       ItemsSource="{Binding DoughnutSeriesData}" 
+                                       XBindingPath="Name" 
+                                       YBindingPath="Value" 
+                                       LegendIcon="Circle" 
+                                       EnableAnimation="true" 
+                                       ExplodeOnTouch="true" 
+                                       EnableDataPointSelection="true">
+                                    <chart:DoughnutSeries.DataMarker>
+                                        <chart:ChartDataMarker ShowLabel="True">
+                                        </chart:ChartDataMarker>
+                                    </chart:DoughnutSeries.DataMarker>
+                                    <chart:DoughnutSeries.ColorModel>
+                                        <chart:ChartColorModel Palette="Custom" CustomBrushes="{StaticResource DoughnutColors}"/>
+                                    </chart:DoughnutSeries.ColorModel>
+                                </chart:DoughnutSeries>
+                            </chart:SfChart.Series>
+                        </chart:SfChart>
                     </StackLayout>
                 </Frame>
                 
                 <!--Top planes/tanks Frame-->
                 <StackLayout Orientation="Horizontal">
                     <Frame CornerRadius="20"  Padding="0" HorizontalOptions="FillAndExpand"
-                       BackgroundColor="White">
+                       BackgroundColor="White" HasShadow="False">
 
                         <!--Grid column definition-->
                         <StackLayout>
@@ -381,7 +405,7 @@
                     </Frame>
 
                     <Frame CornerRadius="20"  Padding="0" HorizontalOptions="FillAndExpand"
-                       BackgroundColor="White">
+                       BackgroundColor="White" HasShadow="False">
 
                         <!--Grid column definition-->
                         <StackLayout>
@@ -401,7 +425,7 @@
 
                 <!--Preference Frame-->
                 <Frame CornerRadius="20"  Padding="0"
-                   BackgroundColor="White">
+                   BackgroundColor="White" HasShadow="False">
 
                     <StackLayout>
 
@@ -419,7 +443,7 @@
 
                 <!--Preference Frame-->
                 <Frame CornerRadius="20"  Padding="0"
-                   BackgroundColor="White">
+                   BackgroundColor="White" HasShadow="False">
 
                     <StackLayout>
 

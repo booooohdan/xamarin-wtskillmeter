@@ -1,12 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
              x:Class="WTStatistics.App">
     <!--
         Define global resources and styles here, that apply to all pages in your app.
     -->
     <Application.Resources>
         <ResourceDictionary>
+            <chart:ChartColorCollection x:Key="DoughnutColors">
+                <Color>#7ec7e8</Color>
+                <Color>#2196f3</Color>
+                <Color>#1769aa</Color>
+                <Color>#93cf96</Color>
+                <Color>#4caf50</Color>
+                <Color>#2d6930</Color>
+                <Color>#8561c5</Color>
+                <Color>#5d4389</Color>
+            </chart:ChartColorCollection>
             <Color x:Key="Primary">#2a2a2a</Color>
             <Style x:Key="buttonStyle" TargetType="Button">
                 <Setter Property="FontAttributes" Value="Bold" />

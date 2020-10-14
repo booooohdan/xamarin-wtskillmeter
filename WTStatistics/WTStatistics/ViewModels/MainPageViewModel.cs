@@ -9,6 +9,7 @@ using System.Windows.Input;
 using WTStatistics.Helpers;
 using WTStatistics.Models;
 using Xamarin.Forms;
+using System.Threading;
 
 namespace WTStatistics.ViewModels
 {
@@ -23,6 +24,7 @@ namespace WTStatistics.ViewModels
 
         public event PropertyChangedEventHandler PropertyChanged;
         public ICommand SearchButtonPressed { get; }
+        public ObservableCollection<ChartDataModel> DoughnutSeriesData { get; set; }
         #endregion
 
         #region Constructor
@@ -32,6 +34,10 @@ namespace WTStatistics.ViewModels
             SearchButtonPressed = new Command<string>(HandleSearchPressed);
             player = new Player();
             HeaderColor = "#574d55";
+            DoughnutSeriesData = new ObservableCollection<ChartDataModel>
+            {
+                new ChartDataModel("Not available", 0)
+            };
         }
         #endregion
 
@@ -114,9 +120,8 @@ namespace WTStatistics.ViewModels
                 player.Squadron = value;
                 OnPropertyChanged();
             }
-        }
-
-
+        }     
+        
         public int WinRateAB
         {
             get { return player.WinRateAB; }
@@ -252,7 +257,7 @@ namespace WTStatistics.ViewModels
                 }
                 if (value > 1.5)
                 {
-                    HeaderColor = "#9c39a3";
+                    HeaderColor = "#b155cf";
                 }
                 OnPropertyChanged();
             }
@@ -317,6 +322,17 @@ namespace WTStatistics.ViewModels
             KD_SRB = data.PlayerInfo().KD_SRB;
 
             Skill = data.PlayerInfo().TotalSkillBackground;
+
+            DoughnutSeriesData.Clear();
+            DoughnutSeriesData.Add(new ChartDataModel("Air Acrade", data.PlayerInfo().CountAAB));
+            DoughnutSeriesData.Add(new ChartDataModel("Air Realistic", data.PlayerInfo().CountARB));
+            DoughnutSeriesData.Add(new ChartDataModel("Air Simulator", data.PlayerInfo().CountASB));
+            DoughnutSeriesData.Add(new ChartDataModel("Tank Arcade", data.PlayerInfo().CountTAB));
+            DoughnutSeriesData.Add(new ChartDataModel("Tank Realistic", data.PlayerInfo().CountTRB));
+            DoughnutSeriesData.Add(new ChartDataModel("Tank Simulator", data.PlayerInfo().CountTSB));
+            DoughnutSeriesData.Add(new ChartDataModel("Fleet Arcade", data.PlayerInfo().CountSAB));
+            DoughnutSeriesData.Add(new ChartDataModel("Fleet Realistic", data.PlayerInfo().CountSRB));
+
         }
     }
 }

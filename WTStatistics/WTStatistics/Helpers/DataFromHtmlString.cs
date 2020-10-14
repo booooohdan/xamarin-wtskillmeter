@@ -143,14 +143,24 @@ namespace WTStatistics.Helpers
             player.WinRateRB = ToInt(listTableMain[14]);
             player.WinRateSB = ToInt(listTableMain[15]);
 
-            player.KD_AAB = KDCalculate(ToInt(listTableAvia[41]), ToInt(listTableAvia[5]));
-            player.KD_ARB = KDCalculate(ToInt(listTableAvia[42]), ToInt(listTableAvia[6]));
-            player.KD_ASB = KDCalculate(ToInt(listTableAvia[43]), ToInt(listTableAvia[7]));
-            player.KD_TAB = KDCalculate(ToInt(listTableTanks[53]), ToInt(listTableTanks[5]));
-            player.KD_TRB = KDCalculate(ToInt(listTableTanks[54]), ToInt(listTableTanks[6]));
-            player.KD_TSB = KDCalculate(ToInt(listTableTanks[55]), ToInt(listTableTanks[7]));
-            player.KD_SAB = KDCalculate(ToInt(listTableShips[81]), ToInt(listTableShips[5]));
-            player.KD_SRB = KDCalculate(ToInt(listTableShips[82]), ToInt(listTableShips[6]));
+            player.CountAAB = ToInt(listTableAvia[5]);
+            player.CountARB = ToInt(listTableAvia[6]);
+            player.CountASB = ToInt(listTableAvia[7]);
+            player.CountTAB = ToInt(listTableTanks[5]);
+            player.CountTRB = ToInt(listTableTanks[6]);
+            player.CountTSB = ToInt(listTableTanks[7]);
+            player.CountSAB = ToInt(listTableShips[5]);
+            player.CountSRB = ToInt(listTableShips[6]);
+
+            player.KD_AAB = KDCalculate(ToInt(listTableAvia[41]), player.CountAAB);
+            player.KD_ARB = KDCalculate(ToInt(listTableAvia[42]), player.CountARB);
+            player.KD_ASB = KDCalculate(ToInt(listTableAvia[43]), player.CountASB);
+            player.KD_TAB = KDCalculate(ToInt(listTableTanks[53]) + ToInt(listTableTanks[49]), player.CountTAB);
+            player.KD_TRB = KDCalculate(ToInt(listTableTanks[54]) + ToInt(listTableTanks[50]), player.CountTRB);
+            player.KD_TSB = KDCalculate(ToInt(listTableTanks[55]) + ToInt(listTableTanks[51]), player.CountTSB);
+            player.KD_SAB = KDCalculate(ToInt(listTableShips[81]), player.CountSAB);
+            player.KD_SRB = KDCalculate(ToInt(listTableShips[82]), player.CountSRB);
+
 
             player.TotalSkillBackground = CalculateTotalSkill();
             return player;

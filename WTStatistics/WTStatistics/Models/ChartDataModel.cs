@@ -2,8 +2,8 @@
 {
     public class ChartDataModel
     {
-        public string Name;
-        public int Value;
+        public string Name { get; set; }
+        public int Value { get; set; }
 
         public ChartDataModel(string Name, int Value)
         {

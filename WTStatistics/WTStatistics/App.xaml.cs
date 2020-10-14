@@ -2,6 +2,8 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using WTStatistics.Views;
+using System.Threading;
+using System.Globalization;
 
 namespace WTStatistics
 {
