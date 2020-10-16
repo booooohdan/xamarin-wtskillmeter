@@ -7,7 +7,11 @@
     -->
     <Application.Resources>
         <ResourceDictionary>
-            <Color x:Key="Primary">#2a2a2a</Color>
+            <Color x:Key="Primary">#1f2428</Color>
+            <Color x:Key="MyWhite">#f6f6f6</Color>
+            <Color x:Key="MyLight">#E0E0E0</Color>
+            <Color x:Key="MyDark">#4d5962</Color>
+            <Color x:Key="MyDarkest">#353c43</Color>
             
             <chart:ChartColorCollection x:Key="DoughnutColors">
                 <Color>#80D8FF</Color>
@@ -22,31 +26,11 @@
 
             <Style x:Key="MainBackground" TargetType="StackLayout">
                 <Setter Property="BackgroundColor" 
-                        Value="{AppThemeBinding Dark=#212121, Light=#F5F5F5}"/>
+                        Value="{AppThemeBinding Dark={StaticResource MyDarkest}, Light={StaticResource MyLight}}"/>
             </Style>
 
             <Style x:Key="rightHeaderText" TargetType="Label">
                 <Setter Property="TextColor" Value="White" />
-                <Setter Property="FontSize" Value="Medium" />
-            </Style>
-            
-            <Style x:Key="buttonStyle" TargetType="Button">
-                <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="BackgroundColor" Value="White" />
-                <Setter Property="BorderWidth" Value="1" />
-                <Setter Property="CornerRadius" Value="15" />
-                <Setter Property="HorizontalOptions" Value="Start" />
-            </Style>
-            
-            <Style x:Key="labelStyle" TargetType="Label">
-                <Setter Property="Padding" Value="20, 10, 0, 0" />
-                <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="FontSize" Value="Medium" />
-            </Style>
-            
-            <Style x:Key="labelKDStyle" TargetType="Label">
-                <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="FontSize" Value="Medium" />
             </Style>
             
@@ -55,8 +39,61 @@
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="HeightRequest" Value="25" />
                 <Setter Property="WidthRequest" Value="25" />
+            </Style>       
+            
+            <Style x:Key="buttonStyle" TargetType="Button">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="BorderWidth" Value="1" />
+                <Setter Property="CornerRadius" Value="15" />
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="BackgroundColor"  
+                        Value="{AppThemeBinding Dark={StaticResource MyDarkest}, Light={StaticResource MyLight}}"/>
             </Style>
             
+            <Style x:Key="labelStyle" TargetType="Label">
+                <Setter Property="Padding" Value="20, 10, 0, 0" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="TextColor" 
+                        Value="{AppThemeBinding Dark={StaticResource MyLight}, Light={StaticResource MyDarkest}}"/>
+            </Style>
+            
+            <Style x:Key="labelKDStyle" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="TextColor" 
+                        Value="{AppThemeBinding Dark={StaticResource MyLight}, Light={StaticResource MyDarkest}}"/>
+
+            </Style>
+            
+            <Style x:Key="frameStyle" TargetType="Frame">
+                <Setter Property="CornerRadius" Value="20" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="BackgroundColor" 
+                         Value="{AppThemeBinding Dark={StaticResource MyDark}, Light={StaticResource MyWhite}}"/>
+            </Style>
+
+            <Style x:Key="ladelInDevStyle" TargetType="Label">
+                <Setter Property="Padding" Value="20,10,0,10" />
+                <Setter Property="Text" Value="In development" />
+                <Setter Property="TextColor" 
+                         Value="{AppThemeBinding Dark={StaticResource MyLight}, Light={StaticResource MyDarkest}}"/>
+            </Style>
+
+            <Style x:Key="ladeEfficiencyStyle" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="TextColor" 
+                         Value="{AppThemeBinding Dark={StaticResource MyLight}, Light={StaticResource MyDarkest}}"/>
+            </Style>
+
+            <Style x:Key="ladeEfficiency2Style" TargetType="Label">
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="TextColor" 
+                         Value="{AppThemeBinding Dark={StaticResource MyLight}, Light={StaticResource MyDarkest}}"/>
+            </Style>
+
         </ResourceDictionary>        
     </Application.Resources>
 </Application>

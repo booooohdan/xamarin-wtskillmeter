@@ -37,7 +37,7 @@
                 </LinearGradientBrush>
             </StackLayout.Background>-->
 
-            <Grid Padding="20, 10, 60, 20" BackgroundColor="Red">
+            <Grid Padding="20, 10, 20, 50">
                 <!--Grid column definition-->
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -45,6 +45,7 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -97,13 +98,13 @@
                 </StackLayout>
 
                 <!--Sign up date-->
-                <Label Grid.Column="0" Grid.Row="1" BackgroundColor="green"
+                <Label Grid.Column="0" Grid.Row="1"
                     Text="{Binding SignUpDate}" 
-                    FontSize="Medium"
+                    FontSize="Small"
                     TextColor="WhiteSmoke"/>
 
                 <!--Searchview Nickname and Squadron-->
-                <StackLayout BackgroundColor="Blue" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" 
+                <StackLayout Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" 
                        Orientation="Horizontal">
                     <Label  Text="{Binding Squadron}" 
                         TextColor="White" 
@@ -114,6 +115,12 @@
                         FontSize="Large" 
                         FontAttributes="Bold" />
                 </StackLayout>
+
+                <!--Sign up date-->
+                <Label Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3"
+                    Text="#dev" 
+                    FontSize="Small"
+                    TextColor="WhiteSmoke"/>
             </Grid>
         </StackLayout>
 
@@ -126,11 +133,10 @@
 
         <!--Main section below gradient section-->
         <ScrollView  Margin="20, -40, 20, 0">
-            <StackLayout Spacing="10">
+            <StackLayout Spacing="10" Padding="0,0,0,10">
 
                 <!--Winrate Frame-->
-                <Frame CornerRadius="20"  Padding="0" HasShadow="False"
-                   BackgroundColor="White">
+                <Frame Style="{StaticResource frameStyle}">
 
                     <!--Grid column definition-->
                     <StackLayout>
@@ -159,7 +165,7 @@
                                     <gauge:Header Text="{Binding WinRateAB, StringFormat='{0}%'}" 
                                         Position="0.5,0.43" 
                                         TextSize="17" 
-                                        ForegroundColor="SlateGray"/>
+                                        ForegroundColor="#7d7d7d"/>
                                 </gauge:SfCircularGauge.Headers>
                                 <!--Round scale-->
                                 <gauge:SfCircularGauge.Scales>
@@ -196,7 +202,7 @@
                                     <gauge:Header Text="{Binding WinRateRB, StringFormat='{0}%'}" 
                                           Position="0.5,0.43" 
                                           TextSize="17" 
-                                          ForegroundColor="SlateGray"/>
+                                          ForegroundColor="#7d7d7d"/>
                                 </gauge:SfCircularGauge.Headers>
 
                                 <!--Round scale-->
@@ -234,7 +240,7 @@
                                     <gauge:Header Text="{Binding WinRateSB, StringFormat='{0}%'}" 
                                           Position="0.5,0.43" 
                                           TextSize="17" 
-                                          ForegroundColor="SlateGray"/>
+                                          ForegroundColor="#7d7d7d"/>
                                 </gauge:SfCircularGauge.Headers>
 
                                 <!--Round scale-->
@@ -269,8 +275,8 @@
                 </Frame>
 
                 <!--Effeciency Frame-->
-                <Frame CornerRadius="20"  Padding="0" HasShadow="False"
-                   BackgroundColor="White">
+                <Frame Style="{StaticResource frameStyle}">
+
 
                     <!--Grid column definition-->
                     <StackLayout>
@@ -298,13 +304,13 @@
 
                             <!--AB/RB/SB label row-->
                             <Label Grid.Column="2" Grid.Row="0" 
-                               HorizontalOptions="Center"
+                               Style="{StaticResource ladeEfficiencyStyle}"
                                Text="AB"/>
                             <Label Grid.Column="3" Grid.Row="0" 
-                               HorizontalOptions="Center"
+                               Style="{StaticResource ladeEfficiencyStyle}"
                                Text="RB"/>
                             <Label Grid.Column="4" Grid.Row="0" 
-                               HorizontalOptions="Center"
+                               Style="{StaticResource ladeEfficiencyStyle}"
                                Text="SB"/>
 
                             <!--Air row-->
@@ -312,7 +318,7 @@
                                    Style="{StaticResource imageKDStyle}"
                                    Source="planeeff"/>
                             <Label Grid.Column="1" Grid.Row="1" 
-                               FontSize="Medium"
+                               Style="{StaticResource ladeEfficiency2Style}"
                                Text="Air"/>
                             <Label Grid.Column="2" Grid.Row="1"                                    
                                    Style="{StaticResource labelKDStyle}"
@@ -329,7 +335,7 @@
                                    Style="{StaticResource imageKDStyle}"
                                    Source="tankeff"/>
                             <Label Grid.Column="1" Grid.Row="2" 
-                               FontSize="Medium"
+                               Style="{StaticResource ladeEfficiency2Style}"
                                Text="Ground"/>
                             <Label Grid.Column="2" Grid.Row="2"                                    
                                    Style="{StaticResource labelKDStyle}"
@@ -346,7 +352,7 @@
                                    Style="{StaticResource imageKDStyle}"
                                    Source="shipeff"/>
                             <Label Grid.Column="1" Grid.Row="3" 
-                               FontSize="Medium"
+                               Style="{StaticResource ladeEfficiency2Style}"
                                Text="Sea"/>
                             <Label Grid.Column="2" Grid.Row="3" 
                                    Style="{StaticResource labelKDStyle}"
@@ -359,8 +365,7 @@
                 </Frame>
 
                 <!--Preference Frame-->
-                <Frame CornerRadius="20"  Padding="0" HasShadow="False"
-                   BackgroundColor="White">
+                <Frame Style="{StaticResource frameStyle}">
 
                     <StackLayout>
 
@@ -370,7 +375,8 @@
                            Style="{StaticResource labelStyle}"/>
 
                         <!--Favorite game modes charts-->
-                        <chart:SfChart>
+                        <chart:SfChart 
+                            BackgroundColor="{AppThemeBinding Dark={StaticResource MyDark}, Light={StaticResource MyWhite}}">
                             <chart:SfChart.Legend>
                                 <chart:ChartLegend IconHeight="14" IconWidth="14" OverflowMode="Scroll" DockPosition="Left" />
                             </chart:SfChart.Legend>
@@ -382,6 +388,7 @@
                                        LegendIcon="Circle" 
                                        EnableAnimation="true" 
                                        ExplodeOnTouch="true" 
+                                       SelectedDataPointColor="OrangeRed"
                                        EnableDataPointSelection="true">
                                     <chart:DoughnutSeries.DataMarker>
                                         <chart:ChartDataMarker ShowLabel="True">
@@ -398,8 +405,7 @@
 
                 <!--Top planes/tanks Frame-->
                 <StackLayout Orientation="Horizontal">
-                    <Frame CornerRadius="20"  Padding="0" HorizontalOptions="FillAndExpand"
-                       BackgroundColor="White" HasShadow="False">
+                    <Frame Style="{StaticResource frameStyle}" HorizontalOptions="FillAndExpand">
 
                         <!--Grid column definition-->
                         <StackLayout>
@@ -410,14 +416,12 @@
                                Style="{StaticResource labelStyle}"/>
 
                             <!--Favorite game modes charts-->
-                            <Label 
-                                Padding="20,10,0,10"
-                                Text="In development"/>
+                            <Label Style="{StaticResource ladelInDevStyle}"/>
+
                         </StackLayout>
                     </Frame>
 
-                    <Frame CornerRadius="20"  Padding="0" HorizontalOptions="FillAndExpand"
-                       BackgroundColor="White" HasShadow="False">
+                    <Frame Style="{StaticResource frameStyle}" HorizontalOptions="FillAndExpand">
 
                         <!--Grid column definition-->
                         <StackLayout>
@@ -428,16 +432,14 @@
                                Style="{StaticResource labelStyle}"/>
 
                             <!--Favorite game modes charts-->
-                            <Label 
-                                Padding="20,10,0,10"
-                                Text="In development"/>
+                            <Label Style="{StaticResource ladelInDevStyle}"/>
+
                         </StackLayout>
                     </Frame>
                 </StackLayout>
 
                 <!--Preference Frame-->
-                <Frame CornerRadius="20"  Padding="0"
-                   BackgroundColor="White" HasShadow="False">
+                <Frame Style="{StaticResource frameStyle}">
 
                     <StackLayout>
 
@@ -447,15 +449,13 @@
                            Style="{StaticResource labelStyle}"/>
 
                         <!--Favorite game modes charts-->
-                        <Label 
-                            Padding="20,10,0,10"
-                            Text="In development"/>
+                        <Label Style="{StaticResource ladelInDevStyle}"/>
+
                     </StackLayout>
                 </Frame>
 
                 <!--Preference Frame-->
-                <Frame CornerRadius="20"  Padding="0"
-                   BackgroundColor="White" HasShadow="False">
+                <Frame Style="{StaticResource frameStyle}">
 
                     <StackLayout>
 
@@ -465,9 +465,7 @@
                            Style="{StaticResource labelStyle}"/>
 
                         <!--Favorite game modes charts-->
-                        <Label 
-                            Padding="20,10,0,10"
-                            Text="In development"/>
+                        <Label Style="{StaticResource ladelInDevStyle}"/>
                     </StackLayout>
                 </Frame>
 

@@ -33,7 +33,7 @@ namespace WTStatistics.ViewModels
         {
             SearchButtonPressed = new Command<string>(HandleSearchPressed);
             player = new Player();
-            HeaderColor = "#616161";
+            HeaderColor = "#353c43";
             DoughnutSeriesData = new ObservableCollection<ChartDataModel>
             {
                 new ChartDataModel("Not available", 0)
