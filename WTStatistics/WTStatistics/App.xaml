@@ -7,17 +7,29 @@
     -->
     <Application.Resources>
         <ResourceDictionary>
-            <chart:ChartColorCollection x:Key="DoughnutColors">
-                <Color>#7ec7e8</Color>
-                <Color>#2196f3</Color>
-                <Color>#1769aa</Color>
-                <Color>#93cf96</Color>
-                <Color>#4caf50</Color>
-                <Color>#2d6930</Color>
-                <Color>#8561c5</Color>
-                <Color>#5d4389</Color>
-            </chart:ChartColorCollection>
             <Color x:Key="Primary">#2a2a2a</Color>
+            
+            <chart:ChartColorCollection x:Key="DoughnutColors">
+                <Color>#80D8FF</Color>
+                <Color>#0091EA</Color>
+                <Color>#01579B</Color>
+                <Color>#69F0AE</Color>
+                <Color>#00C853</Color>
+                <Color>#1B5E20</Color>
+                <Color>#FFCC80</Color>
+                <Color>#FB8C00</Color>
+            </chart:ChartColorCollection>
+
+            <Style x:Key="MainBackground" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" 
+                        Value="{AppThemeBinding Dark=#212121, Light=#F5F5F5}"/>
+            </Style>
+
+            <Style x:Key="rightHeaderText" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="Medium" />
+            </Style>
+            
             <Style x:Key="buttonStyle" TargetType="Button">
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="BackgroundColor" Value="White" />
@@ -25,22 +37,26 @@
                 <Setter Property="CornerRadius" Value="15" />
                 <Setter Property="HorizontalOptions" Value="Start" />
             </Style>
+            
             <Style x:Key="labelStyle" TargetType="Label">
                 <Setter Property="Padding" Value="20, 10, 0, 0" />
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="FontSize" Value="Medium" />
             </Style>
+            
             <Style x:Key="labelKDStyle" TargetType="Label">
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="FontSize" Value="Medium" />
             </Style>
+            
             <Style x:Key="imageKDStyle" TargetType="Image">
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="HeightRequest" Value="25" />
                 <Setter Property="WidthRequest" Value="25" />
             </Style>
+            
         </ResourceDictionary>        
     </Application.Resources>
 </Application>

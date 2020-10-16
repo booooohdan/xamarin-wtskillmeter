@@ -56,7 +56,7 @@ namespace WTStatistics.Views
         /// <param name="stringHTML">HTML string from webview</param>
         private void ErrorHandler(string stringHTML)
         {
-            IsBusy = false;
+            ActivityIndicator.IsRunning = false;
 
             if (stringHTML.Contains("Информации о пользователе недоступна"))
                 Application.Current.MainPage.DisplayAlert("Incorrect nickname", "Nickname doesn\'t exist.\nPlease enter correct nickname", "OK");

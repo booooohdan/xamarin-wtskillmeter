@@ -11,19 +11,11 @@
         <local:MainPageViewModel/>
     </ContentPage.BindingContext>
 
-    <StackLayout Padding="0" BackgroundColor="WhiteSmoke">
+    <StackLayout Padding="0" Style="{StaticResource MainBackground}">
         <!--Gradient section-->
         <StackLayout BackgroundColor="{Binding HeaderColor}">
             
-            <!--<StackLayout.Background>
-                <LinearGradientBrush StartPoint="0,0"
-                             EndPoint="0,1">
-                    <GradientStop Color="{Binding GradientTop}"
-                          Offset="0.1"/>
-                    <GradientStop Color="{Binding GradientBottom}"
-                          Offset="1.0"/>
-                </LinearGradientBrush>
-            </StackLayout.Background>-->
+            <!--SearchBar-->
             <SearchBar x:Name="searchBar"
                                SearchCommand="{Binding SearchButtonPressed}"
                                SearchCommandParameter="{Binding Source={x:Reference searchBar}, Path=Text}"
@@ -34,75 +26,95 @@
                                TextColor="White" 
                                FontSize="Medium" 
                                FontAttributes="Bold" />
-            <Grid Padding="20, 20, 20, -10">
+            <!--Gradient
+            <StackLayout.Background>
+                <LinearGradientBrush StartPoint="0,0"
+                             EndPoint="0,1">
+                    <GradientStop Color="{Binding GradientTop}"
+                          Offset="0.1"/>
+                    <GradientStop Color="{Binding GradientBottom}"
+                          Offset="1.0"/>
+                </LinearGradientBrush>
+            </StackLayout.Background>-->
+
+            <Grid Padding="20, 10, 60, 20" BackgroundColor="Red">
                 <!--Grid column definition-->
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="40*" />
-                    <ColumnDefinition Width="20*" />
-                    <ColumnDefinition Width="40*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
                 <!--Avatar image-->
-                <Image Grid.Column="0"
+                <Image Grid.Column="0" Grid.Row="0"
                        HorizontalOptions="Start"
                        VerticalOptions="Start"
-                       WidthRequest="90"
-                       HeightRequest="90"    
+                       Aspect="AspectFit" 
+                       HeightRequest="80"
                        Source="pilot.png">
                 </Image>
 
                 <!--Activity Indicator-->
-                <ActivityIndicator IsRunning="{Binding IsBusy}" 
-                                   Grid.Column="1"
-                                   Color="White" />
+                <ActivityIndicator Grid.Column="1" Grid.Row="0"
+                                   IsRunning="{Binding IsBusy}" 
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"
+                                   x:Name="ActivityIndicator"
+                                   Color="White"/>
 
                 <!--Right value. Lion, Battle and Time-->
-                <StackLayout Grid.Column="2">
+                <StackLayout Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2">
+
                     <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-                        <Label Text= "{Binding LionEarned, StringFormat='{0:#,#}'}"
-                               TextColor="White" 
-                               FontSize="Medium"/>
-                        <Image Source="lion.png" 
-                               VerticalOptions="Center"
-                               HeightRequest="15"/>
+                        <Label 
+                             Text= "{Binding LionEarned, StringFormat='{0:#,#}'}"     
+                             Style="{StaticResource rightHeaderText}"/>
+                        <Image 
+                            Source="lion.png" 
+                            HeightRequest="15"/>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-                        <Label Text= "{Binding BattleFinished, StringFormat='{0:#,#}'}" 
-                               TextColor="White" 
-                               FontSize="Medium"/>
-                        <Image Source="battle.png" 
-                               VerticalOptions="Center"
-                               HeightRequest="15"/>
+                        <Label  
+                            Text= "{Binding BattleFinished, StringFormat='{0:#,#}'}"                             
+                            Style="{StaticResource rightHeaderText}"/>
+                        <Image Grid.Column="2" Grid.Row="0"
+                           Source="battle.png" 
+                           HeightRequest="15"/>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-                        <Label Text="{Binding TotalTimeSpended, StringFormat='{0:#,#}'}"
-                               TextColor="White" 
-                               FontSize="Medium"/>
-                        <Image Source="time.png" 
-                               VerticalOptions="Center"
-                               HeightRequest="15"/>
+                        <Label
+                           Text="{Binding TotalTimeSpended, StringFormat='{0:#,# }'}"
+                           Style="{StaticResource rightHeaderText}"/>
+                        <Image 
+                           Source="time.png" 
+                           HeightRequest="15"/>
                     </StackLayout>
                 </StackLayout>
+
+                <!--Sign up date-->
+                <Label Grid.Column="0" Grid.Row="1" BackgroundColor="green"
+                    Text="{Binding SignUpDate}" 
+                    FontSize="Medium"
+                    TextColor="WhiteSmoke"/>
+
+                <!--Searchview Nickname and Squadron-->
+                <StackLayout BackgroundColor="Blue" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" 
+                       Orientation="Horizontal">
+                    <Label  Text="{Binding Squadron}" 
+                        TextColor="White" 
+                        FontSize="Large" 
+                        FontAttributes="Bold" />
+                    <Label  Text="{Binding SearchBarText}" 
+                        TextColor="White" 
+                        FontSize="Large" 
+                        FontAttributes="Bold" />
+                </StackLayout>
             </Grid>
-
-            <!--Sign up date-->
-            <Label Text="{Binding SignUpDate}" 
-                Padding="20, 10, 0, 0"
-                TextColor="WhiteSmoke"/>
-
-            <!--Searchview Nickname and Squadron-->
-            <StackLayout Orientation="Horizontal" Padding="20, -10, 0, 40">
-                <Label  Text="{Binding Squadron}" 
-                        TextColor="White" 
-                        FontSize="Medium" 
-                        FontAttributes="Bold" 
-                        VerticalOptions="Center"/>
-                <Label  Text="{Binding SearchBarText}" 
-                        TextColor="White" 
-                        FontSize="Medium" 
-                        FontAttributes="Bold" 
-                        VerticalOptions="Center"/>
-            </StackLayout>
         </StackLayout>
 
         <!--WebView elements-->
@@ -383,7 +395,7 @@
                         </chart:SfChart>
                     </StackLayout>
                 </Frame>
-                
+
                 <!--Top planes/tanks Frame-->
                 <StackLayout Orientation="Horizontal">
                     <Frame CornerRadius="20"  Padding="0" HorizontalOptions="FillAndExpand"

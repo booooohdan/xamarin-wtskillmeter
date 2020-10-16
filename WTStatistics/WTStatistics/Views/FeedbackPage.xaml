@@ -11,7 +11,7 @@
         <local:FeedbackViewModel/>
     </ContentPage.BindingContext>
 
-    <StackLayout Padding="20" BackgroundColor="WhiteSmoke">
+    <StackLayout Padding="20" Style="{StaticResource MainBackground}">
 
         <Label
             FontSize="Title"
