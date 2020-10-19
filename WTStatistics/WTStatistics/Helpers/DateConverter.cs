@@ -23,10 +23,10 @@ namespace WTStatistics.Helpers
 
             if (matchMounth.Success)
             {
-                string totalTime_ = regexOnlyNumbersWithDots.Replace(timeHTML, "");
+                string totalTime_d = regexOnlyNumbersWithDots.Replace(timeHTML, "");
                 CultureInfo temp_culture = Thread.CurrentThread.CurrentCulture;
                 Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("en-US");
-                var totalTime = Convert.ToDouble(totalTime_);
+                var totalTime = Convert.ToDouble(totalTime_d);
                 Thread.CurrentThread.CurrentCulture = temp_culture;
                 return totalTime * 30;
             }

@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Globalization;
-using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using WTStatistics.Helpers;
 using WTStatistics.Models;
 using Xamarin.Forms;
-using System.Threading;
 
 namespace WTStatistics.ViewModels
 {
@@ -232,9 +227,8 @@ namespace WTStatistics.ViewModels
             }
         }
 
-        public double Skill
+        private double Skill
         {
-            get => player.TotalSkillBackground;
             set
             {
                 player.TotalSkillBackground = value;
