@@ -43,7 +43,7 @@ namespace WTStatistics.ViewModels
 
         public bool IsBusy
         {
-            get { return busy; }
+            get => busy;
             set
             {
                 busy = value;
@@ -53,7 +53,7 @@ namespace WTStatistics.ViewModels
 
         public string URL
         {
-            get { return url; }
+            get => url;
             set
             {
                 url = value;
@@ -63,7 +63,7 @@ namespace WTStatistics.ViewModels
 
         public string SearchBarText
         {
-            get { return searchBatText; }
+            get => searchBatText;
             set
             {
                 searchBatText = value;
@@ -74,7 +74,7 @@ namespace WTStatistics.ViewModels
 
         public int LionEarned
         {
-            get { return player.LionEarned; }
+            get => player.LionEarned;
             set
             {
                 player.LionEarned = value;
@@ -84,7 +84,7 @@ namespace WTStatistics.ViewModels
 
         public int BattleFinished
         {
-            get { return player.BattleFinished; }
+            get => player.BattleFinished;
             set
             {
                 player.BattleFinished = value;
@@ -94,7 +94,7 @@ namespace WTStatistics.ViewModels
 
         public double TotalTimeSpended
         {
-            get { return player.TotalTimeSpended; }
+            get => player.TotalTimeSpended;
             set
             {
                 player.TotalTimeSpended = value;
@@ -104,7 +104,7 @@ namespace WTStatistics.ViewModels
 
         public string SignUpDate
         {
-            get { return player.SignUpDate; }
+            get => player.SignUpDate;
             set
             {
                 player.SignUpDate = value;
@@ -114,7 +114,7 @@ namespace WTStatistics.ViewModels
 
         public string Squadron
         {
-            get { return player.Squadron; }
+            get => player.Squadron;
             set
             {
                 player.Squadron = value;
@@ -124,7 +124,7 @@ namespace WTStatistics.ViewModels
         
         public int WinRateAB
         {
-            get { return player.WinRateAB; }
+            get => player.WinRateAB;
             set
             {
                 player.WinRateAB = value;
@@ -134,7 +134,7 @@ namespace WTStatistics.ViewModels
 
         public int WinRateRB
         {
-            get { return player.WinRateRB; }
+            get => player.WinRateRB;
             set
             {
                 player.WinRateRB = value;
@@ -144,7 +144,7 @@ namespace WTStatistics.ViewModels
 
         public int WinRateSB
         {
-            get { return player.WinRateSB; }
+            get => player.WinRateSB;
             set
             {
                 player.WinRateSB = value;
@@ -154,7 +154,7 @@ namespace WTStatistics.ViewModels
 
         public double KD_AAB
         {
-            get { return player.KD_AAB; }
+            get => player.KD_AAB;
             set
             {
                 player.KD_AAB = value;
@@ -164,7 +164,7 @@ namespace WTStatistics.ViewModels
 
         public double KD_ARB
         {
-            get { return player.KD_ARB; }
+            get => player.KD_ARB;
             set
             {
                 player.KD_ARB = value;
@@ -174,7 +174,7 @@ namespace WTStatistics.ViewModels
 
         public double KD_ASB
         {
-            get { return player.KD_ASB; }
+            get => player.KD_ASB;
             set
             {
                 player.KD_ASB = value;
@@ -184,7 +184,7 @@ namespace WTStatistics.ViewModels
 
         public double KD_TAB
         {
-            get { return player.KD_TAB; }
+            get => player.KD_TAB;
             set
             {
                 player.KD_TAB = value;
@@ -194,7 +194,7 @@ namespace WTStatistics.ViewModels
 
         public double KD_TRB
         {
-            get { return player.KD_TRB; }
+            get => player.KD_TRB;
             set
             {
                 player.KD_TRB = value;
@@ -204,7 +204,7 @@ namespace WTStatistics.ViewModels
 
         public double KD_TSB
         {
-            get { return player.KD_TSB; }
+            get => player.KD_TSB;
             set
             {
                 player.KD_TSB = value;
@@ -214,7 +214,7 @@ namespace WTStatistics.ViewModels
 
         public double KD_SAB
         {
-            get { return player.KD_SAB; }
+            get => player.KD_SAB;
             set
             {
                 player.KD_SAB = value;
@@ -224,7 +224,7 @@ namespace WTStatistics.ViewModels
 
         public double KD_SRB
         {
-            get { return player.KD_SRB; }
+            get => player.KD_SRB;
             set
             {
                 player.KD_SRB = value;
@@ -234,7 +234,7 @@ namespace WTStatistics.ViewModels
 
         public double Skill
         {
-            get { return player.TotalSkillBackground; }
+            get => player.TotalSkillBackground;
             set
             {
                 player.TotalSkillBackground = value;
@@ -265,7 +265,7 @@ namespace WTStatistics.ViewModels
 
         public string HeaderColor
         {
-            get { return player.HeaderColor; }
+            get => player.HeaderColor;
             set
             {
                 player.HeaderColor = value;
