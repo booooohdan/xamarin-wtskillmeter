@@ -10030,28 +10030,31 @@ namespace WTStatistics.Droid
 			public const int tab_feedback = 2131165365;
 			
 			// aapt resource value: 0x7F0700B6
-			public const int tab_statistics = 2131165366;
+			public const int tab_question = 2131165366;
 			
 			// aapt resource value: 0x7F0700B7
-			public const int tankeff = 2131165367;
+			public const int tab_statistics = 2131165367;
 			
 			// aapt resource value: 0x7F0700B8
-			public const int time = 2131165368;
+			public const int tankeff = 2131165368;
 			
 			// aapt resource value: 0x7F0700B9
-			public const int tooltip_frame_dark = 2131165369;
+			public const int time = 2131165369;
 			
 			// aapt resource value: 0x7F0700BA
-			public const int tooltip_frame_light = 2131165370;
+			public const int tooltip_frame_dark = 2131165370;
 			
 			// aapt resource value: 0x7F0700BB
-			public const int Versus = 2131165371;
+			public const int tooltip_frame_light = 2131165371;
 			
 			// aapt resource value: 0x7F0700BC
-			public const int WoTQuiz = 2131165372;
+			public const int Versus = 2131165372;
 			
 			// aapt resource value: 0x7F0700BD
-			public const int WTQuiz = 2131165373;
+			public const int WoTQuiz = 2131165373;
+			
+			// aapt resource value: 0x7F0700BE
+			public const int WTQuiz = 2131165374;
 			
 			static Drawable()
 			{
