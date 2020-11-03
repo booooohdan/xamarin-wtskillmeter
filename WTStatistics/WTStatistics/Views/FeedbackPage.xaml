@@ -4,8 +4,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:local="clr-namespace:WTStatistics.ViewModels"
              x:Class="WTStatistics.Views.FeedbackPage"
-             x:Name="BrowseItemsPage"
-             Shell.NavBarIsVisible="False">
+             NavigationPage.HasNavigationBar="False"
+             x:Name="BrowseItemsPage">
 
     <ContentPage.BindingContext>
         <local:FeedbackViewModel/>

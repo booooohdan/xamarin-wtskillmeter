@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"     
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core" 
+            xmlns:pages="clr-namespace:WTStatistics.Views"
+            NavigationPage.HasNavigationBar="False"
+             BarBackgroundColor="#2a2a2a"
+             SelectedTabColor="White"
+             UnselectedTabColor="Gray" 
+             android:TabbedPage.ToolbarPlacement="Bottom"
+             x:Class="WTStatistics.MainTabbedPage">
+
+    <TabbedPage.Children>
+        <NavigationPage Title="Statistics" IconImageSource="tab_statistics.png">
+            <x:Arguments>
+                <pages:MainPage/>
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="Hints" IconImageSource="tab_question.png">
+            <x:Arguments>
+                <pages:HintsPage/>
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="Feedback" IconImageSource="tab_feedback.png">
+            <x:Arguments>
+                <pages:FeedbackPage/>
+            </x:Arguments>
+        </NavigationPage>
+    </TabbedPage.Children>
+
+
+</TabbedPage>

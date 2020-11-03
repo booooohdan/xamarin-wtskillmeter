@@ -4,8 +4,8 @@
              xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
              xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
              xmlns:local="clr-namespace:WTStatistics.ViewModels" 
-             x:Class="WTStatistics.Views.MainPage"
-             Shell.NavBarIsVisible="False">
+             NavigationPage.HasNavigationBar="False"
+             x:Class="WTStatistics.Views.MainPage">
 
     <ContentPage.BindingContext>
         <local:MainPageViewModel/>
