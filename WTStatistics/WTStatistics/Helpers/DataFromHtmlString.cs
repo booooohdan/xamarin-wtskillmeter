@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
 using WTStatistics.Models;
+using Xamarin.Forms;
 
 namespace WTStatistics.Helpers
 {
@@ -44,16 +45,40 @@ namespace WTStatistics.Helpers
         private List<string> GetTableData(string htmlString, string tableName)
         {
             var listString = new List<string>();
-            string[] splittedString = htmlString.Split(new string[] { "u003" }, StringSplitOptions.None);
+            string[] splittedString = null;
+            switch (Device.RuntimePlatform)
+            {
+                case Device.Android:
+                    splittedString = htmlString.Split(new string[] { "u003" }, StringSplitOptions.None);
+                    break;
+                case Device.iOS:
+                    splittedString = htmlString.Split(new string[] { "<" }, StringSplitOptions.None);
+                    break;
+            }
 
             foreach (var s in splittedString)
             {
-                if (s.Contains(tableName))
+                switch (Device.RuntimePlatform)
                 {
-                    var trimStart = s.Substring(s.IndexOf('>') + 1);
-                    var trimEnd = trimStart.Substring(0, trimStart.Length - 1);
-                    listString.Add(trimEnd);
+                    case Device.Android:
+                        if (s.Contains(tableName))
+                        {
+                            var trimStart = s.Substring(s.IndexOf('>') + 1);
+                            var trimEnd = trimStart.Substring(0, trimStart.Length - 1);
+                            listString.Add(trimEnd);
+                        }
+                        break;
+                    case Device.iOS:
+                        if (s.Contains(tableName))
+                        {
+                            var trimStart = s.Substring(s.IndexOf('>') + 1);
+                            var trimEnd = trimStart.Substring(0, trimStart.Length - 0);
+                            listString.Add(trimEnd);
+                        }
+                        break;
                 }
+                
+                
             }
             return listString;
         }

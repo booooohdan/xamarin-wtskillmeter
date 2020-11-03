@@ -226,6 +226,7 @@
     <BundleResource Include="Resources\lion.png" />
   </ItemGroup>
   <ItemGroup>
+    <BundleResource Include="Resources\tab_question.png" />
     <BundleResource Include="Resources\time.png" />
   </ItemGroup>
   <ItemGroup>
