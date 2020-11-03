@@ -26,16 +26,6 @@
                                TextColor="White" 
                                FontSize="Medium" 
                                FontAttributes="Bold" />
-            <!--Gradient
-            <StackLayout.Background>
-                <LinearGradientBrush StartPoint="0,0"
-                             EndPoint="0,1">
-                    <GradientStop Color="{Binding GradientTop}"
-                          Offset="0.1"/>
-                    <GradientStop Color="{Binding GradientBottom}"
-                          Offset="1.0"/>
-                </LinearGradientBrush>
-            </StackLayout.Background>-->
 
             <Grid Padding="20, 10, 20, 50">
                 <!--Grid column definition-->
@@ -137,8 +127,6 @@
 
                 <!--Winrate Frame-->
                 <Frame Style="{StaticResource frameStyle}">
-
-                    <!--Grid column definition-->
                     <StackLayout>
 
                         <!--Winrate Label-->
@@ -276,9 +264,6 @@
 
                 <!--Effeciency Frame-->
                 <Frame Style="{StaticResource frameStyle}">
-
-
-                    <!--Grid column definition-->
                     <StackLayout>
 
                         <!--Kill/battle ratio Label-->
@@ -366,7 +351,6 @@
 
                 <!--Preference Frame-->
                 <Frame Style="{StaticResource frameStyle}">
-
                     <StackLayout>
 
                         <!--Preference Label-->
@@ -375,10 +359,10 @@
                            Style="{StaticResource labelStyle}"/>
 
                         <!--Favorite game modes charts-->
-                        <chart:SfChart 
+                        <chart:SfChart
                             BackgroundColor="{AppThemeBinding Dark={StaticResource MyDark}, Light={StaticResource MyWhite}}">
                             <chart:SfChart.Legend>
-                                <chart:ChartLegend IconHeight="14" IconWidth="14" OverflowMode="Scroll" DockPosition="Left" />
+                                <chart:ChartLegend IconHeight="14" IconWidth="14" OverflowMode="Wrap" DockPosition="Bottom" />
                             </chart:SfChart.Legend>
                             <chart:SfChart.Series>
                                 <chart:DoughnutSeries  ExplodeIndex="{Binding SelectedIndex}" 
@@ -386,13 +370,16 @@
                                        XBindingPath="Name" 
                                        YBindingPath="Value" 
                                        LegendIcon="Circle" 
+                                       CircularCoefficient="0.7"
                                        EnableAnimation="true" 
                                        ExplodeOnTouch="true" 
                                        SelectedDataPointColor="OrangeRed"
+                                       DataMarkerPosition="OutsideExtended"
+                                       EnableSmartLabels="true"
+                                       ConnectorLineType="Bezier"
                                        EnableDataPointSelection="true">
                                     <chart:DoughnutSeries.DataMarker>
-                                        <chart:ChartDataMarker ShowLabel="True">
-                                        </chart:ChartDataMarker>
+                                        <chart:ChartDataMarker ShowLabel="True"/>
                                     </chart:DoughnutSeries.DataMarker>
                                     <chart:DoughnutSeries.ColorModel>
                                         <chart:ChartColorModel Palette="Custom" CustomBrushes="{StaticResource DoughnutColors}"/>
@@ -406,8 +393,6 @@
                 <!--Top planes/tanks Frame-->
                 <StackLayout Orientation="Horizontal">
                     <Frame Style="{StaticResource frameStyle}" HorizontalOptions="FillAndExpand">
-
-                        <!--Grid column definition-->
                         <StackLayout>
 
                             <!--Planes Label-->
@@ -422,11 +407,9 @@
                     </Frame>
 
                     <Frame Style="{StaticResource frameStyle}" HorizontalOptions="FillAndExpand">
-
-                        <!--Grid column definition-->
                         <StackLayout>
 
-                            <!--Planes Label-->
+                            <!--Tanks Label-->
                             <Label 
                                Text="Top tanks"
                                Style="{StaticResource labelStyle}"/>
@@ -438,33 +421,32 @@
                     </Frame>
                 </StackLayout>
 
-                <!--Preference Frame-->
+                <!--Favorite type of vehicle-->
                 <Frame Style="{StaticResource frameStyle}">
-
                     <StackLayout>
 
-                        <!--Preference Label-->
+                        <!--Favorite type of vehicle-->
                         <Label 
                            Text="Favorite type of vehicle"
                            Style="{StaticResource labelStyle}"/>
 
-                        <!--Favorite game modes charts-->
+                        <!--Favorite type of vehicle charts-->
                         <Label Style="{StaticResource ladelInDevStyle}"/>
 
                     </StackLayout>
                 </Frame>
 
-                <!--Preference Frame-->
+                <!--Researched vehicle-->
                 <Frame Style="{StaticResource frameStyle}">
 
                     <StackLayout>
 
-                        <!--Preference Label-->
+                        <!--Researched vehicle label-->
                         <Label 
                            Text="Researched vehicle"
                            Style="{StaticResource labelStyle}"/>
 
-                        <!--Favorite game modes charts-->
+                        <!--Researched vehicle table-->
                         <Label Style="{StaticResource ladelInDevStyle}"/>
                     </StackLayout>
                 </Frame>

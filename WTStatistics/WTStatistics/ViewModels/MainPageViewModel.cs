@@ -318,14 +318,14 @@ namespace WTStatistics.ViewModels
             Skill = data.PlayerInfo().TotalSkillBackground;
 
             DoughnutSeriesData.Clear();
-            DoughnutSeriesData.Add(new ChartDataModel("Air Acrade", data.PlayerInfo().CountAAB));
-            DoughnutSeriesData.Add(new ChartDataModel("Air Realistic", data.PlayerInfo().CountARB));
-            DoughnutSeriesData.Add(new ChartDataModel("Air Simulator", data.PlayerInfo().CountASB));
-            DoughnutSeriesData.Add(new ChartDataModel("Tank Arcade", data.PlayerInfo().CountTAB));
-            DoughnutSeriesData.Add(new ChartDataModel("Tank Realistic", data.PlayerInfo().CountTRB));
-            DoughnutSeriesData.Add(new ChartDataModel("Tank Simulator", data.PlayerInfo().CountTSB));
-            DoughnutSeriesData.Add(new ChartDataModel("Fleet Arcade", data.PlayerInfo().CountSAB));
-            DoughnutSeriesData.Add(new ChartDataModel("Fleet Realistic", data.PlayerInfo().CountSRB));
+            DoughnutSeriesData.Add(new ChartDataModel("Air AB", data.PlayerInfo().CountAAB));
+            DoughnutSeriesData.Add(new ChartDataModel("Air RB", data.PlayerInfo().CountARB));
+            DoughnutSeriesData.Add(new ChartDataModel("Air SB", data.PlayerInfo().CountASB));
+            DoughnutSeriesData.Add(new ChartDataModel("Tank AB", data.PlayerInfo().CountTAB));
+            DoughnutSeriesData.Add(new ChartDataModel("Tank RB", data.PlayerInfo().CountTRB));
+            DoughnutSeriesData.Add(new ChartDataModel("Tank SB", data.PlayerInfo().CountTSB));
+            DoughnutSeriesData.Add(new ChartDataModel("Fleet AB", data.PlayerInfo().CountSAB));
+            DoughnutSeriesData.Add(new ChartDataModel("Fleet RB", data.PlayerInfo().CountSRB));
 
         }
     }
