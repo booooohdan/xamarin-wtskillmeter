@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
              xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
-             xmlns:local="clr-namespace:WTStatistics.ViewModels" 
+             xmlns:local="clr-namespace:WTStatistics.ViewModels" xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
              NavigationPage.HasNavigationBar="False"
              x:Class="WTStatistics.Views.MainPage">
 
@@ -13,21 +13,14 @@
 
     <StackLayout Padding="0" Style="{StaticResource MainBackground}">
         <!--Gradient section-->
-        <StackLayout BackgroundColor="{Binding HeaderColor}">
-            
-            <!--SearchBar-->
-            <SearchBar x:Name="searchBar"
-                               SearchCommand="{Binding SearchButtonPressed}"
-                               SearchCommandParameter="{Binding Source={x:Reference searchBar}, Path=Text}"
-                               Placeholder="Enter nickname"
-                               PlaceholderColor="LightGray"
-                               MaxLength="16"
-                               HorizontalOptions="Fill"
-                               TextColor="White" 
-                               FontSize="Medium" 
-                               FontAttributes="Bold" />
-
-            <Grid Padding="20, 10, 20, 50">
+        <Grid Padding="0,0,0,0">
+            <!--Gradient image-->
+            <Image
+                   Aspect="AspectFill"
+                   HeightRequest="600"
+                   Source="grad_red">
+            </Image>
+            <Grid Padding="20, 0, 20, 0">
                 <!--Grid column definition-->
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -41,8 +34,22 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
+                <!--SearchBar-->
+                <SearchBar Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3"
+                           x:Name="searchBar"
+                           SearchCommand="{Binding SearchButtonPressed}"
+                           SearchCommandParameter="{Binding Source={x:Reference searchBar}, Path=Text}"
+                           Placeholder="Enter nickname"
+                           PlaceholderColor="LightGray"
+                           MaxLength="16"
+                           HorizontalOptions="Fill"
+                           TextColor="White" 
+                           FontSize="Medium" 
+                           FontAttributes="Bold" />
+
                 <!--Avatar image-->
-                <Image Grid.Column="0" Grid.Row="0"
+                <Image Grid.Column="0" Grid.Row="1"
+                       Margin="0, 10, 0, 0"
                        HorizontalOptions="Start"
                        VerticalOptions="Start"
                        Aspect="AspectFit" 
@@ -51,7 +58,7 @@
                 </Image>
 
                 <!--Activity Indicator-->
-                <ActivityIndicator Grid.Column="1" Grid.Row="0"
+                <ActivityIndicator Grid.Column="1" Grid.Row="1"
                                    IsRunning="{Binding IsBusy}" 
                                    HorizontalOptions="Center"
                                    VerticalOptions="Center"
@@ -59,11 +66,11 @@
                                    Color="White"/>
 
                 <!--Right value. Lion, Battle and Time-->
-                <StackLayout Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2">
+                <StackLayout Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2">
 
                     <StackLayout Orientation="Horizontal" HorizontalOptions="End">
                         <Label 
-                             Text= "{Binding LionEarned, StringFormat='{0:#,#}'}"     
+                             Text= "{Binding LionEarned}"     
                              Style="{StaticResource rightHeaderText}"/>
                         <Image 
                             Source="lion.png" 
@@ -88,13 +95,13 @@
                 </StackLayout>
 
                 <!--Sign up date-->
-                <Label Grid.Column="0" Grid.Row="1"
+                <Label Grid.Column="0" Grid.Row="2"
                     Text="{Binding SignUpDate}" 
                     FontSize="Small"
                     TextColor="WhiteSmoke"/>
 
                 <!--Searchview Nickname and Squadron-->
-                <StackLayout Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" 
+                <StackLayout Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" 
                        Orientation="Horizontal">
                     <Label  Text="{Binding Squadron}" 
                         TextColor="White" 
@@ -107,12 +114,12 @@
                 </StackLayout>
 
                 <!--Sign up date-->
-                <Label Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3"
+                <Label Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3"
                     Text="#dev" 
                     FontSize="Small"
                     TextColor="WhiteSmoke"/>
             </Grid>
-        </StackLayout>
+        </Grid>
 
         <!--WebView elements-->
         <WebView Source="{Binding URL}" 

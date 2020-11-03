@@ -158,9 +158,9 @@ namespace WTStatistics.Helpers
             DateConverter date = new DateConverter();
             var totalTime = date.GetSpendTime(listTableMain[29]) + date.GetSpendTime(listTableMain[30]) + date.GetSpendTime(listTableMain[31]);
 
-            player.LionEarned = ToInt(listTableMain[21]) + ToInt(listTableMain[22]) + ToInt(listTableMain[23]);
-            player.BattleFinished = ToInt(listTableMain[9]) + ToInt(listTableMain[10]) + ToInt(listTableMain[11]);
-            player.TotalTimeSpended = Math.Truncate(totalTime);
+            player.LionEarned = (ToInt(listTableMain[21]) + ToInt(listTableMain[22]) + ToInt(listTableMain[23])).ToString();
+            player.BattleFinished = (ToInt(listTableMain[9]) + ToInt(listTableMain[10]) + ToInt(listTableMain[11])).ToString();
+            player.TotalTimeSpended = Math.Truncate(totalTime).ToString();
             player.SignUpDate = signUpDate[0].Substring(18);
             player.Squadron = squadron[0];
 

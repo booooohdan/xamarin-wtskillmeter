@@ -195,5 +195,8 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\tab_question.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\grad_red.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

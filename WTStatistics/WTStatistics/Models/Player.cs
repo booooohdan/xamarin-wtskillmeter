@@ -8,9 +8,9 @@ namespace WTStatistics.Models
         public string Nickname { get; set; }
         public string Squadron { get; set; }
         public string SignUpDate { get; set; }
-        public int BattleFinished { get; set; }
-        public int LionEarned { get; set; }
-        public double TotalTimeSpended { get; set; }
+        public string BattleFinished { get; set; }
+        public string LionEarned { get; set; }
+        public string TotalTimeSpended { get; set; }
         public double TotalSkillBackground { get; set; }
         public string HeaderColor { get; set; }
         public int Preference { get; set; }

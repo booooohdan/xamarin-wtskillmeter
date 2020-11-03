@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
@@ -67,7 +68,7 @@ namespace WTStatistics.ViewModels
         }
 
 
-        public int LionEarned
+        public string LionEarned
         {
             get => player.LionEarned;
             set
@@ -77,7 +78,7 @@ namespace WTStatistics.ViewModels
             }
         }
 
-        public int BattleFinished
+        public string BattleFinished
         {
             get => player.BattleFinished;
             set
@@ -87,7 +88,7 @@ namespace WTStatistics.ViewModels
             }
         }
 
-        public double TotalTimeSpended
+        public string TotalTimeSpended
         {
             get => player.TotalTimeSpended;
             set
@@ -287,6 +288,25 @@ namespace WTStatistics.ViewModels
             URL = "https://warthunder.ru/ru/community/userinfo/?nick=" + searchText;
         }
 
+        private string ConvertToKM(string convertedValue)
+        {
+            double num = Convert.ToDouble(convertedValue);
+            string converted=string.Empty;
+            if (num > 1000000)
+            {
+                converted = Math.Round(num / 1000000, 1)+" M";
+            }else
+            if (num > 1000)
+            {
+                converted = Math.Round(num / 1000, 1) + " K";
+            }
+            else
+            {
+                converted = num.ToString();
+            }
+            return converted;
+        }
+
         /// <summary>
         /// Get data drom HTML string and set property values
         /// </summary>
@@ -296,9 +316,9 @@ namespace WTStatistics.ViewModels
             IsBusy = false;
             DataFromHtmlString data = new DataFromHtmlString(htmlString);
 
-            LionEarned = data.PlayerInfo().LionEarned;
-            BattleFinished = data.PlayerInfo().BattleFinished;
-            TotalTimeSpended = data.PlayerInfo().TotalTimeSpended;
+            LionEarned = ConvertToKM(data.PlayerInfo().LionEarned);
+            BattleFinished = ConvertToKM(data.PlayerInfo().BattleFinished);
+            TotalTimeSpended = data.PlayerInfo().TotalTimeSpended+" D";
             SignUpDate = data.PlayerInfo().SignUpDate;
             Squadron = data.PlayerInfo().Squadron;
 
