@@ -18,7 +18,7 @@
             <Image
                    Aspect="AspectFill"
                    HeightRequest="600"
-                   Source="grad_red">
+                   Source="grad_violet">
             </Image>
             <Grid Padding="20, 0, 20, 0">
                 <!--Grid column definition-->

@@ -259,4 +259,19 @@
   <ItemGroup>
     <BundleResource Include="Resources\WTQuiz.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\grad_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\grad_green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\grad_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\grad_violet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\grad_yellow.png" />
+  </ItemGroup>
 </Project>
