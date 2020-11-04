@@ -37,7 +37,7 @@ namespace WTStatistics.ViewModels
 
         private void VKHandler(object obj)
         {
-            Launcher.OpenAsync(new Uri("https://www.vk.com/waveapp/"));
+            Launcher.OpenAsync(new Uri("https://www.vk.com/wave_app/"));
         }
 
         private void GMailHandler(object obj)

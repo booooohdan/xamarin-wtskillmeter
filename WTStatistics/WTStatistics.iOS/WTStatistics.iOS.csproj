@@ -223,14 +223,16 @@
     <BundleResource Include="Resources\battle.png" />
   </ItemGroup>
   <ItemGroup>
+    <BundleResource Include="Resources\egg.png" />
     <BundleResource Include="Resources\lion.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\tab_question.png" />
-    <BundleResource Include="Resources\time.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\pilot.png" />
+    <BundleResource Include="Resources\sailor.png" />
+    <BundleResource Include="Resources\tab_question.png" />
+    <BundleResource Include="Resources\tankman.png" />
+    <BundleResource Include="Resources\team.png" />
+    <BundleResource Include="Resources\time.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\tab_feedback.png" />

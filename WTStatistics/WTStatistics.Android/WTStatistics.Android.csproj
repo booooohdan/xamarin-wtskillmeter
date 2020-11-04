@@ -103,6 +103,11 @@
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Include="Resources\drawable\egg.png" />
+    <AndroidResource Include="Resources\drawable\pilot.png" />
+    <AndroidResource Include="Resources\drawable\sailor.png" />
+    <AndroidResource Include="Resources\drawable\tankman.png" />
+    <AndroidResource Include="Resources\drawable\team.png" />
     <AndroidResource Include="Resources\layout\Tabbar.xml" />
     <AndroidResource Include="Resources\layout\Toolbar.xml" />
     <AndroidResource Include="Resources\values\styles.xml" />
@@ -122,9 +127,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\time.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\pilot.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\icon.png" />
