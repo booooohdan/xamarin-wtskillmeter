@@ -241,6 +241,26 @@ namespace WTStatistics.ViewModels
                 OnPropertyChanged();
             }
         }
+        
+        public string Avatar
+        {
+            get => player.SkillGradient;
+            set
+            {
+                player.SkillGradient = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string HashTag
+        {
+            get => player.SkillDescription;
+            set
+            {
+                player.SkillDescription = value;
+                OnPropertyChanged();
+            }
+        }
         #endregion
 
         #region Methods
@@ -259,9 +279,11 @@ namespace WTStatistics.ViewModels
             IsBusy = false;
             DataFromHtmlString data = new DataFromHtmlString(htmlString);
 
-            SetAvatar();
-            SetSkill(data.Info().TotalSkillBackground);
-            
+            Avatar = data.Info().Avatar;
+            HashTag = data.Info().HashTag;
+            SkillGradient = data.Info().SkillGradient;
+            SkillDescription = data.Info().SkillDescription;
+
             SignUpDate = data.Info().SignUpDate;
             Squadron = data.Info().Squadron;
             BattleFinished = data.Info().BattleFinished;
@@ -290,42 +312,6 @@ namespace WTStatistics.ViewModels
             DoughnutSeriesData.Add(new ChartDataModel("Tank SB", data.Info().CountTSB));
             DoughnutSeriesData.Add(new ChartDataModel("Fleet AB", data.Info().CountSAB));
             DoughnutSeriesData.Add(new ChartDataModel("Fleet RB", data.Info().CountSRB));
-        }
-        
-        //Set gradient color and skill label
-        private void SetSkill(double skill)
-        {
-            if (skill >= 0 & skill <= 0.6)
-            {
-                SkillGradient = "grad_red.png";
-                SkillDescription = "Bad player";
-            }
-            if (skill > 0.6 & skill <= 0.9)
-            {
-                SkillGradient = "grad_yellow.png";
-                SkillDescription = "Average player";
-            }
-            if (skill > 0.9 & skill <= 1.1)
-            {
-                SkillGradient = "grad_green.png";
-                SkillDescription = "Good player";
-            }
-            if (skill > 1.1 & skill <= 1.5)
-            {
-                SkillGradient = "grad_blue.png";
-                SkillDescription = "Excellent player";
-            }
-            if (skill > 1.5)
-            {
-                SkillGradient = "grad_violet.png";
-                SkillDescription = "Outstanding player";
-            }
-        }
-        
-        //Set gradient color and skill label
-        private void SetAvatar()
-        {
-            
         }
         #endregion
     }

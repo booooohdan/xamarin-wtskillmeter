@@ -146,7 +146,45 @@ namespace WTStatistics.Helpers
             return efficiency.Average();
         }
 
-        private 
+        private string SetAvatar()
+        {
+            return null;
+        }
+
+        private string SetHashTag()
+        {
+            return null;
+        }
+        
+        //Set gradient color and skill label
+        private void SetSkill(double skill)
+        {
+            if (skill >= 0 & skill <= 0.6)
+            {
+                player.SkillGradient = "grad_red.png";
+                player.SkillDescription = "Bad player";
+            }
+            if (skill > 0.6 & skill <= 0.9)
+            {
+                player.SkillGradient = "grad_yellow.png";
+                player.SkillDescription = "Average player";
+            }
+            if (skill > 0.9 & skill <= 1.1)
+            {
+                player.SkillGradient = "grad_green.png";
+                player.SkillDescription = "Good player";
+            }
+            if (skill > 1.1 & skill <= 1.5)
+            {
+                player.SkillGradient = "grad_blue.png";
+                player.SkillDescription = "Excellent player";
+            }
+            if (skill > 1.5)
+            {
+                player.SkillGradient = "grad_violet.png";
+                player.SkillDescription = "Outstanding player";
+            }
+        }
         
         private string ConvToM(string convertedValue)
         {
@@ -170,7 +208,13 @@ namespace WTStatistics.Helpers
             var battleFinished = (ToInt(listTableMain[9]) + ToInt(listTableMain[10]) + ToInt(listTableMain[11])).ToString();
             var totalTime = date.GetSpendTime(listTableMain[29]) + date.GetSpendTime(listTableMain[30]) + date.GetSpendTime(listTableMain[31]);
             var lionEarned = (ToInt(listTableMain[21]) + ToInt(listTableMain[22]) + ToInt(listTableMain[23])).ToString();
-
+            var skill = CalculateTotalSkill();
+            
+            SetSkill(skill);
+            
+            //player.Avatar = SetAvatar();
+            //player.HashTag = SetHashTag();
+            
             player.BattleFinished = battleFinished;
             player.TotalTimeSpended = Math.Truncate(totalTime)+" h";
             player.LionEarned = ConvToM(lionEarned);
@@ -199,7 +243,7 @@ namespace WTStatistics.Helpers
             player.KD_SAB = KBCalc(ToInt(listTableShips[81]), player.CountSAB);
             player.KD_SRB = KBCalc(ToInt(listTableShips[82]), player.CountSRB);
 
-            player.TotalSkillBackground = CalculateTotalSkill();
+
             return player;
         }
         #endregion
