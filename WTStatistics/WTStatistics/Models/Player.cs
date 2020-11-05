@@ -12,7 +12,8 @@ namespace WTStatistics.Models
         public string LionEarned { get; set; }
         public string TotalTimeSpended { get; set; }
         public double TotalSkillBackground { get; set; }
-        public string HeaderColor { get; set; }
+        public string SkillGradient { get; set; }
+        public string SkillDescription { get; set; }
         public int Preference { get; set; }
 
         public int WinRateAB { get; set; }

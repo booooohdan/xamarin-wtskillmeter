@@ -29,7 +29,6 @@ namespace WTStatistics.ViewModels
         {
             SearchButtonPressed = new Command<string>(HandleSearchPressed);
             player = new Player();
-            HeaderColor = "#353c43";
             DoughnutSeriesData = new ObservableCollection<ChartDataModel>
             {
                 new ChartDataModel("Not available", 0)
@@ -228,6 +227,7 @@ namespace WTStatistics.ViewModels
             }
         }
 
+
         private double Skill
         {
             set
@@ -236,34 +236,50 @@ namespace WTStatistics.ViewModels
 
                 if (value >= 0 & value <= 0.6)
                 {
-                    HeaderColor = "#e82652";
+                    SkillGradient = "grad_red.png";
+                    SkillDescription = "Bad player";
                 }
                 if (value > 0.6 & value <= 0.9)
                 {
-                    HeaderColor = "#f19411";
+                    SkillGradient = "grad_yellow.png";
+                    SkillDescription = "Average player";
                 }
                 if (value > 0.9 & value <= 1.1)
                 {
-                    HeaderColor = "#2dd782";
+                    SkillGradient = "grad_green.png";
+                    SkillDescription = "Good player";
                 }
                 if (value > 1.1 & value <= 1.5)
                 {
-                    HeaderColor = "#28a3da";
+                    SkillGradient = "grad_blue.png";
+                    SkillDescription = "Excellent player";
                 }
                 if (value > 1.5)
                 {
-                    HeaderColor = "#b155cf";
+                    SkillGradient = "grad_violet.png";
+                    SkillDescription = "Outstanding player";
                 }
                 OnPropertyChanged();
             }
         }
 
-        public string HeaderColor
+        public string SkillGradient
         {
-            get => player.HeaderColor;
+            get => player.SkillGradient;
             set
             {
-                player.HeaderColor = value;
+                player.SkillGradient = value;
+                OnPropertyChanged();
+            }
+        }
+
+
+        public string SkillDescription
+        {
+            get => player.SkillDescription;
+            set
+            {
+                player.SkillDescription = value;
                 OnPropertyChanged();
             }
         }

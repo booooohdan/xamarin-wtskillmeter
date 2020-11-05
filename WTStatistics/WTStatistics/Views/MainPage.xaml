@@ -20,9 +20,9 @@
             <Image
                    Aspect="AspectFill"
                    HeightRequest="550"
-                   Source="grad_blue">
+                   Source="{Binding  SkillGradient}">
             </Image>
-            <Grid Padding="20, 0, 20, 0">
+            <Grid Padding="20, 0, 0, 0">
                 <!--Grid column definition-->
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -34,7 +34,7 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="1"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
@@ -58,95 +58,98 @@
                        HorizontalOptions="Start"
                        VerticalOptions="Start"
                        Aspect="AspectFit"
-                       HeightRequest="110"
+                       HeightRequest="90"
                        Source="pilot.png">
                 </Image>
 
 
                 <!--Activity Indicator-->
-                <ActivityIndicator Grid.Column="1" Grid.Row="2"
+                <ActivityIndicator Grid.Column="1" Grid.Row="4"
                                    IsRunning="{Binding IsBusy}" 
                                    HorizontalOptions="Center"
                                    VerticalOptions="Center"
                                    x:Name="ActivityIndicator"
                                    Color="White"/>
-                
-                <!--Battle Label-->
-                <StackLayout Grid.Column="1" Grid.Row="1"
-                    Orientation="Horizontal" 
-                    HorizontalOptions="FillAndExpand">
-                    <Label  
-                        Style="{StaticResource rightHeaderText}"
-                        Text= "{Binding BattleFinished}" />
-                    <Image 
-                        Source="battle.png" 
-                        HeightRequest="15"/>
-                </StackLayout>
-                
-                <!--Time Label-->
-                <StackLayout Grid.Column="2" Grid.Row="1" 
-                             Orientation="Horizontal" 
-                             HorizontalOptions="FillAndExpand">
-                    <Label
-                        Style="{StaticResource rightHeaderText}"
-                        Text="{Binding TotalTimeSpended}"/>
-                    <Image 
-                        Source="time.png" 
-                        HeightRequest="15"/>
-                </StackLayout>
-                
+
                 <!--Sign up date-->
-                <StackLayout Grid.Column="1" Grid.Row="2" 
+                <StackLayout Grid.Column="1" Grid.Row="1" 
+                             Grid.ColumnSpan="2"
                              Orientation="Horizontal" 
                              HorizontalOptions="FillAndExpand">
-                    <Label 
-                        Style="{StaticResource rightHeaderText}"
-                        Text="{Binding SignUpDate}" />
                     <Image 
                         Source="egg.png" 
                         HeightRequest="15"/>
-                </StackLayout>
-                
-                <!--Squad Label-->
-                <StackLayout Grid.Column="2" Grid.Row="2" 
-                             Orientation="Horizontal" 
-                             HorizontalOptions="FillAndExpand">
                     <Label 
                         Style="{StaticResource rightHeaderText}"
-                        Text="{Binding Squadron}"/>
+                        Text="{Binding SignUpDate}" />
+                </StackLayout>
+
+                <!--Squad Label-->
+                <StackLayout Grid.Column="2" Grid.Row="1"  
+                             Padding="10, 0, 0, 0"
+                             Orientation="Horizontal" 
+                             HorizontalOptions="FillAndExpand">
                     <Image 
                         Source="team.png" 
                         HeightRequest="15"/>
-                </StackLayout>
-                
-                <!--Lion Label-->
-                <StackLayout Grid.Column="1" Grid.Row="3"
-                             Orientation="Horizontal" 
-                             HorizontalOptions="FillAndExpand">
                     <Label 
                         Style="{StaticResource rightHeaderText}"
-                        Text= "{Binding LionEarned}"     />
+                        Text="{Binding Squadron}"/>
+                </StackLayout>
+
+                <!--Battle Label-->
+                <StackLayout Grid.Column="1" Grid.Row="2"
+                             Orientation="Horizontal" 
+                             HorizontalOptions="FillAndExpand">
+                    <Image 
+                        Source="battle.png" 
+                        HeightRequest="15"/>
+                    <Label  
+                        Style="{StaticResource rightHeaderText}"
+                        Text= "{Binding BattleFinished}" />
+                </StackLayout>
+
+                <!--Time Label-->
+                <StackLayout Grid.Column="2" Grid.Row="2" 
+                             Padding="10, 0, 0, 0"
+                             Orientation="Horizontal" 
+                             HorizontalOptions="FillAndExpand">
+                    <Image 
+                        Source="time.png" 
+                        HeightRequest="15"/>
+                    <Label
+                        Style="{StaticResource rightHeaderText}"
+                        Text="{Binding TotalTimeSpended}"/>
+                </StackLayout>
+
+                <!--Lion Label-->
+                <StackLayout Grid.Column="1" Grid.Row="3" 
+                             Orientation="Horizontal" 
+                             HorizontalOptions="FillAndExpand">
                     <Image 
                         Source="lion.png" 
                         HeightRequest="15"/>
+                    <Label 
+                        Style="{StaticResource rightHeaderText}"
+                        Text= "{Binding LionEarned}"     />
                 </StackLayout>
 
-                
-                
+
+
                 <!--Skill label-->
                 <StackLayout Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="3"
                        Orientation="Horizontal">
-                    
-                    <Label  Text="Good player" 
+
+                    <Label  Text="{Binding SkillDescription}" 
                         TextColor="White" 
-                        FontSize="Large" 
+                        FontSize="Title" 
                         FontAttributes="Bold" />
                 </StackLayout>
 
                 <!--Hashtags label-->
                 <Label Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="3"
-                    Text="#rb #pilot #ussr" 
-                    FontSize="Small"
+                    Text="{Binding HashTag}"
+                    FontSize="Medium"
                     TextColor="WhiteSmoke"/>
             </Grid>
         </Grid>
