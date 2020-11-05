@@ -245,6 +245,7 @@ namespace WTStatistics.ViewModels
 
         #region Methods
 
+        //Build searched url
         private void HandleSearchPressed(string searchText)
         {
             IsBusy = true;
@@ -252,44 +253,46 @@ namespace WTStatistics.ViewModels
             URL = "https://warthunder.ru/ru/community/userinfo/?nick=" + searchText;
         }
 
+        //Set value from data class to ViewModel properties
         public void StartExtractData(string htmlString)
         {
             IsBusy = false;
             DataFromHtmlString data = new DataFromHtmlString(htmlString);
 
-            LionEarned = data.PlayerInfo().LionEarned;
-            BattleFinished = data.PlayerInfo().BattleFinished;
-            TotalTimeSpended = data.PlayerInfo().TotalTimeSpended;
-            SignUpDate = data.PlayerInfo().SignUpDate;
-            Squadron = data.PlayerInfo().Squadron;
+            SetAvatar();
+            SetSkill(data.Info().TotalSkillBackground);
+            
+            SignUpDate = data.Info().SignUpDate;
+            Squadron = data.Info().Squadron;
+            BattleFinished = data.Info().BattleFinished;
+            TotalTimeSpended = data.Info().TotalTimeSpended;
+            LionEarned = data.Info().LionEarned;
 
-            WinRateAB = data.PlayerInfo().WinRateAB;
-            WinRateRB = data.PlayerInfo().WinRateRB;
-            WinRateSB = data.PlayerInfo().WinRateSB;
+            WinRateAB = data.Info().WinRateAB;
+            WinRateRB = data.Info().WinRateRB;
+            WinRateSB = data.Info().WinRateSB;
 
-            KD_AAB = data.PlayerInfo().KD_AAB;
-            KD_ARB = data.PlayerInfo().KD_ARB;
-            KD_ASB = data.PlayerInfo().KD_ASB;
-            KD_TAB = data.PlayerInfo().KD_TAB;
-            KD_TRB = data.PlayerInfo().KD_TRB;
-            KD_TSB = data.PlayerInfo().KD_TSB;
-            KD_SAB = data.PlayerInfo().KD_SAB;
-            KD_SRB = data.PlayerInfo().KD_SRB;
-
-            SetSkill(data.PlayerInfo().TotalSkillBackground);
+            KD_AAB = data.Info().KD_AAB;
+            KD_ARB = data.Info().KD_ARB;
+            KD_ASB = data.Info().KD_ASB;
+            KD_TAB = data.Info().KD_TAB;
+            KD_TRB = data.Info().KD_TRB;
+            KD_TSB = data.Info().KD_TSB;
+            KD_SAB = data.Info().KD_SAB;
+            KD_SRB = data.Info().KD_SRB;
 
             DoughnutSeriesData.Clear();
-            DoughnutSeriesData.Add(new ChartDataModel("Air AB", data.PlayerInfo().CountAAB));
-            DoughnutSeriesData.Add(new ChartDataModel("Air RB", data.PlayerInfo().CountARB));
-            DoughnutSeriesData.Add(new ChartDataModel("Air SB", data.PlayerInfo().CountASB));
-            DoughnutSeriesData.Add(new ChartDataModel("Tank AB", data.PlayerInfo().CountTAB));
-            DoughnutSeriesData.Add(new ChartDataModel("Tank RB", data.PlayerInfo().CountTRB));
-            DoughnutSeriesData.Add(new ChartDataModel("Tank SB", data.PlayerInfo().CountTSB));
-            DoughnutSeriesData.Add(new ChartDataModel("Fleet AB", data.PlayerInfo().CountSAB));
-            DoughnutSeriesData.Add(new ChartDataModel("Fleet RB", data.PlayerInfo().CountSRB));
-
+            DoughnutSeriesData.Add(new ChartDataModel("Air AB", data.Info().CountAAB));
+            DoughnutSeriesData.Add(new ChartDataModel("Air RB", data.Info().CountARB));
+            DoughnutSeriesData.Add(new ChartDataModel("Air SB", data.Info().CountASB));
+            DoughnutSeriesData.Add(new ChartDataModel("Tank AB", data.Info().CountTAB));
+            DoughnutSeriesData.Add(new ChartDataModel("Tank RB", data.Info().CountTRB));
+            DoughnutSeriesData.Add(new ChartDataModel("Tank SB", data.Info().CountTSB));
+            DoughnutSeriesData.Add(new ChartDataModel("Fleet AB", data.Info().CountSAB));
+            DoughnutSeriesData.Add(new ChartDataModel("Fleet RB", data.Info().CountSRB));
         }
         
+        //Set gradient color and skill label
         private void SetSkill(double skill)
         {
             if (skill >= 0 & skill <= 0.6)
@@ -317,6 +320,12 @@ namespace WTStatistics.ViewModels
                 SkillGradient = "grad_violet.png";
                 SkillDescription = "Outstanding player";
             }
+        }
+        
+        //Set gradient color and skill label
+        private void SetAvatar()
+        {
+            
         }
         #endregion
     }

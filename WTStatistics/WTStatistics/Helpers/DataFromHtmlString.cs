@@ -174,7 +174,7 @@ namespace WTStatistics.Helpers
         /// Return players data
         /// </summary>
         /// <returns>Players data</returns>
-        public Player PlayerInfo()
+        public Player Info()
         {
             DateConverter date = new DateConverter();
             var battleFinished = (ToInt(listTableMain[9]) + ToInt(listTableMain[10]) + ToInt(listTableMain[11])).ToString();
