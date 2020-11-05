@@ -149,6 +149,27 @@ namespace WTStatistics.Helpers
             return efficiency.Average();
         }
 
+        private string ConvertToK_M(string convertedValue)
+        {
+            double num = Convert.ToDouble(convertedValue);
+            string converted = string.Empty;
+            if (num > 1000000)
+            {
+                converted = Math.Round(num / 1000000, 1) + " M";
+            }
+            else
+            if (num > 1000)
+            {
+                converted = Math.Round(num / 1000, 1) + " K";
+            }
+            else
+            {
+                converted = num.ToString();
+            }
+            return converted;
+        }
+
+
         /// <summary>
         /// Return players data
         /// </summary>
@@ -156,11 +177,13 @@ namespace WTStatistics.Helpers
         public Player PlayerInfo()
         {
             DateConverter date = new DateConverter();
+            var battleFinished = (ToInt(listTableMain[9]) + ToInt(listTableMain[10]) + ToInt(listTableMain[11])).ToString();
             var totalTime = date.GetSpendTime(listTableMain[29]) + date.GetSpendTime(listTableMain[30]) + date.GetSpendTime(listTableMain[31]);
+            var lionEarned = (ToInt(listTableMain[21]) + ToInt(listTableMain[22]) + ToInt(listTableMain[23])).ToString();
 
-            player.LionEarned = (ToInt(listTableMain[21]) + ToInt(listTableMain[22]) + ToInt(listTableMain[23])).ToString();
-            player.BattleFinished = (ToInt(listTableMain[9]) + ToInt(listTableMain[10]) + ToInt(listTableMain[11])).ToString();
-            player.TotalTimeSpended = Math.Truncate(totalTime).ToString();
+            player.BattleFinished = battleFinished;
+            player.TotalTimeSpended = Math.Truncate(totalTime)+" h";
+            player.LionEarned = ConvertToK_M(lionEarned);
             player.SignUpDate = signUpDate[0].Substring(18);
             player.Squadron = squadron[0];
 

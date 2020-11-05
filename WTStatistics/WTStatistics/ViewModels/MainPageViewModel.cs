@@ -9,16 +9,15 @@ using Xamarin.Forms;
 
 namespace WTStatistics.ViewModels
 {
-    public class MainPageViewModel : INotifyPropertyChanged
+    public class MainPageViewModel : BaseViewModel
     {
-        #region Propertys, events and commands
+        #region Propertys and commands
 
-        string searchBatText;
-        bool busy;
-        string url;
         Player player;
+        bool busy;
+        string searchBatText;
+        string url;
 
-        public event PropertyChangedEventHandler PropertyChanged;
         public ICommand SearchButtonPressed { get; }
         public ObservableCollection<ChartDataModel> DoughnutSeriesData { get; set; }
         #endregion
@@ -29,12 +28,10 @@ namespace WTStatistics.ViewModels
         {
             SearchButtonPressed = new Command<string>(HandleSearchPressed);
             player = new Player();
-            DoughnutSeriesData = new ObservableCollection<ChartDataModel>
-            {
-                new ChartDataModel("Not available", 0)
-            };
+            DoughnutInit();
         }
         #endregion
+
 
         public bool IsBusy
         {
@@ -227,8 +224,7 @@ namespace WTStatistics.ViewModels
             }
         }
 
-
-        private double Skill
+        private double SetSkill
         {
             set
             {
@@ -273,7 +269,6 @@ namespace WTStatistics.ViewModels
             }
         }
 
-
         public string SkillDescription
         {
             get => player.SkillDescription;
@@ -284,19 +279,21 @@ namespace WTStatistics.ViewModels
             }
         }
 
-        /// <summary>
-        /// OnPropertyChanged (syntactic sugar)
-        /// </summary>
-        /// <param name="propertyName">Name of binding property</param>
-        private void OnPropertyChanged([CallerMemberName] string propertyName = "")
+        private void DoughnutInit()
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            DoughnutSeriesData = new ObservableCollection<ChartDataModel>
+            {
+                new ChartDataModel("Air AB", 0),
+                new ChartDataModel("Air RB", 0),
+                new ChartDataModel("Air SB", 0),
+                new ChartDataModel("Tank AB", 0),
+                new ChartDataModel("Tank RB", 0),
+                new ChartDataModel("Tank SB", 0),
+                new ChartDataModel("Fleet AB", 0),
+                new ChartDataModel("Fleet RB", 0)
+             };
         }
 
-        /// <summary>
-        /// SearchBar command handler
-        /// </summary>
-        /// <param name="searchText">Nickname</param>
         private void HandleSearchPressed(string searchText)
         {
             IsBusy = true;
@@ -304,37 +301,14 @@ namespace WTStatistics.ViewModels
             URL = "https://warthunder.ru/ru/community/userinfo/?nick=" + searchText;
         }
 
-        private string ConvertToKM(string convertedValue)
-        {
-            double num = Convert.ToDouble(convertedValue);
-            string converted=string.Empty;
-            if (num > 1000000)
-            {
-                converted = Math.Round(num / 1000000, 1)+" M";
-            }else
-            if (num > 1000)
-            {
-                converted = Math.Round(num / 1000, 1) + " K";
-            }
-            else
-            {
-                converted = num.ToString();
-            }
-            return converted;
-        }
-
-        /// <summary>
-        /// Get data drom HTML string and set property values
-        /// </summary>
-        /// <param name="htmlString">HTML string from webview</param>
         public void StartExtractData(string htmlString)
         {
             IsBusy = false;
             DataFromHtmlString data = new DataFromHtmlString(htmlString);
 
-            LionEarned = ConvertToKM(data.PlayerInfo().LionEarned);
-            BattleFinished = ConvertToKM(data.PlayerInfo().BattleFinished);
-            TotalTimeSpended = data.PlayerInfo().TotalTimeSpended+" D";
+            LionEarned = data.PlayerInfo().LionEarned;
+            BattleFinished = data.PlayerInfo().BattleFinished;
+            TotalTimeSpended = data.PlayerInfo().TotalTimeSpended;
             SignUpDate = data.PlayerInfo().SignUpDate;
             Squadron = data.PlayerInfo().Squadron;
 
@@ -351,7 +325,7 @@ namespace WTStatistics.ViewModels
             KD_SAB = data.PlayerInfo().KD_SAB;
             KD_SRB = data.PlayerInfo().KD_SRB;
 
-            Skill = data.PlayerInfo().TotalSkillBackground;
+            SetSkill = data.PlayerInfo().TotalSkillBackground;
 
             DoughnutSeriesData.Clear();
             DoughnutSeriesData.Add(new ChartDataModel("Air AB", data.PlayerInfo().CountAAB));

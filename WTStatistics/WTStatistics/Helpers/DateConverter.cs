@@ -28,19 +28,19 @@ namespace WTStatistics.Helpers
                 Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("en-US");
                 var totalTime = Convert.ToDouble(totalTime_d);
                 Thread.CurrentThread.CurrentCulture = temp_culture;
-                return totalTime * 30;
+                return totalTime * 30 * 24;
             }
             else
               if (matchDayAndHours.Success)
             {
                 var time = TimeSpan.ParseExact(timeHTML, "d'д 'h'ч'", null);
-                return time.TotalDays;
+                return time.TotalDays * 24;
             }
             else
               if (matchHoursAndMinutes.Success)
             {
                 var time = TimeSpan.ParseExact(timeHTML, "h'ч 'm'мин'", null);
-                return time.TotalDays;
+                return time.TotalDays * 24;
             }
             return 0;
         }

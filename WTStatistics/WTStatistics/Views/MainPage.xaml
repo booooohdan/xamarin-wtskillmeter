@@ -64,7 +64,7 @@
 
 
                 <!--Activity Indicator-->
-                <ActivityIndicator Grid.Column="1" Grid.Row="4"
+                <ActivityIndicator Grid.Column="1" Grid.Row="5"
                                    IsRunning="{Binding IsBusy}" 
                                    HorizontalOptions="Center"
                                    VerticalOptions="Center"
@@ -106,7 +106,7 @@
                         HeightRequest="15"/>
                     <Label  
                         Style="{StaticResource rightHeaderText}"
-                        Text= "{Binding BattleFinished}" />
+                        Text= "{Binding BattleFinished, StringFormat='{0:#,#}'}" />
                 </StackLayout>
 
                 <!--Time Label-->

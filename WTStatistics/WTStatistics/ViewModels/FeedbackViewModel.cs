@@ -8,9 +8,8 @@ using Xamarin.Forms;
 
 namespace WTStatistics.ViewModels
 {
-    public class FeedbackViewModel : INotifyPropertyChanged
+    public class FeedbackViewModel : BaseViewModel
     {
-        public event PropertyChangedEventHandler PropertyChanged;
         public ICommand RedditCommand { get; }
         public ICommand VKCommand { get; }
         public ICommand GMailCommand { get; }
