@@ -15,10 +15,8 @@ namespace WTStatistics.Views
             model = new MainPageViewModel();
             BindingContext = model;
         }
-
-        /// <summary>
-        /// Get HTML string from webview and pass it to viewmodel
-        /// </summary>
+        
+        // Get HTML string from webview and pass it to viewmodel
         private async void LoadingStarted(object sender, WebNavigatingEventArgs e)
         {
             try
@@ -49,11 +47,8 @@ namespace WTStatistics.Views
                 ErrorHandler("error message");
             }
         }
-
-        /// <summary>
-        /// Handle most common error
-        /// </summary>
-        /// <param name="stringHTML">HTML string from webview</param>
+        
+        // Handle most common error
         private void ErrorHandler(string stringHTML)
         {
             ActivityIndicator.IsRunning = false;

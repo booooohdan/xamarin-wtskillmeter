@@ -8,12 +8,12 @@
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.UseSafeArea="true"
              x:Class="WTStatistics.Views.MainPage">
-
     <ContentPage.BindingContext>
         <local:MainPageViewModel/>
     </ContentPage.BindingContext>
-
+    
     <StackLayout Padding="0" Style="{StaticResource MainBackground}">
+        
         <!--Gradient section-->
         <Grid Padding="0">
             <!--Gradient image-->
@@ -23,7 +23,7 @@
                    Source="{Binding  SkillGradient}">
             </Image>
             <Grid>
-                <!--Grid column definition-->
+                <!--Grid column and row definition-->
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -40,7 +40,6 @@
                 </Grid.RowDefinitions>
 
                 <!--SearchBar-->
-
                 <SearchBar Grid.Column="0" Grid.ColumnSpan="3" 
                            x:Name="searchBar"
                            SearchCommand="{Binding SearchButtonPressed}"
@@ -60,7 +59,7 @@
                        VerticalOptions="Start"
                        Aspect="AspectFit"
                        HeightRequest="90"
-                       Source="pilot.png">
+                       Source="{Binding  Avatar}">
                 </Image>
 
 
@@ -134,19 +133,16 @@
                         Style="{StaticResource rightHeaderText}"
                         Text= "{Binding LionEarned}"     />
                 </StackLayout>
-
-
-
+                
                 <!--Skill Description-->
                 <StackLayout Grid.Column="0" Grid.Row="5" 
                              Grid.ColumnSpan="3"
                              Margin="20, 0, 0, 0"
                        Orientation="Horizontal">
-
                     <Label  Text="{Binding SkillDescription}" 
-                        TextColor="White" 
-                        FontSize="Title" 
-                        FontAttributes="Bold" />
+                            TextColor="White" 
+                            FontSize="Title" 
+                            FontAttributes="Bold" />
                 </StackLayout>
 
                 <!--Hashtags label-->
@@ -307,7 +303,7 @@
                     </StackLayout>
                 </Frame>
 
-                <!--Effeciency Frame-->
+                <!--Efficiency Frame-->
                 <Frame Style="{StaticResource frameStyle}">
                     <StackLayout>
 

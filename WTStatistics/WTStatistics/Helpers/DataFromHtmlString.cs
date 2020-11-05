@@ -11,14 +11,17 @@ namespace WTStatistics.Helpers
 {
     class DataFromHtmlString
     {
+        #region List of collection
+        
         Player player;
         List<string> listTableMain;
         List<string> listTableAvia;
         List<string> listTableTanks;
         List<string> listTableShips;
         List<string> listTableVehicle;
-        List<string> signUpDate;
         List<string> squadron;
+        List<string> signUpDate;
+        #endregion
 
         #region Constructor
 
@@ -35,17 +38,14 @@ namespace WTStatistics.Helpers
         }
         #endregion
 
-        /// <summary>
-        /// Put info from html table to list
-        /// </summary>
-        /// <param name="htmlString">HTML string</param>
-        /// <param name="tableName">Name of HTML table</param>
-        /// <param name="startTrim">Count of symbol to cut</param>
-        /// <returns></returns>
+        #region Methods
+
+        // Put info from html table to list
         private List<string> GetTableData(string htmlString, string tableName)
         {
             var listString = new List<string>();
             string[] splittedString = null;
+            
             switch (Device.RuntimePlatform)
             {
                 case Device.Android:
@@ -77,17 +77,12 @@ namespace WTStatistics.Helpers
                         }
                         break;
                 }
-                
-                
             }
             return listString;
         }
 
-        /// <summary>
-        ///  Returrn Int32 value from string with null check
-        /// </summary>
-        /// <param name="subjectString">HTML string</param>
-        /// <returns>Int32 value</returns>
+
+        //  Return Int32 value from string with null check
         private int ToInt(string subjectString)
         {
             var stringWithLetter = string.Concat(subjectString.Where(Char.IsDigit));
@@ -101,12 +96,14 @@ namespace WTStatistics.Helpers
             }
         }
 
-        private double KDCalculate(int kills, int battles)
+        // Calculate Kill/Battle ratio
+        private double KBCalc(int kills, int battles)
         {
-            double KD = battles > 0 ? (double)kills / (double)battles : 0;
+            double KD = battles > 0 ? kills / battles : 0;
             return Math.Round(KD, 1);
         }
 
+        // Calculate total skill for modes where more 100 battles + winrate
         private double CalculateTotalSkill()
         {
             List<double> efficiency = new List<double>();
@@ -149,7 +146,7 @@ namespace WTStatistics.Helpers
             return efficiency.Average();
         }
 
-        private string ConvertToK_M(string convertedValue)
+        private string ConvToM(string convertedValue)
         {
             double num = Convert.ToDouble(convertedValue);
             string converted = string.Empty;
@@ -158,22 +155,13 @@ namespace WTStatistics.Helpers
                 converted = Math.Round(num / 1000000, 1) + " M";
             }
             else
-            if (num > 1000)
-            {
-                converted = Math.Round(num / 1000, 1) + " K";
-            }
-            else
             {
                 converted = num.ToString();
             }
             return converted;
         }
-
-
-        /// <summary>
-        /// Return players data
-        /// </summary>
-        /// <returns>Players data</returns>
+        
+        // Set players data to model instance
         public Player Info()
         {
             DateConverter date = new DateConverter();
@@ -183,7 +171,7 @@ namespace WTStatistics.Helpers
 
             player.BattleFinished = battleFinished;
             player.TotalTimeSpended = Math.Truncate(totalTime)+" h";
-            player.LionEarned = ConvertToK_M(lionEarned);
+            player.LionEarned = ConvToM(lionEarned);
             player.SignUpDate = signUpDate[0].Substring(18);
             player.Squadron = squadron[0];
 
@@ -200,18 +188,18 @@ namespace WTStatistics.Helpers
             player.CountSAB = ToInt(listTableShips[5]);
             player.CountSRB = ToInt(listTableShips[6]);
 
-            player.KD_AAB = KDCalculate(ToInt(listTableAvia[41]), player.CountAAB);
-            player.KD_ARB = KDCalculate(ToInt(listTableAvia[42]), player.CountARB);
-            player.KD_ASB = KDCalculate(ToInt(listTableAvia[43]), player.CountASB);
-            player.KD_TAB = KDCalculate(ToInt(listTableTanks[53]) + ToInt(listTableTanks[49]), player.CountTAB);
-            player.KD_TRB = KDCalculate(ToInt(listTableTanks[54]) + ToInt(listTableTanks[50]), player.CountTRB);
-            player.KD_TSB = KDCalculate(ToInt(listTableTanks[55]) + ToInt(listTableTanks[51]), player.CountTSB);
-            player.KD_SAB = KDCalculate(ToInt(listTableShips[81]), player.CountSAB);
-            player.KD_SRB = KDCalculate(ToInt(listTableShips[82]), player.CountSRB);
-
+            player.KD_AAB = KBCalc(ToInt(listTableAvia[41]), player.CountAAB);
+            player.KD_ARB = KBCalc(ToInt(listTableAvia[42]), player.CountARB);
+            player.KD_ASB = KBCalc(ToInt(listTableAvia[43]), player.CountASB);
+            player.KD_TAB = KBCalc(ToInt(listTableTanks[53]) + ToInt(listTableTanks[49]), player.CountTAB);
+            player.KD_TRB = KBCalc(ToInt(listTableTanks[54]) + ToInt(listTableTanks[50]), player.CountTRB);
+            player.KD_TSB = KBCalc(ToInt(listTableTanks[55]) + ToInt(listTableTanks[51]), player.CountTSB);
+            player.KD_SAB = KBCalc(ToInt(listTableShips[81]), player.CountSAB);
+            player.KD_SRB = KBCalc(ToInt(listTableShips[82]), player.CountSRB);
 
             player.TotalSkillBackground = CalculateTotalSkill();
             return player;
         }
+        #endregion
     }
 }
