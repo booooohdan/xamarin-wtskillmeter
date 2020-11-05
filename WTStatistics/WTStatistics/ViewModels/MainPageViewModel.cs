@@ -279,8 +279,8 @@ namespace WTStatistics.ViewModels
             IsBusy = false;
             DataFromHtmlString data = new DataFromHtmlString(htmlString);
 
-            Avatar = data.Info().Avatar;
-            HashTag = data.Info().HashTag;
+            //Avatar = data.Info().Avatar;
+            //HashTag = data.Info().HashTag;
             SkillGradient = data.Info().SkillGradient;
             SkillDescription = data.Info().SkillDescription;
 

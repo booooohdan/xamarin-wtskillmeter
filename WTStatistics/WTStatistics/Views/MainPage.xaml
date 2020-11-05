@@ -59,7 +59,7 @@
                        VerticalOptions="Start"
                        Aspect="AspectFit"
                        HeightRequest="90"
-                       Source="{Binding  Avatar}">
+                       Source="pilot">
                 </Image>
 
 
@@ -149,7 +149,7 @@
                 <Label Grid.Column="0" Grid.Row="6" 
                        Grid.ColumnSpan="3"
                        Margin="20, 0, 0, 0"
-                    Text="{Binding HashTag}"
+                    Text="d"
                     FontSize="Medium"
                     TextColor="WhiteSmoke"/>
             </Grid>

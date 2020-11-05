@@ -99,7 +99,7 @@ namespace WTStatistics.Helpers
         // Calculate Kill/Battle ratio
         private double KBCalc(int kills, int battles)
         {
-            double KD = battles > 0 ? kills / battles : 0;
+            double KD = battles > 0 ? (double)kills / (double)battles : 0;
             return Math.Round(KD, 1);
         }
 
@@ -207,10 +207,7 @@ namespace WTStatistics.Helpers
             DateConverter date = new DateConverter();
             var battleFinished = (ToInt(listTableMain[9]) + ToInt(listTableMain[10]) + ToInt(listTableMain[11])).ToString();
             var totalTime = date.GetSpendTime(listTableMain[29]) + date.GetSpendTime(listTableMain[30]) + date.GetSpendTime(listTableMain[31]);
-            var lionEarned = (ToInt(listTableMain[21]) + ToInt(listTableMain[22]) + ToInt(listTableMain[23])).ToString();
-            var skill = CalculateTotalSkill();
-            
-            SetSkill(skill);
+            var lionEarned = (ToInt(listTableMain[21]) + ToInt(listTableMain[22]) + ToInt(listTableMain[23])).ToString();            
             
             //player.Avatar = SetAvatar();
             //player.HashTag = SetHashTag();
@@ -243,6 +240,8 @@ namespace WTStatistics.Helpers
             player.KD_SAB = KBCalc(ToInt(listTableShips[81]), player.CountSAB);
             player.KD_SRB = KBCalc(ToInt(listTableShips[82]), player.CountSRB);
 
+            var skill = CalculateTotalSkill();
+            SetSkill(skill);
 
             return player;
         }
