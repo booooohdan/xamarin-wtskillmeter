@@ -19,17 +19,18 @@ namespace WTStatistics.Views
         public FeedbackPage()
         {
             InitializeComponent();
-
         }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-        }
-
+        
         private void SfRating_ValueChanged(object sender, Syncfusion.SfRating.XForms.ValueEventArgs e)
         {
-            Launcher.OpenAsync(new Uri("https://www.reddit.com/r/wtversus/"));
+            switch (Device.RuntimePlatform)
+            {
+                case Device.Android:
+                    Launcher.OpenAsync(new Uri("https://play.google.com/store/apps/details?id=com.wave.skillmeter"));
+                    break;
+                case Device.iOS:
+                    break;
+            }
         }
     }
 }

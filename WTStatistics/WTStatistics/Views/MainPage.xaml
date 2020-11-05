@@ -22,7 +22,7 @@
                    HeightRequest="550"
                    Source="{Binding  SkillGradient}">
             </Image>
-            <Grid Padding="20, 0, 0, 0">
+            <Grid>
                 <!--Grid column definition-->
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -46,15 +46,16 @@
                            SearchCommand="{Binding SearchButtonPressed}"
                            SearchCommandParameter="{Binding Source={x:Reference searchBar}, Path=Text}"
                            Placeholder="Enter nickname"
+                           ios:SearchBar.SearchBarStyle="Minimal"    
                            PlaceholderColor="LightGray"
                            MaxLength="16"
                            TextColor="White" 
                            FontSize="Medium" 
-                           FontAttributes="Bold"
-                           BackgroundColor="Transparent"/>
+                           FontAttributes="Bold"/>
 
                 <!--Avatar image-->
                 <Image Grid.Column="0" Grid.Row="1" Grid.RowSpan="4" 
+                       Margin="20, 0, 0, 0"
                        HorizontalOptions="Start"
                        VerticalOptions="Start"
                        Aspect="AspectFit"
@@ -136,8 +137,10 @@
 
 
 
-                <!--Skill label-->
-                <StackLayout Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="3"
+                <!--Skill Description-->
+                <StackLayout Grid.Column="0" Grid.Row="5" 
+                             Grid.ColumnSpan="3"
+                             Margin="20, 0, 0, 0"
                        Orientation="Horizontal">
 
                     <Label  Text="{Binding SkillDescription}" 
@@ -147,7 +150,9 @@
                 </StackLayout>
 
                 <!--Hashtags label-->
-                <Label Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="3"
+                <Label Grid.Column="0" Grid.Row="6" 
+                       Grid.ColumnSpan="3"
+                       Margin="20, 0, 0, 0"
                     Text="{Binding HashTag}"
                     FontSize="Medium"
                     TextColor="WhiteSmoke"/>

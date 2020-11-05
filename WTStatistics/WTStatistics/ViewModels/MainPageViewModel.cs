@@ -11,13 +11,12 @@ namespace WTStatistics.ViewModels
 {
     public class MainPageViewModel : BaseViewModel
     {
-        #region Propertys and commands
+        #region Init propertys and commands
 
         Player player;
         bool busy;
         string searchBatText;
         string url;
-
         public ICommand SearchButtonPressed { get; }
         public ObservableCollection<ChartDataModel> DoughnutSeriesData { get; set; }
         #endregion
@@ -28,11 +27,11 @@ namespace WTStatistics.ViewModels
         {
             SearchButtonPressed = new Command<string>(HandleSearchPressed);
             player = new Player();
-            DoughnutInit();
+            DoughnutSeriesData = DoughnutInit.Init();
         }
         #endregion
 
-
+        #region Properties
         public bool IsBusy
         {
             get => busy;
@@ -223,42 +222,6 @@ namespace WTStatistics.ViewModels
                 OnPropertyChanged();
             }
         }
-
-        private double SetSkill
-        {
-            set
-            {
-                player.TotalSkillBackground = value;
-
-                if (value >= 0 & value <= 0.6)
-                {
-                    SkillGradient = "grad_red.png";
-                    SkillDescription = "Bad player";
-                }
-                if (value > 0.6 & value <= 0.9)
-                {
-                    SkillGradient = "grad_yellow.png";
-                    SkillDescription = "Average player";
-                }
-                if (value > 0.9 & value <= 1.1)
-                {
-                    SkillGradient = "grad_green.png";
-                    SkillDescription = "Good player";
-                }
-                if (value > 1.1 & value <= 1.5)
-                {
-                    SkillGradient = "grad_blue.png";
-                    SkillDescription = "Excellent player";
-                }
-                if (value > 1.5)
-                {
-                    SkillGradient = "grad_violet.png";
-                    SkillDescription = "Outstanding player";
-                }
-                OnPropertyChanged();
-            }
-        }
-
         public string SkillGradient
         {
             get => player.SkillGradient;
@@ -278,21 +241,9 @@ namespace WTStatistics.ViewModels
                 OnPropertyChanged();
             }
         }
+        #endregion
 
-        private void DoughnutInit()
-        {
-            DoughnutSeriesData = new ObservableCollection<ChartDataModel>
-            {
-                new ChartDataModel("Air AB", 0),
-                new ChartDataModel("Air RB", 0),
-                new ChartDataModel("Air SB", 0),
-                new ChartDataModel("Tank AB", 0),
-                new ChartDataModel("Tank RB", 0),
-                new ChartDataModel("Tank SB", 0),
-                new ChartDataModel("Fleet AB", 0),
-                new ChartDataModel("Fleet RB", 0)
-             };
-        }
+        #region Methods
 
         private void HandleSearchPressed(string searchText)
         {
@@ -325,7 +276,7 @@ namespace WTStatistics.ViewModels
             KD_SAB = data.PlayerInfo().KD_SAB;
             KD_SRB = data.PlayerInfo().KD_SRB;
 
-            SetSkill = data.PlayerInfo().TotalSkillBackground;
+            SetSkill(data.PlayerInfo().TotalSkillBackground);
 
             DoughnutSeriesData.Clear();
             DoughnutSeriesData.Add(new ChartDataModel("Air AB", data.PlayerInfo().CountAAB));
@@ -338,5 +289,35 @@ namespace WTStatistics.ViewModels
             DoughnutSeriesData.Add(new ChartDataModel("Fleet RB", data.PlayerInfo().CountSRB));
 
         }
+        
+        private void SetSkill(double skill)
+        {
+            if (skill >= 0 & skill <= 0.6)
+            {
+                SkillGradient = "grad_red.png";
+                SkillDescription = "Bad player";
+            }
+            if (skill > 0.6 & skill <= 0.9)
+            {
+                SkillGradient = "grad_yellow.png";
+                SkillDescription = "Average player";
+            }
+            if (skill > 0.9 & skill <= 1.1)
+            {
+                SkillGradient = "grad_green.png";
+                SkillDescription = "Good player";
+            }
+            if (skill > 1.1 & skill <= 1.5)
+            {
+                SkillGradient = "grad_blue.png";
+                SkillDescription = "Excellent player";
+            }
+            if (skill > 1.5)
+            {
+                SkillGradient = "grad_violet.png";
+                SkillDescription = "Outstanding player";
+            }
+        }
+        #endregion
     }
 }
