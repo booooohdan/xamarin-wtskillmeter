@@ -12,7 +12,7 @@ namespace WTStatistics.Helpers
     class DataFromHtmlString
     {
         #region List of collection
-        
+
         Player player;
         List<string> listTableMain;
         List<string> listTableAvia;
@@ -45,7 +45,7 @@ namespace WTStatistics.Helpers
         {
             var listString = new List<string>();
             string[] splittedString = null;
-            
+
             switch (Device.RuntimePlatform)
             {
                 case Device.Android:
@@ -107,7 +107,8 @@ namespace WTStatistics.Helpers
         private double CalculateTotalSkill()
         {
             List<double> efficiency = new List<double>();
-            if (ToInt(listTableAvia[5]) > 100) {
+            if (ToInt(listTableAvia[5]) > 100)
+            {
                 efficiency.Add(player.KD_AAB);
             }
             if (ToInt(listTableAvia[6]) > 100)
@@ -139,23 +140,42 @@ namespace WTStatistics.Helpers
                 efficiency.Add(player.KD_SRB);
             }
 
-            efficiency.Add((double)player.WinRateAB*2/100);
-            efficiency.Add((double)player.WinRateRB*2/100);
-            efficiency.Add((double)player.WinRateSB*2/100);
+            efficiency.Add((double)player.WinRateAB * 2 / 100);
+            efficiency.Add((double)player.WinRateRB * 2 / 100);
+            efficiency.Add((double)player.WinRateSB * 2 / 100);
 
             return efficiency.Average();
         }
 
         private string SetAvatar()
         {
-            return null;
+            string result = string.Empty;
+            var air = player.CountAAB + player.CountARB + player.CountASB;
+            var tank = player.CountTAB + player.CountTRB + player.CountTSB;
+            var fleet = player.CountSAB + player.CountSRB;
+
+            if (air >= tank & air >= fleet)
+            {
+                result = "pilot";
+            }
+            else
+            if (tank >= air & tank >= fleet)
+            {
+                result = "tankman";
+            }
+            else
+            if (fleet >= air & fleet >= tank)
+            {
+                result = "sailor";
+            }
+            return result;
         }
 
         private string SetHashTag()
         {
-            return null;
+            return "";
         }
-        
+
         //Set gradient color and skill label
         private void SetSkill(double skill)
         {
@@ -185,7 +205,7 @@ namespace WTStatistics.Helpers
                 player.SkillDescription = "Outstanding player";
             }
         }
-        
+
         private string ConvToM(string convertedValue)
         {
             double num = Convert.ToDouble(convertedValue);
@@ -200,20 +220,17 @@ namespace WTStatistics.Helpers
             }
             return converted;
         }
-        
+
         // Set players data to model instance
         public Player Info()
         {
             DateConverter date = new DateConverter();
             var battleFinished = (ToInt(listTableMain[9]) + ToInt(listTableMain[10]) + ToInt(listTableMain[11])).ToString();
             var totalTime = date.GetSpendTime(listTableMain[29]) + date.GetSpendTime(listTableMain[30]) + date.GetSpendTime(listTableMain[31]);
-            var lionEarned = (ToInt(listTableMain[21]) + ToInt(listTableMain[22]) + ToInt(listTableMain[23])).ToString();            
-            
-            //player.Avatar = SetAvatar();
-            //player.HashTag = SetHashTag();
-            
+            var lionEarned = (ToInt(listTableMain[21]) + ToInt(listTableMain[22]) + ToInt(listTableMain[23])).ToString();
+
             player.BattleFinished = battleFinished;
-            player.TotalTimeSpended = Math.Truncate(totalTime)+" h";
+            player.TotalTimeSpended = Math.Truncate(totalTime) + " h";
             player.LionEarned = ConvToM(lionEarned);
             player.SignUpDate = signUpDate[0].Substring(18);
             player.Squadron = squadron[0];
@@ -242,6 +259,8 @@ namespace WTStatistics.Helpers
 
             var skill = CalculateTotalSkill();
             SetSkill(skill);
+            player.Avatar = SetAvatar();
+            player.HashTag = SetHashTag();
 
             return player;
         }

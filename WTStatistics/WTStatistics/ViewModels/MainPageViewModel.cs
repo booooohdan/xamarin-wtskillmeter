@@ -14,7 +14,6 @@ namespace WTStatistics.ViewModels
         #region Init propertys and commands
 
         Player player;
-        bool busy;
         string searchBatText;
         string url;
         public ICommand SearchButtonPressed { get; }
@@ -32,16 +31,6 @@ namespace WTStatistics.ViewModels
         #endregion
 
         #region Properties
-        public bool IsBusy
-        {
-            get => busy;
-            set
-            {
-                busy = value;
-                OnPropertyChanged();
-            }
-        }
-
         public string URL
         {
             get => url;
@@ -268,7 +257,6 @@ namespace WTStatistics.ViewModels
         //Build searched url
         private void HandleSearchPressed(string searchText)
         {
-            IsBusy = true;
             SearchBarText = searchText;
             URL = "https://warthunder.ru/ru/community/userinfo/?nick=" + searchText;
         }
@@ -276,11 +264,10 @@ namespace WTStatistics.ViewModels
         //Set value from data class to ViewModel properties
         public void StartExtractData(string htmlString)
         {
-            IsBusy = false;
             DataFromHtmlString data = new DataFromHtmlString(htmlString);
 
-            //Avatar = data.Info().Avatar;
-            //HashTag = data.Info().HashTag;
+            Avatar = data.Info().Avatar;
+            HashTag = data.Info().HashTag;
             SkillGradient = data.Info().SkillGradient;
             SkillDescription = data.Info().SkillDescription;
 

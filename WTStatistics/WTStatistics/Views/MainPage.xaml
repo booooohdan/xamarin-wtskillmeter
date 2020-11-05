@@ -59,16 +59,16 @@
                        VerticalOptions="Start"
                        Aspect="AspectFit"
                        HeightRequest="90"
-                       Source="pilot">
+                       Source="{Binding Avatar}">
                 </Image>
 
 
                 <!--Activity Indicator-->
                 <ActivityIndicator Grid.Column="1" Grid.Row="5"
-                                   IsRunning="{Binding IsBusy}" 
+                                   x:Name="IsBusy"
+                                   IsRunning="False" 
                                    HorizontalOptions="Center"
                                    VerticalOptions="Center"
-                                   x:Name="ActivityIndicator"
                                    Color="White"/>
 
                 <!--Sign up date-->
@@ -149,7 +149,7 @@
                 <Label Grid.Column="0" Grid.Row="6" 
                        Grid.ColumnSpan="3"
                        Margin="20, 0, 0, 0"
-                    Text="d"
+                    Text="{Binding HashTag}"
                     FontSize="Medium"
                     TextColor="WhiteSmoke"/>
             </Grid>
