@@ -72,9 +72,6 @@
     <PackageReference Include="Syncfusion.Licensing">
       <Version>18.3.0.38</Version>
     </PackageReference>
-    <PackageReference Include="Syncfusion.Xamarin.Buttons">
-      <Version>18.3.0.38</Version>
-    </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.Core">
       <Version>18.3.0.38</Version>
     </PackageReference>
@@ -85,9 +82,6 @@
       <Version>18.3.0.38</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfGauge">
-      <Version>18.3.0.38</Version>
-    </PackageReference>
-    <PackageReference Include="Syncfusion.Xamarin.SfPopupLayout">
       <Version>18.3.0.38</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfRating">

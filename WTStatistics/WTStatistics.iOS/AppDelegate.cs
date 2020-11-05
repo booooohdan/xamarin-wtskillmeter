@@ -1,5 +1,4 @@
 using Syncfusion.SfRating.XForms.iOS;
-using Syncfusion.XForms.iOS.Buttons;
 using Syncfusion.SfChart.XForms.iOS.Renderers;
 using Syncfusion.XForms.iOS.Border;
 using Syncfusion.SfGauge.XForms.iOS;
@@ -30,7 +29,6 @@ namespace WTStatistics.iOS
             global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
 global::Xamarin.Forms.Forms.Init();
 SfRatingRenderer.Init();
-SfButtonRenderer.Init();
 SfChartRenderer.Init();
 SfBorderRenderer.Init();
 SfGaugeRenderer.Init();

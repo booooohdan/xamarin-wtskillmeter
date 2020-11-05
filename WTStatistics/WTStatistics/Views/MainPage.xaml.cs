@@ -32,7 +32,7 @@ namespace WTStatistics.Views
             {
                 for (int i = 0; i <= 30; i++)
                 {
-                    IsBusy.IsRunning = true;
+                    BusiIndicator.IsBusy = true;
                     string stringHTML = await theWebView.EvaluateJavaScriptAsync("document.body.innerHTML");
 
                     if (!string.IsNullOrEmpty(stringHTML)
@@ -40,7 +40,7 @@ namespace WTStatistics.Views
                         && stringHTML.Contains("AllStatTable-TableData"))
                     {
                         model.StartExtractData(stringHTML);
-                        IsBusy.IsRunning = false;
+                        BusiIndicator.IsBusy = false;
                         break;
                     }
                     else
@@ -48,7 +48,7 @@ namespace WTStatistics.Views
                         await Task.Delay(1000);
                         if (i == 30)
                         {
-                            IsBusy.IsRunning = false;
+                            BusiIndicator.IsBusy = false;
                             ErrorHandler(stringHTML);
                         }
                     }

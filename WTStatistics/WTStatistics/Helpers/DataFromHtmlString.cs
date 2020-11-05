@@ -173,8 +173,10 @@ namespace WTStatistics.Helpers
 
         private string SetHashTag()
         {
-            return "";
+            return "#beta";
         }
+
+
 
         //Set gradient color and skill label
         private void SetSkill(double skill)

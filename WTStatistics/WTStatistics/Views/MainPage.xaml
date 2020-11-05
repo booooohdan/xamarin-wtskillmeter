@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
              xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
              xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
-             xmlns:local="clr-namespace:WTStatistics.ViewModels" 
+             xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
              NavigationPage.HasNavigationBar="False"
-             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:local="clr-namespace:WTStatistics.ViewModels" 
              ios:Page.UseSafeArea="true"
              x:Class="WTStatistics.Views.MainPage">
     <ContentPage.BindingContext>
@@ -59,17 +60,23 @@
                        VerticalOptions="Start"
                        Aspect="AspectFit"
                        HeightRequest="90"
-                       Source="{Binding Avatar}">
+                       Source="pilot">
                 </Image>
 
 
                 <!--Activity Indicator-->
-                <ActivityIndicator Grid.Column="1" Grid.Row="5"
-                                   x:Name="IsBusy"
-                                   IsRunning="False" 
-                                   HorizontalOptions="Center"
-                                   VerticalOptions="Center"
-                                   Color="White"/>
+                <busyindicator:SfBusyIndicator Grid.Column="0" Grid.Row="1" Grid.RowSpan="4"
+                                       x:Name="BusiIndicator" 
+                                       AnimationType="SingleCircle" 
+                                               Margin="20, 0, 0, 0"
+                                               HorizontalOptions="Start"
+                                               VerticalOptions="Start"
+                                               ViewBoxHeight="130"
+                                               ViewBoxWidth="130"
+                                               HeightRequest="90"
+                                               WidthRequest="90"
+                                               TextColor="White"
+                                       IsBusy="true"/>
 
                 <!--Sign up date-->
                 <StackLayout Grid.Column="1" Grid.Row="1" 
