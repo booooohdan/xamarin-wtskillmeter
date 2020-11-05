@@ -4,8 +4,7 @@ namespace WTStatistics.Models
 {
     public class Player
     {
-        public string Id { get; set; }
-        public string Nickname { get; set; }
+
         public string Squadron { get; set; }
         public string SignUpDate { get; set; }
         public string BattleFinished { get; set; }
@@ -14,7 +13,8 @@ namespace WTStatistics.Models
         public double TotalSkillBackground { get; set; }
         public string SkillGradient { get; set; }
         public string SkillDescription { get; set; }
-        public int Preference { get; set; }
+        public string Avatar { get; set; }
+        public string HashTag { get; set; }
 
         public int WinRateAB { get; set; }
         public int WinRateRB { get; set; }
@@ -45,7 +45,6 @@ namespace WTStatistics.Models
         public string FavoriteTank2 { get; set; }
         public string FavoriteTank3 { get; set; }
 
-
         public int MissionFighter { get; set; }
         public int MissionAttacker { get; set; }
         public int MissionBomber { get; set; }
@@ -55,16 +54,17 @@ namespace WTStatistics.Models
         public int MissionDestroyer { get; set; }
         public int MissionBoats { get; set; }
         public int MissionBarge { get; set; }
-        public int MissionSubChasers { get; set; }
+        public int MissionFrigate { get; set; }
         public int MissionDestroyerShip { get; set; }
-        public int MissionDestroyerCruiser { get; set; }
+        //public int MissionDestroyerCruiser { get; set; }
+        //public int MissionDestroyerBattleShip { get; set; }
 
         public int ResearchedUSA { get; set; }
         public int ResearchedGermany { get; set; }
         public int ResearchedUSSR { get; set; }
         public int ResearchedBritain { get; set; }
         public int ResearchedJapan { get; set; }
-        public int ResearchedIItaly { get; set; }
+        public int ResearchedItaly { get; set; }
         public int ResearchedFrance { get; set; }
         public int ResearchedChina { get; set; }
         public int ResearchedSweden { get; set; }

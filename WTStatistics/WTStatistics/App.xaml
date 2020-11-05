@@ -45,7 +45,7 @@
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="BorderWidth" Value="1" />
                 <Setter Property="CornerRadius" Value="15" />
-                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
                 <Setter Property="BackgroundColor"  
                         Value="{AppThemeBinding Dark={StaticResource MyDarkest}, Light={StaticResource MyLight}}"/>
             </Style>

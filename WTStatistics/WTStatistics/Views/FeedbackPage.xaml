@@ -22,18 +22,21 @@
         <StackLayout Orientation="Horizontal">
             <Button Command="{Binding RedditCommand}"
                     Text="Reddit" 
+                    HorizontalOptions="FillAndExpand"
                     TextColor="OrangeRed"
                     BorderColor="OrangeRed"
                     Style="{StaticResource buttonStyle}"/>
 
             <Button Command="{Binding VKCommand}"
                     Text="VK" 
+                    HorizontalOptions="FillAndExpand"
                     TextColor="RoyalBlue"
                     BorderColor="RoyalBlue"
                     Style="{StaticResource buttonStyle}"/>
 
             <Button Command="{Binding GMailCommand}"
                     Text="GMail" 
+                    HorizontalOptions="FillAndExpand"
                     TextColor="DarkRed"
                     BorderColor="DarkRed"
                     Style="{StaticResource buttonStyle}"/>
@@ -58,9 +61,8 @@
             </rating:SfRating.RatingSettings>
         </rating:SfRating>
 
-        <Grid>
+        <Grid ColumnSpacing="30">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
@@ -72,21 +74,42 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="60" />
             </Grid.RowDefinitions>
+            
+            <!--Hide on iOS-->
+            <Grid.IsVisible>
+                <OnPlatform x:TypeArguments="x:Boolean"
+                            iOS="false"
+                            Android="true"/>
+            </Grid.IsVisible>
 
 
-        <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3"
+        <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"
             Padding="0, 20, 0,0"
             FontSize="Title"
             TextColor="#2a2a2a"
                Text="Try our apps:" />
-            <Image Grid.Column="0" Grid.Row="1"
-                   WidthRequest="75"
-                   HeightRequest="75"
-                Source="Versus"/>
-            <Image Grid.Column="1" Grid.Row="1"
-                   WidthRequest="75"
-                   HeightRequest="75"
-                Source="Charts"/>
+        <Image Grid.Column="0" Grid.Row="1"
+              WidthRequest="80"
+              HeightRequest="80"
+              Source="Versus">
+            <Image.Clip>
+                <EllipseGeometry
+                    Center="85,40"
+                    RadiusX="50"
+                    RadiusY="50"/>
+            </Image.Clip>
+        </Image>
+        <Image Grid.Column="1" Grid.Row="1"
+               WidthRequest="80"
+               HeightRequest="80"
+               Source="Charts">
+            <Image.Clip>
+            <EllipseGeometry
+                Center="85,40"
+                RadiusX="50"
+                RadiusY="50"/>
+        </Image.Clip>
+        </Image>
 
             <Button Command="{Binding VersusCommand}"
                     Grid.Column="0" Grid.Row="2"
@@ -101,19 +124,33 @@
                     BorderColor="Red"
                 Text="Download Charts"/>
 
-            <Label Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3"
+            <Label Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2"
                                Padding="0, 20, 0,0"
             FontSize="Title"
             TextColor="#2a2a2a"
                Text="Try our games:" />
             <Image Grid.Column="0" Grid.Row="4"
-                   WidthRequest="75"
-                   HeightRequest="75"
-                Source="WTQuiz"/>
+                   WidthRequest="80"
+                   HeightRequest="80"
+                Source="WTQuiz">
+                <Image.Clip>
+                    <EllipseGeometry
+                        Center="85,40"
+                        RadiusX="50"
+                        RadiusY="50"/>
+                </Image.Clip>
+            </Image>
             <Image Grid.Column="1" Grid.Row="4"
-                   WidthRequest="75"
-                   HeightRequest="75"
-                Source="WoTQuiz"/>
+                   WidthRequest="80"
+                   HeightRequest="80"
+                Source="WoTQuiz">
+                <Image.Clip>
+                    <EllipseGeometry
+                        Center="85,40"
+                        RadiusX="50"
+                        RadiusY="50"/>
+                </Image.Clip>
+            </Image>
 
             <Button Command="{Binding WTQuizCommand}"
                     Grid.Column="0" Grid.Row="5"

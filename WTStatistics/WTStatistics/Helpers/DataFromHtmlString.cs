@@ -146,6 +146,8 @@ namespace WTStatistics.Helpers
             return efficiency.Average();
         }
 
+        private 
+        
         private string ConvToM(string convertedValue)
         {
             double num = Convert.ToDouble(convertedValue);
