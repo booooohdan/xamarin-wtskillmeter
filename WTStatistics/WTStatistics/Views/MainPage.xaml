@@ -6,7 +6,7 @@
              xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
              xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
              NavigationPage.HasNavigationBar="False"
-             xmlns:local="clr-namespace:WTStatistics.ViewModels" 
+             xmlns:local="clr-namespace:WTStatistics.ViewModels" xmlns:controls="clr-namespace:MarcTron.Plugin.Controls;assembly=Plugin.MtAdmob"
              ios:Page.UseSafeArea="true"
              x:Class="WTStatistics.Views.MainPage">
     <ContentPage.BindingContext>
@@ -60,7 +60,7 @@
                        VerticalOptions="Start"
                        Aspect="AspectFit"
                        HeightRequest="90"
-                       Source="pilot">
+                       Source="{Binding Avatar}">
                 </Image>
 
 
@@ -76,7 +76,7 @@
                                                HeightRequest="90"
                                                WidthRequest="90"
                                                TextColor="White"
-                                       IsBusy="true"/>
+                                       IsBusy="False"/>
 
                 <!--Sign up date-->
                 <StackLayout Grid.Column="1" Grid.Row="1" 
@@ -501,5 +501,9 @@
 
             </StackLayout>
         </ScrollView>
+
+        <controls:MTAdView            
+                PersonalizedAds="True"
+                AdsId="ca-app-pub-8211072909515345/2887719343"/>
     </StackLayout>
 </ContentPage>
