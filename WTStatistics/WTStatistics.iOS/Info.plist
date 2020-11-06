@@ -25,7 +25,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>WT Skill Meter</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.companyname.WTStatistics</string>
+	<string>com.wtwave.wtskillmeter</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>UILaunchStoryboardName</key>
@@ -34,11 +34,9 @@
 	<string>WTStatistics</string>
 	<key>XSAppIconAssets</key>
 	<string>AssetsIcon.xcassets/AppIcons.appiconset</string>
-	<key>CFBundleShortVersionString</key>
-	<string>1</string>
-  <key>GADApplicationIdentifier</key>
-  <string>ca-app-pub-8211072909515345~9225731711</string>
-  <key>GADIsAdManagerApp</key>
-  <true/>
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-8211072909515345~9225731711</string> 
+	<key>GADIsAdManagerApp</key>
+	<true/>
 </dict>
 </plist>

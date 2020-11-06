@@ -33,8 +33,8 @@ SfRatingRenderer.Init();
 SfChartRenderer.Init();
 SfBorderRenderer.Init();
 SfGaugeRenderer.Init();
-            MobileAds.SharedInstance.Start(CompletionHandler);
-            void CompletionHandler(InitializationStatus status) { }
+MobileAds.SharedInstance.Start(CompletionHandler);
+void CompletionHandler(InitializationStatus status){}
             LoadApplication(new App());
             return base.FinishedLaunching(app, options);
         }

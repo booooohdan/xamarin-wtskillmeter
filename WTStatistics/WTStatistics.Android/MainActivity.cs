@@ -16,12 +16,11 @@ namespace WTStatistics.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            MobileAds.Initialize(ApplicationContext, "ca-app-pub-8211072909515345~9225731711");
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
-
+            MobileAds.Initialize(ApplicationContext, "ca-app-pub-8211072909515345~9225731711");
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
