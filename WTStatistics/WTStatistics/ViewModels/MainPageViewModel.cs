@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MarcTron.Plugin;
+using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -16,6 +17,8 @@ namespace WTStatistics.ViewModels
         Player player;
         string searchBatText;
         string url;
+        int adsCount = 0;
+        int adsNum = 7;
         public ICommand SearchButtonPressed { get; }
         public ObservableCollection<ChartDataModel> DoughnutSeriesData { get; set; }
         #endregion
@@ -264,6 +267,16 @@ namespace WTStatistics.ViewModels
         //Set value from data class to ViewModel properties
         public void StartExtractData(string htmlString)
         {
+            #region Intersitial Ad
+
+            adsCount++;
+            CrossMTAdmob.Current.LoadInterstitial("ca-app-pub-8211072909515345/8885441043");
+            if ((adsCount % adsNum) ==0)
+            {
+                CrossMTAdmob.Current.ShowInterstitial();
+            }
+            #endregion
+
             DataFromHtmlString data = new DataFromHtmlString(htmlString);
 
             Avatar = data.Info().Avatar;
