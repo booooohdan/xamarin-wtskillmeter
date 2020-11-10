@@ -6,6 +6,7 @@
              xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
              xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
              NavigationPage.HasNavigationBar="False"
+             xmlns:syncEffectsView="clr-namespace:Syncfusion.XForms.EffectsView;assembly=Syncfusion.Core.XForms"
              xmlns:local="clr-namespace:WTStatistics.ViewModels" xmlns:controls="clr-namespace:MarcTron.Plugin.Controls;assembly=Plugin.MtAdmob"
              ios:Page.UseSafeArea="true"
              x:Class="WTStatistics.Views.MainPage">
@@ -18,9 +19,11 @@
         <!--Gradient section-->
         <Grid Padding="0">
             <!--Gradient image-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
             <Image
                    Aspect="AspectFill"
-                   HeightRequest="550"
                    Source="{Binding  SkillGradient}">
             </Image>
             <Grid>
@@ -35,7 +38,7 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="1"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
@@ -43,15 +46,25 @@
                 <!--SearchBar-->
                 <SearchBar Grid.Column="0" Grid.ColumnSpan="3" 
                            x:Name="searchBar"
+                           Margin="0,0,50,0"
                            SearchCommand="{Binding SearchButtonPressed}"
                            SearchCommandParameter="{Binding Source={x:Reference searchBar}, Path=Text}"
                            Placeholder="Enter nickname"
                            ios:SearchBar.SearchBarStyle="Minimal"    
-                           PlaceholderColor="LightGray"
-                           MaxLength="16"
+                           PlaceholderColor="#919191"
+                           MaxLength="25"
                            TextColor="White" 
                            FontSize="Medium" 
                            FontAttributes="Bold"/>
+
+                <ImageButton Grid.Column="2" Grid.Row="0"
+                        BackgroundColor="Transparent"
+                             Padding="0,0,20,0"
+                             HorizontalOptions="End"
+                        WidthRequest="50"
+                        Source="gamepad"
+                        Command="{Binding GamepadCommand}"
+                        Aspect="AspectFit"/>
 
                 <!--Avatar image-->
                 <Image Grid.Column="0" Grid.Row="1" Grid.RowSpan="4" 
@@ -130,7 +143,7 @@
                 </StackLayout>
 
                 <!--Lion Label-->
-                <StackLayout Grid.Column="1" Grid.Row="3" 
+                <StackLayout Grid.Column="1" Grid.Row="3"
                              Orientation="Horizontal" 
                              HorizontalOptions="FillAndExpand">
                     <Image 
@@ -140,7 +153,7 @@
                         Style="{StaticResource rightHeaderText}"
                         Text= "{Binding LionEarned}"     />
                 </StackLayout>
-                
+
                 <!--Skill Description-->
                 <StackLayout Grid.Column="0" Grid.Row="5" 
                              Grid.ColumnSpan="3"
@@ -201,7 +214,7 @@
                                     <gauge:Header Text="{Binding WinRateAB, StringFormat='{0}%'}" 
                                         Position="0.5,0.43" 
                                         TextSize="17" 
-                                        ForegroundColor="#7d7d7d"/>
+                                        ForegroundColor="#919191"/>
                                 </gauge:SfCircularGauge.Headers>
                                 <!--Round scale-->
                                 <gauge:SfCircularGauge.Scales>
@@ -238,7 +251,7 @@
                                     <gauge:Header Text="{Binding WinRateRB, StringFormat='{0}%'}" 
                                           Position="0.5,0.43" 
                                           TextSize="17" 
-                                          ForegroundColor="#7d7d7d"/>
+                                          ForegroundColor="#919191"/>
                                 </gauge:SfCircularGauge.Headers>
 
                                 <!--Round scale-->
@@ -276,7 +289,7 @@
                                     <gauge:Header Text="{Binding WinRateSB, StringFormat='{0}%'}" 
                                           Position="0.5,0.43" 
                                           TextSize="17" 
-                                          ForegroundColor="#7d7d7d"/>
+                                          ForegroundColor="#919191"/>
                                 </gauge:SfCircularGauge.Headers>
 
                                 <!--Round scale-->

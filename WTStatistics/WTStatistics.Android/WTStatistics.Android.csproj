@@ -72,6 +72,9 @@
     <PackageReference Include="MarcTron.Admob">
       <Version>1.5.8</Version>
     </PackageReference>
+    <PackageReference Include="Plugin.StoreReview">
+      <Version>2.0.0.5</Version>
+    </PackageReference>
     <PackageReference Include="Syncfusion.Licensing">
       <Version>18.3.0.38</Version>
     </PackageReference>
@@ -215,6 +218,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\grad_yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\gamepad.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

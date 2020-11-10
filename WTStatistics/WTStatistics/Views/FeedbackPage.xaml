@@ -12,12 +12,12 @@
     <ContentPage.BindingContext>
         <local:FeedbackViewModel/>
     </ContentPage.BindingContext>
-
-    <StackLayout Padding="20" Style="{StaticResource MainBackground}">
+    <ScrollView>
+        <StackLayout Padding="20" Style="{StaticResource MainBackground}">
 
         <Label
             FontSize="Title"
-            TextColor="#2a2a2a"
+            TextColor="{AppThemeBinding Dark={StaticResource MyLight}, Light={StaticResource MyDarkest}}"
                Text="Contact us:" />
         <StackLayout Orientation="Horizontal">
             <Button Command="{Binding RedditCommand}"
@@ -45,7 +45,7 @@
         <Label
             Padding="0, 20, 0,0"
             FontSize="Title"
-            TextColor="#2a2a2a"
+            TextColor="{AppThemeBinding Dark={StaticResource MyLight}, Light={StaticResource MyDarkest}}"
                Text="Rate us in Google Play:" />
 
         <rating:SfRating  
@@ -86,7 +86,7 @@
             <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"
             Padding="0, 20, 0,0"
             FontSize="Title"
-            TextColor="#2a2a2a"
+            TextColor="{AppThemeBinding Dark={StaticResource MyLight}, Light={StaticResource MyDarkest}}"
                Text="Try our apps:" />
             <Image Grid.Column="0" Grid.Row="1"
               WidthRequest="80"
@@ -114,7 +114,7 @@
             <Label Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2"
                                Padding="0, 20, 0,0"
             FontSize="Title"
-            TextColor="#2a2a2a"
+            TextColor="{AppThemeBinding Dark={StaticResource MyLight}, Light={StaticResource MyDarkest}}"
                Text="Try our games:" />
             <Image Grid.Column="0" Grid.Row="4"
                    WidthRequest="80"
@@ -139,4 +139,5 @@
                 Text="Download WoT Quiz"/>
         </Grid>
     </StackLayout>
+    </ScrollView>
 </ContentPage>

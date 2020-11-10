@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="MarcTron.Admob" Version="1.5.8" />
+    <PackageReference Include="Plugin.StoreReview" Version="2.0.0.5" />
     <PackageReference Include="Syncfusion.Licensing" Version="18.3.0.38" />
     <PackageReference Include="Syncfusion.Xamarin.Core" Version="18.3.0.38" />
     <PackageReference Include="Syncfusion.Xamarin.SfBusyIndicator" Version="18.3.0.38" />

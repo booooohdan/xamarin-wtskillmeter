@@ -1,4 +1,5 @@
 ﻿using MarcTron.Plugin;
+using Plugin.StoreReview;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -6,6 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using WTStatistics.Helpers;
 using WTStatistics.Models;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace WTStatistics.ViewModels
@@ -13,13 +15,15 @@ namespace WTStatistics.ViewModels
     public class MainPageViewModel : BaseViewModel
     {
         #region Init propertys and commands
-
         Player player;
         string searchBatText;
         string url;
         int adsCount = 0;
-        int adsNum = 7;
+        int adsNum = 4;
+        int start_count = Preferences.Get("start_count", 0);
+
         public ICommand SearchButtonPressed { get; }
+        public ICommand GamepadCommand { get; }
         public ObservableCollection<ChartDataModel> DoughnutSeriesData { get; set; }
         #endregion
 
@@ -28,8 +32,14 @@ namespace WTStatistics.ViewModels
         public MainPageViewModel()
         {
             SearchButtonPressed = new Command<string>(HandleSearchPressed);
+            GamepadCommand = new Command<string>(HandleGamepadPressed);
             player = new Player();
             DoughnutSeriesData = DoughnutInit.Init();
+
+
+            start_count++;
+            Preferences.Set("start_count", start_count);
+            ShowReview(start_count);
         }
         #endregion
 
@@ -262,6 +272,22 @@ namespace WTStatistics.ViewModels
         {
             SearchBarText = searchText;
             URL = "https://warthunder.ru/ru/community/userinfo/?nick=" + searchText;
+        }
+
+        //Gamepad hint
+        private void HandleGamepadPressed(string obj)
+        {
+            Application.Current.MainPage.DisplayAlert("Hint for Xbox and PS players",
+                "If you have PS account, add @psn to end of your nickname\nIf you have Xbox account, add @live to end of your nickname\nFor example \nPlayer1@psn\nPlayer1@live", "OK");
+        }
+
+        //Review request
+        private void ShowReview(int start_count)
+        {
+            if (start_count == 5 || start_count == 15)
+            {
+                CrossStoreReview.Current.RequestReview();
+            }
         }
 
         //Set value from data class to ViewModel properties
