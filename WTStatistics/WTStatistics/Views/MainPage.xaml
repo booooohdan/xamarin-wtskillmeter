@@ -5,8 +5,8 @@
              xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
              xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
              xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+             xmlns:resources="clr-namespace:WTStatistics.Resx"
              NavigationPage.HasNavigationBar="False"
-             xmlns:syncEffectsView="clr-namespace:Syncfusion.XForms.EffectsView;assembly=Syncfusion.Core.XForms"
              xmlns:local="clr-namespace:WTStatistics.ViewModels" xmlns:controls="clr-namespace:MarcTron.Plugin.Controls;assembly=Plugin.MtAdmob"
              ios:Page.UseSafeArea="true"
              x:Class="WTStatistics.Views.MainPage">
@@ -192,7 +192,7 @@
 
                         <!--Winrate Label-->
                         <Label 
-                           Text="Winrate (AB/RB/SB)"
+                           Text="{x:Static resources:AppResources.Winrate}"
                            Style="{StaticResource labelStyle}"/>
 
                         <!--Grid definition-->

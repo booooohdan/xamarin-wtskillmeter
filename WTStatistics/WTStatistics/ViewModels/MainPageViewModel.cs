@@ -7,6 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using WTStatistics.Helpers;
 using WTStatistics.Models;
+using WTStatistics.Resx;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -277,7 +278,7 @@ namespace WTStatistics.ViewModels
         //Gamepad hint
         private void HandleGamepadPressed(string obj)
         {
-            Application.Current.MainPage.DisplayAlert("Hint for Xbox and PS players",
+            Application.Current.MainPage.DisplayAlert(AppResources.ConsoleHintLabel,
                 "If you have PS account, add @psn to end of your nickname\nIf you have Xbox account, add @live to end of your nickname\nFor example \nPlayer1@psn\nPlayer1@live", "OK");
         }
 
