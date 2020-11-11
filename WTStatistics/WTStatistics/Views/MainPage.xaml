@@ -5,7 +5,7 @@
              xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
              xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
              xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
-             xmlns:resources="clr-namespace:WTStatistics.Resx"
+             xmlns:properties="clr-namespace:WTStatistics.Resx"
              NavigationPage.HasNavigationBar="False"
              xmlns:local="clr-namespace:WTStatistics.ViewModels" xmlns:controls="clr-namespace:MarcTron.Plugin.Controls;assembly=Plugin.MtAdmob"
              ios:Page.UseSafeArea="true"
@@ -49,7 +49,7 @@
                            Margin="0,0,50,0"
                            SearchCommand="{Binding SearchButtonPressed}"
                            SearchCommandParameter="{Binding Source={x:Reference searchBar}, Path=Text}"
-                           Placeholder="Enter nickname"
+                           Placeholder="{x:Static properties:AppResources.EnterNickname}"
                            ios:SearchBar.SearchBarStyle="Minimal"    
                            PlaceholderColor="#919191"
                            MaxLength="25"
@@ -192,7 +192,7 @@
 
                         <!--Winrate Label-->
                         <Label 
-                           Text="{x:Static resources:AppResources.Winrate}"
+                           Text="{x:Static properties:AppResources.Winrate}"
                            Style="{StaticResource labelStyle}"/>
 
                         <!--Grid definition-->
@@ -329,7 +329,7 @@
 
                         <!--Kill/battle ratio Label-->
                         <Label 
-                           Text="Kill/battle ratio"
+                           Text="{x:Static properties:AppResources.KillBattleRatio}"
                            Style="{StaticResource labelStyle}"/>
 
                         <!--Grid definition-->
@@ -351,13 +351,13 @@
                             <!--AB/RB/SB label row-->
                             <Label Grid.Column="2" Grid.Row="0" 
                                Style="{StaticResource ladeEfficiencyStyle}"
-                               Text="AB"/>
+                               Text="{x:Static properties:AppResources.AB}"/>
                             <Label Grid.Column="3" Grid.Row="0" 
                                Style="{StaticResource ladeEfficiencyStyle}"
-                               Text="RB"/>
+                               Text="{x:Static properties:AppResources.RB}"/>
                             <Label Grid.Column="4" Grid.Row="0" 
                                Style="{StaticResource ladeEfficiencyStyle}"
-                               Text="SB"/>
+                               Text="{x:Static properties:AppResources.SB}"/>
 
                             <!--Air row-->
                             <Image Grid.Column="0" Grid.Row="1"
@@ -365,7 +365,7 @@
                                    Source="planeeff"/>
                             <Label Grid.Column="1" Grid.Row="1" 
                                Style="{StaticResource ladeEfficiency2Style}"
-                               Text="Air"/>
+                               Text="{x:Static properties:AppResources.Air}"/>
                             <Label Grid.Column="2" Grid.Row="1"                                    
                                    Style="{StaticResource labelKDStyle}"
                                    Text="{Binding KD_AAB}"/>
@@ -382,7 +382,7 @@
                                    Source="tankeff"/>
                             <Label Grid.Column="1" Grid.Row="2" 
                                Style="{StaticResource ladeEfficiency2Style}"
-                               Text="Ground"/>
+                               Text="{x:Static properties:AppResources.Ground}"/>
                             <Label Grid.Column="2" Grid.Row="2"                                    
                                    Style="{StaticResource labelKDStyle}"
                                    Text="{Binding KD_TAB}"/>
@@ -399,7 +399,7 @@
                                    Source="shipeff"/>
                             <Label Grid.Column="1" Grid.Row="3" 
                                Style="{StaticResource ladeEfficiency2Style}"
-                               Text="Sea"/>
+                               Text="{x:Static properties:AppResources.Sea}"/>
                             <Label Grid.Column="2" Grid.Row="3" 
                                    Style="{StaticResource labelKDStyle}"
                                    Text="{Binding KD_SAB}"/>
@@ -416,7 +416,7 @@
 
                         <!--Preference Label-->
                         <Label 
-                           Text="Favorite game modes"
+                           Text="{x:Static properties:AppResources.FavoriteGameModes}"
                            Style="{StaticResource labelStyle}"/>
 
                         <!--Favorite game modes charts-->
@@ -458,7 +458,7 @@
 
                             <!--Planes Label-->
                             <Label 
-                               Text="Top planes"
+                               Text="{x:Static properties:AppResources.TopPlanes}"
                                Style="{StaticResource labelStyle}"/>
 
                             <!--Favorite game modes charts-->
@@ -472,7 +472,7 @@
 
                             <!--Tanks Label-->
                             <Label 
-                               Text="Top tanks"
+                               Text="{x:Static properties:AppResources.TopTanks}"
                                Style="{StaticResource labelStyle}"/>
 
                             <!--Favorite game modes charts-->
@@ -488,7 +488,7 @@
 
                         <!--Favorite type of vehicle-->
                         <Label 
-                           Text="Favorite type of vehicle"
+                           Text="{x:Static properties:AppResources.FavoriteTypeOfVehicle}"
                            Style="{StaticResource labelStyle}"/>
 
                         <!--Favorite type of vehicle charts-->
@@ -504,7 +504,7 @@
 
                         <!--Researched vehicle label-->
                         <Label 
-                           Text="Researched vehicle"
+                           Text="{x:Static properties:AppResources.ResearchedVehicle}"
                            Style="{StaticResource labelStyle}"/>
 
                         <!--Researched vehicle table-->

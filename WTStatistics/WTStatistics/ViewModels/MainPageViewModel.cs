@@ -331,14 +331,14 @@ namespace WTStatistics.ViewModels
             KD_SRB = data.Info().KD_SRB;
 
             DoughnutSeriesData.Clear();
-            DoughnutSeriesData.Add(new ChartDataModel("Air AB", data.Info().CountAAB));
-            DoughnutSeriesData.Add(new ChartDataModel("Air RB", data.Info().CountARB));
-            DoughnutSeriesData.Add(new ChartDataModel("Air SB", data.Info().CountASB));
-            DoughnutSeriesData.Add(new ChartDataModel("Tank AB", data.Info().CountTAB));
-            DoughnutSeriesData.Add(new ChartDataModel("Tank RB", data.Info().CountTRB));
-            DoughnutSeriesData.Add(new ChartDataModel("Tank SB", data.Info().CountTSB));
-            DoughnutSeriesData.Add(new ChartDataModel("Fleet AB", data.Info().CountSAB));
-            DoughnutSeriesData.Add(new ChartDataModel("Fleet RB", data.Info().CountSRB));
+            DoughnutSeriesData.Add(new ChartDataModel(AppResources.AirAB, data.Info().CountAAB));
+            DoughnutSeriesData.Add(new ChartDataModel(AppResources.AirRB, data.Info().CountARB));
+            DoughnutSeriesData.Add(new ChartDataModel(AppResources.AirSB, data.Info().CountASB));
+            DoughnutSeriesData.Add(new ChartDataModel(AppResources.TankAB, data.Info().CountTAB));
+            DoughnutSeriesData.Add(new ChartDataModel(AppResources.TankRB, data.Info().CountTRB));
+            DoughnutSeriesData.Add(new ChartDataModel(AppResources.TankSB, data.Info().CountTSB));
+            DoughnutSeriesData.Add(new ChartDataModel(AppResources.FleetAB, data.Info().CountSAB));
+            DoughnutSeriesData.Add(new ChartDataModel(AppResources.FleetRB, data.Info().CountSRB));
         }
         #endregion
     }

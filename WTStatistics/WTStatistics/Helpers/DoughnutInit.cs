@@ -1,5 +1,6 @@
 using System.Collections.ObjectModel;
 using WTStatistics.Models;
+using WTStatistics.Resx;
 
 namespace WTStatistics.Helpers
 {
@@ -9,14 +10,14 @@ namespace WTStatistics.Helpers
         {
             var collection = new ObservableCollection<ChartDataModel>
             {
-                new ChartDataModel("Air AB", 0),
-                new ChartDataModel("Air RB", 0),
-                new ChartDataModel("Air SB", 0),
-                new ChartDataModel("Tank AB", 0),
-                new ChartDataModel("Tank RB", 0),
-                new ChartDataModel("Tank SB", 0),
-                new ChartDataModel("Fleet AB", 0),
-                new ChartDataModel("Fleet RB", 0)
+                new ChartDataModel(AppResources.AirAB, 0),
+                new ChartDataModel(AppResources.AirRB, 0),
+                new ChartDataModel(AppResources.AirSB, 0),
+                new ChartDataModel(AppResources.TankAB, 0),
+                new ChartDataModel(AppResources.TankRB, 0),
+                new ChartDataModel(AppResources.TankSB, 0),
+                new ChartDataModel(AppResources.FleetAB, 0),
+                new ChartDataModel(AppResources.FleetRB, 0)
             };
             return collection;
         }

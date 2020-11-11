@@ -61,11 +61,200 @@ namespace WTStatistics.Resx {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на AB.
+        /// </summary>
+        internal static string AB {
+            get {
+                return ResourceManager.GetString("AB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Air.
+        /// </summary>
+        internal static string Air {
+            get {
+                return ResourceManager.GetString("Air", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Air AB.
+        /// </summary>
+        internal static string AirAB {
+            get {
+                return ResourceManager.GetString("AirAB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Air RB.
+        /// </summary>
+        internal static string AirRB {
+            get {
+                return ResourceManager.GetString("AirRB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Air SB.
+        /// </summary>
+        internal static string AirSB {
+            get {
+                return ResourceManager.GetString("AirSB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Hint for Xbox and PS players.
         /// </summary>
         internal static string ConsoleHintLabel {
             get {
                 return ResourceManager.GetString("ConsoleHintLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Enter nickname.
+        /// </summary>
+        internal static string EnterNickname {
+            get {
+                return ResourceManager.GetString("EnterNickname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Favorite game modes.
+        /// </summary>
+        internal static string FavoriteGameModes {
+            get {
+                return ResourceManager.GetString("FavoriteGameModes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Favorite type of vehicle.
+        /// </summary>
+        internal static string FavoriteTypeOfVehicle {
+            get {
+                return ResourceManager.GetString("FavoriteTypeOfVehicle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Fleet AB.
+        /// </summary>
+        internal static string FleetAB {
+            get {
+                return ResourceManager.GetString("FleetAB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Fleet RB.
+        /// </summary>
+        internal static string FleetRB {
+            get {
+                return ResourceManager.GetString("FleetRB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ground.
+        /// </summary>
+        internal static string Ground {
+            get {
+                return ResourceManager.GetString("Ground", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Kill/battle ratio.
+        /// </summary>
+        internal static string KillBattleRatio {
+            get {
+                return ResourceManager.GetString("KillBattleRatio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на RB.
+        /// </summary>
+        internal static string RB {
+            get {
+                return ResourceManager.GetString("RB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Researched vehicle.
+        /// </summary>
+        internal static string ResearchedVehicle {
+            get {
+                return ResourceManager.GetString("ResearchedVehicle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на SB.
+        /// </summary>
+        internal static string SB {
+            get {
+                return ResourceManager.GetString("SB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Sea.
+        /// </summary>
+        internal static string Sea {
+            get {
+                return ResourceManager.GetString("Sea", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Tank AB.
+        /// </summary>
+        internal static string TankAB {
+            get {
+                return ResourceManager.GetString("TankAB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Tank RB.
+        /// </summary>
+        internal static string TankRB {
+            get {
+                return ResourceManager.GetString("TankRB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Tank SB.
+        /// </summary>
+        internal static string TankSB {
+            get {
+                return ResourceManager.GetString("TankSB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Top planes.
+        /// </summary>
+        internal static string TopPlanes {
+            get {
+                return ResourceManager.GetString("TopPlanes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Top tanks.
+        /// </summary>
+        internal static string TopTanks {
+            get {
+                return ResourceManager.GetString("TopTanks", resourceCulture);
             }
         }
         
