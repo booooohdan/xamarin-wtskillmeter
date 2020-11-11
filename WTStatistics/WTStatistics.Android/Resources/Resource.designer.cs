@@ -12437,40 +12437,43 @@ namespace WTStatistics.Droid
 			public const int shipeff = 2131165358;
 			
 			// aapt resource value: 0x7F0700AF
-			public const int tab_feedback = 2131165359;
+			public const int SplashScreen = 2131165359;
 			
 			// aapt resource value: 0x7F0700B0
-			public const int tab_question = 2131165360;
+			public const int tab_feedback = 2131165360;
 			
 			// aapt resource value: 0x7F0700B1
-			public const int tab_statistics = 2131165361;
+			public const int tab_question = 2131165361;
 			
 			// aapt resource value: 0x7F0700B2
-			public const int tankeff = 2131165362;
+			public const int tab_statistics = 2131165362;
 			
 			// aapt resource value: 0x7F0700B3
-			public const int tankman = 2131165363;
+			public const int tankeff = 2131165363;
 			
 			// aapt resource value: 0x7F0700B4
-			public const int team = 2131165364;
+			public const int tankman = 2131165364;
 			
 			// aapt resource value: 0x7F0700B5
-			public const int time = 2131165365;
+			public const int team = 2131165365;
 			
 			// aapt resource value: 0x7F0700B6
-			public const int tooltip_frame_dark = 2131165366;
+			public const int time = 2131165366;
 			
 			// aapt resource value: 0x7F0700B7
-			public const int tooltip_frame_light = 2131165367;
+			public const int tooltip_frame_dark = 2131165367;
 			
 			// aapt resource value: 0x7F0700B8
-			public const int Versus = 2131165368;
+			public const int tooltip_frame_light = 2131165368;
 			
 			// aapt resource value: 0x7F0700B9
-			public const int WoTQuiz = 2131165369;
+			public const int Versus = 2131165369;
 			
 			// aapt resource value: 0x7F0700BA
-			public const int WTQuiz = 2131165370;
+			public const int WoTQuiz = 2131165370;
+			
+			// aapt resource value: 0x7F0700BB
+			public const int WTQuiz = 2131165371;
 			
 			static Drawable()
 			{
@@ -14776,6 +14779,9 @@ namespace WTStatistics.Droid
 			
 			// aapt resource value: 0x7F0E01FE
 			public const int scrollViewTheme = 2131624446;
+			
+			// aapt resource value: 0x7F0E01FF
+			public const int splashscreen = 2131624447;
 			
 			// aapt resource value: 0x7F0E00E8
 			public const int TextAppearance_AppCompat = 2131624168;
