@@ -50,7 +50,6 @@
 
         <rating:SfRating  
             ValueChanged="SfRating_ValueChanged"
-            Value="4"
             ItemSize="35">
             <rating:SfRating.RatingSettings>
                 <rating:SfRatingSettings 

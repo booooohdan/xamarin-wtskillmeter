@@ -221,12 +221,13 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\WTStatistics\WTStatistics.csproj">
-      <Project>{BDE343E2-29F3-4C34-B50C-E403C8791091}</Project>
+      <Project>{BAEA2E1A-26E5-408F-8EE8-04633AE6BDE2}</Project>
       <Name>WTStatistics</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\battle.png" />
+    <BundleResource Include="Resources\SplashScreen.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\egg.png" />
