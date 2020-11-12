@@ -173,9 +173,114 @@ namespace WTStatistics.Helpers
 
         private string SetHashTag()
         {
-            return "#beta";
+            ModesCalc();
+            VehicleCalc();
+            CountryCalc();
+
+            return "#" + ModesCalc() + " #" + VehicleCalc() + " #"+CountryCalc();
         }
 
+        //return string with preference game mode for hashtag
+        private string ModesCalc()
+        {
+            var ab = player.CountAAB + player.CountTAB + player.CountSAB; 
+            var rb = player.CountARB + player.CountTRB + player.CountSRB;
+            var sb = player.CountASB + player.CountTSB;
+
+            if (ab > rb & ab > sb)
+            {
+                return "ab";
+            }
+            if (rb > ab & rb > sb)
+            {
+                return "rb";
+            }
+            if (sb > ab & sb > rb)
+            {
+                return "sb";
+            }
+            return null;
+        }
+
+        //return string with preference vehicle for hashtag
+        private string VehicleCalc()
+        {
+            var avia = player.CountAAB + player.CountARB + player.CountASB;
+            var tank = player.CountTAB + player.CountTRB + player.CountTSB;
+            var ship = player.CountSAB + player.CountSRB;
+
+            if (avia > tank & avia > ship)
+            {
+                return "pilot";
+            }
+            if (tank > avia & tank > ship)
+            {
+                return "tankman";
+            }
+            if (ship > avia & ship > tank)
+            {
+                return "sailor";
+            }
+            return null;
+        }
+
+        //return string with preference country for hashtag
+        private string CountryCalc()
+        {
+            var countrys = new List<int>
+            {
+                player.ResearchedUSA,
+                player.ResearchedGermany,
+                player.ResearchedUSSR,
+                player.ResearchedBritain,
+                player.ResearchedJapan,
+                player.ResearchedItaly,
+                player.ResearchedFrance,
+                player.ResearchedChina,
+                player.ResearchedSweden
+            };
+
+            var country = countrys.Max();
+                      
+            if (country == player.ResearchedUSA)
+            {
+                return "usa";
+            }
+            if (country == player.ResearchedGermany)
+            {
+                return "germany";
+            }
+            if (country == player.ResearchedUSSR)
+            {
+                return "ussr";
+            }
+            if (country == player.ResearchedBritain)
+            {
+                return "britain";
+            }
+            if (country == player.ResearchedJapan)
+            {
+                return "japan";
+            }
+            if (country == player.ResearchedItaly)
+            {
+                return "italy";
+            }
+            if (country == player.ResearchedFrance)
+            {
+                return "france";
+            }
+            if (country == player.ResearchedChina)
+            {
+                return "china";
+            }
+            if (country == player.ResearchedSweden)
+            {
+                return "sweden";
+            }
+
+            return null;
+        }
 
 
         //Set gradient color and skill label
@@ -259,6 +364,31 @@ namespace WTStatistics.Helpers
             player.KD_SAB = KBCalc(ToInt(listTableShips[81]), player.CountSAB);
             player.KD_SRB = KBCalc(ToInt(listTableShips[82]), player.CountSRB);
 
+            player.MissionFighter = ToInt(listTableAvia[9]) + ToInt(listTableAvia[10]) + ToInt(listTableAvia[11]);
+            player.MissionAttacker = ToInt(listTableAvia[17]) + ToInt(listTableAvia[18]) + ToInt(listTableAvia[19]);
+            player.MissionBomber = ToInt(listTableAvia[13]) + ToInt(listTableAvia[14]) + ToInt(listTableAvia[15]);
+
+            player.MissionMTank = ToInt(listTableTanks[9]) + ToInt(listTableTanks[10]) + ToInt(listTableTanks[11]);
+            player.MissionHTank = ToInt(listTableTanks[17]) + ToInt(listTableTanks[18]) + ToInt(listTableTanks[19]);
+            player.MissionDestroyer = ToInt(listTableTanks[13]) + ToInt(listTableTanks[14]) + ToInt(listTableTanks[15]);
+            player.MissionSPAA = ToInt(listTableTanks[21]) + ToInt(listTableTanks[22]) + ToInt(listTableTanks[23]);
+
+            player.MissionBoats = ToInt(listTableShips[13]) + ToInt(listTableShips[14])+ ToInt(listTableShips[17]) + ToInt(listTableShips[18]) 
+                + ToInt(listTableShips[21]) + ToInt(listTableShips[22]);
+            player.MissionBarge = ToInt(listTableShips[33]) + ToInt(listTableShips[34]);
+            player.MissionFrigate = ToInt(listTableShips[25]) + ToInt(listTableShips[26]);
+            player.MissionDestroyerShip = ToInt(listTableShips[29]) + ToInt(listTableShips[30]);
+
+            player.ResearchedUSA = ToInt(listTableVehicle[11]);
+            player.ResearchedUSSR = ToInt(listTableVehicle[17]);
+            player.ResearchedBritain = ToInt(listTableVehicle[23]);
+            player.ResearchedGermany = ToInt(listTableVehicle[29]);
+            player.ResearchedJapan = ToInt(listTableVehicle[35]);
+            player.ResearchedItaly = ToInt(listTableVehicle[41]);
+            player.ResearchedFrance = ToInt(listTableVehicle[47]);
+            player.ResearchedChina = 0;
+            player.ResearchedSweden = 0;
+            
             var skill = CalculateTotalSkill();
             SetSkill(skill);
             player.Avatar = SetAvatar();

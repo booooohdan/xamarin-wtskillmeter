@@ -508,7 +508,9 @@
                            Style="{StaticResource labelStyle}"/>
 
                         <!--Researched vehicle table-->
-                        <Label Style="{StaticResource ladelInDevStyle}"/>
+                        <chart:SfChart>
+                            <chart:BarSeries ItemsSource ="{Binding DoughnutSeriesData}" XBindingPath="Name" YBindingPath="Value"/>
+                        </chart:SfChart>
                     </StackLayout>
                 </Frame>
 
