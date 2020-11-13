@@ -286,4 +286,37 @@
   <ItemGroup>
     <BundleResource Include="Resources\gamepad.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Attacker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Barge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Boat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Bomber.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Fighter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Frigate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\HeavyTank.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\MiddleTank.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ShipDestroyer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\SPAA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\TankDestroyer.png" />
+  </ItemGroup>
 </Project>

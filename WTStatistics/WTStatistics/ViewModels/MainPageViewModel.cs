@@ -228,6 +228,7 @@ namespace WTStatistics.ViewModels
                 OnPropertyChanged();
             }
         }
+
         public string SkillGradient
         {
             get => player.SkillGradient;
@@ -267,6 +268,157 @@ namespace WTStatistics.ViewModels
                 OnPropertyChanged();
             }
         }
+
+        public double FavoriteVehicle1
+        {
+            get => player.FavoriteVehicle1;
+            set
+            {
+                player.FavoriteVehicle1 = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public double FavoriteVehicle2
+        {
+            get => player.FavoriteVehicle2;
+            set
+            {
+                player.FavoriteVehicle2 = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public double FavoriteVehicle3
+        {
+            get => player.FavoriteVehicle3;
+            set
+            {
+                player.FavoriteVehicle3 = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public double FavoriteVehicle4
+        {
+            get => player.FavoriteVehicle4;
+            set
+            {
+                player.FavoriteVehicle4 = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public double FavoriteVehicle5
+        {
+            get => player.FavoriteVehicle5;
+            set
+            {
+                player.FavoriteVehicle5 = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string FavoriteVehicleName1
+        {
+            get => player.FavoriteVehicleName1;
+            set
+            {
+                player.FavoriteVehicleName1 = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string FavoriteVehicleName2
+        {
+            get => player.FavoriteVehicleName2;
+            set
+            {
+                player.FavoriteVehicleName2 = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string FavoriteVehicleName3
+        {
+            get => player.FavoriteVehicleName3;
+            set
+            {
+                player.FavoriteVehicleName3 = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string FavoriteVehicleName4
+        {
+            get => player.FavoriteVehicleName4;
+            set
+            {
+                player.FavoriteVehicleName4 = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string FavoriteVehicleName5
+        {
+            get => player.FavoriteVehicleName5;
+            set
+            {
+                player.FavoriteVehicleName5 = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string FavoriteVehicleIcon1
+        {
+            get => player.FavoriteVehicleIcon1;
+            set
+            {
+                player.FavoriteVehicleIcon1 = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string FavoriteVehicleIcon2
+        {
+            get => player.FavoriteVehicleIcon2;
+            set
+            {
+                player.FavoriteVehicleIcon2 = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string FavoriteVehicleIcon3
+        {
+            get => player.FavoriteVehicleIcon3;
+            set
+            {
+                player.FavoriteVehicleIcon3 = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string FavoriteVehicleIcon4
+        {
+            get => player.FavoriteVehicleIcon4;
+            set
+            {
+                player.FavoriteVehicleIcon4 = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string FavoriteVehicleIcon5
+        {
+            get => player.FavoriteVehicleIcon5;
+            set
+            {
+                player.FavoriteVehicleIcon5 = value;
+                OnPropertyChanged();
+            }
+        }
+
         #endregion
 
         #region Methods
@@ -332,6 +484,24 @@ namespace WTStatistics.ViewModels
             KD_TSB = data.Info().KD_TSB;
             KD_SAB = data.Info().KD_SAB;
             KD_SRB = data.Info().KD_SRB;
+
+            FavoriteVehicle1 = data.Info().FavoriteVehicle1;
+            FavoriteVehicle2 = data.Info().FavoriteVehicle2;
+            FavoriteVehicle3 = data.Info().FavoriteVehicle3;
+            FavoriteVehicle4 = data.Info().FavoriteVehicle4;
+            FavoriteVehicle5 = data.Info().FavoriteVehicle5;
+
+            FavoriteVehicleName1 = data.Info().FavoriteVehicleName1;
+            FavoriteVehicleName2 = data.Info().FavoriteVehicleName2;
+            FavoriteVehicleName3 = data.Info().FavoriteVehicleName3;
+            FavoriteVehicleName4 = data.Info().FavoriteVehicleName4;
+            FavoriteVehicleName5 = data.Info().FavoriteVehicleName5;
+
+            FavoriteVehicleIcon1 = data.Info().FavoriteVehicleIcon1;
+            FavoriteVehicleIcon2 = data.Info().FavoriteVehicleIcon2;
+            FavoriteVehicleIcon3 = data.Info().FavoriteVehicleIcon3;
+            FavoriteVehicleIcon4 = data.Info().FavoriteVehicleIcon4;
+            FavoriteVehicleIcon5 = data.Info().FavoriteVehicleIcon5;
 
             DoughnutSeriesData.Clear();
             DoughnutSeriesData.Add(new ChartDataModel(AppResources.AirAB, data.Info().CountAAB));

@@ -38,12 +38,23 @@ namespace WTStatistics.Models
         public int CountSAB { get; set; }
         public int CountSRB { get; set; }
 
-        public string FavoritePlane1 { get; set; }
-        public string FavoritePlane2 { get; set; }
-        public string FavoritePlane3 { get; set; }
-        public string FavoriteTank1 { get; set; }
-        public string FavoriteTank2 { get; set; }
-        public string FavoriteTank3 { get; set; }
+        public double FavoriteVehicle1 { get; set; }
+        public double FavoriteVehicle2 { get; set; }
+        public double FavoriteVehicle3 { get; set; }
+        public double FavoriteVehicle4 { get; set; }
+        public double FavoriteVehicle5 { get; set; }
+
+        public string FavoriteVehicleName1 { get; set; }
+        public string FavoriteVehicleName2 { get; set; }
+        public string FavoriteVehicleName3 { get; set; }
+        public string FavoriteVehicleName4 { get; set; }
+        public string FavoriteVehicleName5 { get; set; }
+
+        public string FavoriteVehicleIcon1 { get; set; }
+        public string FavoriteVehicleIcon2 { get; set; }
+        public string FavoriteVehicleIcon3 { get; set; }
+        public string FavoriteVehicleIcon4 { get; set; }
+        public string FavoriteVehicleIcon5 { get; set; }
 
         public int MissionFighter { get; set; }
         public int MissionAttacker { get; set; }

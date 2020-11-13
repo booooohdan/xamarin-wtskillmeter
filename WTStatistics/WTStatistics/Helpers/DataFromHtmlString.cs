@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -282,6 +283,48 @@ namespace WTStatistics.Helpers
             return null;
         }
 
+        private void PreferenceVehicleType()
+        {
+            var list = new List<Preference>()
+            {
+                new Preference("Fighter", player.MissionFighter, "Fighter"),
+                new Preference("Attacker", player.MissionAttacker, "Attacker"),
+                new Preference("Bomber", player.MissionBomber, "Bomber"),
+                new Preference("Medium tanks", player.MissionMTank, "MiddleTank"),
+                new Preference("Heavy tanks", player.MissionHTank, "HeavyTank"),
+                new Preference("Tank destroyer", player.MissionDestroyer, "TankDestroyer"),
+                new Preference("SPAA", player.MissionSPAA, "SPAA"),
+                new Preference("Boats", player.MissionBoats, "Boat"),
+                new Preference("Barge", player.MissionBarge, "Barge"),
+                new Preference("Frigate", player.MissionFrigate, "Frigate"),
+                new Preference("Ship destroyer", player.MissionDestroyerShip, "ShipDestroyer")
+            };
+            double sum = list.Sum(x => x.Count);
+            var sorted = list.OrderByDescending(x => x.Count);
+
+            var percentage = new List<Preference>();
+            foreach (var s in sorted)
+            {
+                var percent = Math.Round(s.Count / sum*100, 0);
+                percentage.Add(new Preference(s.Name, percent, s.Icon));
+            }
+
+            player.FavoriteVehicleName1 = percentage[0].Name;
+            player.FavoriteVehicleName2 = percentage[1].Name;
+            player.FavoriteVehicleName3 = percentage[2].Name;
+            player.FavoriteVehicleName4 = percentage[3].Name;
+            player.FavoriteVehicleName5 = percentage[4].Name;
+            player.FavoriteVehicle1 = percentage[0].Count;
+            player.FavoriteVehicle2 = percentage[1].Count;
+            player.FavoriteVehicle3 = percentage[2].Count;
+            player.FavoriteVehicle4 = percentage[3].Count;
+            player.FavoriteVehicle5 = percentage[4].Count;
+            player.FavoriteVehicleIcon1 = percentage[0].Icon;
+            player.FavoriteVehicleIcon2 = percentage[1].Icon;
+            player.FavoriteVehicleIcon3 = percentage[2].Icon;
+            player.FavoriteVehicleIcon4 = percentage[3].Icon;
+            player.FavoriteVehicleIcon5 = percentage[4].Icon;
+        }
 
         //Set gradient color and skill label
         private void SetSkill(double skill)
@@ -391,9 +434,9 @@ namespace WTStatistics.Helpers
             
             var skill = CalculateTotalSkill();
             SetSkill(skill);
+            PreferenceVehicleType();
             player.Avatar = SetAvatar();
             player.HashTag = SetHashTag();
-
             return player;
         }
         #endregion
