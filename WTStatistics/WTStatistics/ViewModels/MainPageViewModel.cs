@@ -27,6 +27,7 @@ namespace WTStatistics.ViewModels
         public ICommand GamepadCommand { get; }
         public ObservableCollection<ChartDataModel> DoughnutSeriesData { get; set; }
         public ObservableCollection<BarChartDataModel> BarChartData { get; set; }
+        public ObservableCollection<BarChartDataModel> BarChartDataTotal { get; set; }
         #endregion
 
         #region Constructor
@@ -37,20 +38,12 @@ namespace WTStatistics.ViewModels
             GamepadCommand = new Command<string>(HandleGamepadPressed);
             player = new Player();
             DoughnutSeriesData = DoughnutInit.Init();
-
+            BarChartData = ChartBarInit.Init();
+            BarChartDataTotal = ChartBarTotalInit.Init();
 
             start_count++;
             Preferences.Set("start_count", start_count);
             ShowReview(start_count);
-
-            BarChartData = new ObservableCollection<BarChartDataModel>()
-        {
-            new BarChartDataModel("USA", 50),
-            new BarChartDataModel("Germany", 70),
-            new BarChartDataModel("USSR", 65),
-            new BarChartDataModel("Britain", 57),
-            new BarChartDataModel("Japan", 48),
-        };
         }
         #endregion
 
@@ -349,6 +342,15 @@ namespace WTStatistics.ViewModels
             DoughnutSeriesData.Add(new ChartDataModel(AppResources.TankSB, data.Info().CountTSB));
             DoughnutSeriesData.Add(new ChartDataModel(AppResources.FleetAB, data.Info().CountSAB));
             DoughnutSeriesData.Add(new ChartDataModel(AppResources.FleetRB, data.Info().CountSRB));
+
+            BarChartData.Clear();
+            BarChartData.Add(new BarChartDataModel(AppResources.France, data.Info().ResearchedFrance));
+            BarChartData.Add(new BarChartDataModel(AppResources.Italy, data.Info().ResearchedItaly));
+            BarChartData.Add(new BarChartDataModel(AppResources.Japan, data.Info().ResearchedJapan));
+            BarChartData.Add(new BarChartDataModel(AppResources.Britain, data.Info().ResearchedBritain));
+            BarChartData.Add(new BarChartDataModel(AppResources.USSR, data.Info().ResearchedUSSR));
+            BarChartData.Add(new BarChartDataModel(AppResources.Germany, data.Info().ResearchedGermany));
+            BarChartData.Add(new BarChartDataModel(AppResources.USA, data.Info().ResearchedUSA));
         }
         #endregion
     }

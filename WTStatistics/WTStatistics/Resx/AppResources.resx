@@ -141,9 +141,6 @@
   <data name="FavoriteTypeOfVehicle" xml:space="preserve">
     <value>Favorite type of vehicle</value>
   </data>
-  <data name="ResearchedVehicle" xml:space="preserve">
-    <value>Researched vehicle</value>
-  </data>
   <data name="AB" xml:space="preserve">
     <value>AB</value>
   </data>
@@ -185,5 +182,35 @@
   </data>
   <data name="FleetRB" xml:space="preserve">
     <value>Fleet RB</value>
+  </data>
+  <data name="USA" xml:space="preserve">
+    <value>USA</value>
+  </data>
+  <data name="Germany" xml:space="preserve">
+    <value>Germany</value>
+  </data>
+  <data name="USSR" xml:space="preserve">
+    <value>USSR</value>
+  </data>
+  <data name="Britain" xml:space="preserve">
+    <value>Britain</value>
+  </data>
+  <data name="Japan" xml:space="preserve">
+    <value>Japan</value>
+  </data>
+  <data name="Italy" xml:space="preserve">
+    <value>Italy</value>
+  </data>
+  <data name="France" xml:space="preserve">
+    <value>France</value>
+  </data>
+  <data name="TotalCountOfVehicles" xml:space="preserve">
+    <value>Total count</value>
+  </data>
+  <data name="ResearchedVehicles" xml:space="preserve">
+    <value>Researched vehicles</value>
+  </data>
+  <data name="Researched" xml:space="preserve">
+    <value>Researched</value>
   </data>
 </root>

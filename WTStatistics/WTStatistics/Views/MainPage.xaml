@@ -482,43 +482,64 @@
                     </Frame>
                 </StackLayout>
 
-                <!--Favorite type of vehicle-->
-                <Frame Style="{StaticResource frameStyle}">
-                    <StackLayout>
-
-                        <!--Favorite type of vehicle-->
-                        <Label 
-                           Text="{x:Static properties:AppResources.FavoriteTypeOfVehicle}"
-                           Style="{StaticResource labelStyle}"/>
-
-                        <!--Favorite type of vehicle charts-->
-                        <Label Style="{StaticResource ladelInDevStyle}"/>
-
-                    </StackLayout>
-                </Frame>
-
                 <!--Researched vehicle-->
                 <Frame Style="{StaticResource frameStyle}">
 
                     <StackLayout>
-
                         <!--Researched vehicle label-->
                         <Label 
-                           Text="{x:Static properties:AppResources.ResearchedVehicle}"
+                           Text="{x:Static properties:AppResources.ResearchedVehicles}"
                            Style="{StaticResource labelStyle}"/>
 
                         <!--Researched vehicle table-->
-                        <chart:SfChart>
+                        <chart:SfChart 
+                            BackgroundColor="{AppThemeBinding Dark={StaticResource MyDark}, Light={StaticResource MyWhite}}"
+                            HeightRequest="200" 
+                            Margin="0,0,20,0"  
+                            SideBySideSeriesPlacement="False">
                             <chart:SfChart.PrimaryAxis>
-                                <chart:CategoryAxis/>
+                                <chart:CategoryAxis>
+                                    <chart:CategoryAxis.LabelStyle>
+                                        <chart:ChartAxisLabelStyle FontAttributes="Bold" />
+                                    </chart:CategoryAxis.LabelStyle>
+                                </chart:CategoryAxis>
                             </chart:SfChart.PrimaryAxis>
                             <chart:SfChart.SecondaryAxis>
-                                <chart:NumericalAxis/>
+                                <chart:NumericalAxis IsVisible="False"/>
                             </chart:SfChart.SecondaryAxis>
-                            <chart:BarSeries
+                            <chart:SfChart.Legend>
+                                <chart:ChartLegend IconHeight="14" IconWidth="14" DockPosition="Bottom"/>
+                            </chart:SfChart.Legend>
+                            <chart:SfChart.Series>
+                                <chart:BarSeries
+
+                                    Label="{x:Static properties:AppResources.TotalCountOfVehicles}"
+                                           ItemsSource="{Binding BarChartDataTotal}" 
+                                       XBindingPath="Country" 
+                                       YBindingPath="Count" >
+                                    <chart:BarSeries.DataMarker>
+                                        <chart:ChartDataMarker ShowMarker="False">
+                                            <chart:ChartDataMarker.LabelStyle>
+                                                <chart:DataMarkerLabelStyle LabelPosition="Inner" BackgroundColor="Transparent" TextColor="White"/>
+                                            </chart:ChartDataMarker.LabelStyle>
+                                        </chart:ChartDataMarker>
+                                    </chart:BarSeries.DataMarker>
+                                </chart:BarSeries>
+                                <chart:BarSeries
+                                    Width="0.6"
+                                    Label="{x:Static properties:AppResources.Researched}"
                                        ItemsSource="{Binding BarChartData}" 
                                        XBindingPath="Country" 
-                                       YBindingPath="Count"/>
+                                       YBindingPath="Count">
+                                    <chart:BarSeries.DataMarker>
+                                        <chart:ChartDataMarker ShowMarker="False">
+                                            <chart:ChartDataMarker.LabelStyle>
+                                                <chart:DataMarkerLabelStyle LabelPosition="Inner" BackgroundColor="Transparent" TextColor="White"/>
+                                            </chart:ChartDataMarker.LabelStyle>
+                                        </chart:ChartDataMarker>
+                                    </chart:BarSeries.DataMarker>
+                                </chart:BarSeries>
+                            </chart:SfChart.Series>
                         </chart:SfChart>
                     </StackLayout>
                 </Frame>

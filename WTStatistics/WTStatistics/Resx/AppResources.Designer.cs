@@ -106,6 +106,15 @@ namespace WTStatistics.Resx {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Britain.
+        /// </summary>
+        internal static string Britain {
+            get {
+                return ResourceManager.GetString("Britain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Hint for Xbox and PS players.
         /// </summary>
         internal static string ConsoleHintLabel {
@@ -160,11 +169,47 @@ namespace WTStatistics.Resx {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на France.
+        /// </summary>
+        internal static string France {
+            get {
+                return ResourceManager.GetString("France", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Germany.
+        /// </summary>
+        internal static string Germany {
+            get {
+                return ResourceManager.GetString("Germany", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Ground.
         /// </summary>
         internal static string Ground {
             get {
                 return ResourceManager.GetString("Ground", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Italy.
+        /// </summary>
+        internal static string Italy {
+            get {
+                return ResourceManager.GetString("Italy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Japan.
+        /// </summary>
+        internal static string Japan {
+            get {
+                return ResourceManager.GetString("Japan", resourceCulture);
             }
         }
         
@@ -187,11 +232,20 @@ namespace WTStatistics.Resx {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Researched vehicle.
+        ///   Ищет локализованную строку, похожую на Researched.
         /// </summary>
-        internal static string ResearchedVehicle {
+        internal static string Researched {
             get {
-                return ResourceManager.GetString("ResearchedVehicle", resourceCulture);
+                return ResourceManager.GetString("Researched", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Researched vehicles.
+        /// </summary>
+        internal static string ResearchedVehicles {
+            get {
+                return ResourceManager.GetString("ResearchedVehicles", resourceCulture);
             }
         }
         
@@ -255,6 +309,33 @@ namespace WTStatistics.Resx {
         internal static string TopTanks {
             get {
                 return ResourceManager.GetString("TopTanks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Total count.
+        /// </summary>
+        internal static string TotalCountOfVehicles {
+            get {
+                return ResourceManager.GetString("TotalCountOfVehicles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на USA.
+        /// </summary>
+        internal static string USA {
+            get {
+                return ResourceManager.GetString("USA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на USSR.
+        /// </summary>
+        internal static string USSR {
+            get {
+                return ResourceManager.GetString("USSR", resourceCulture);
             }
         }
         
