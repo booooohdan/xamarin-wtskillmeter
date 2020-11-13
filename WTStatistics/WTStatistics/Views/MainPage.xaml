@@ -494,34 +494,31 @@
                         <!--Researched vehicle table-->
                         <chart:SfChart 
                             BackgroundColor="{AppThemeBinding Dark={StaticResource MyDark}, Light={StaticResource MyWhite}}"
-                            HeightRequest="200" 
+                            HeightRequest="300" 
                             Margin="0,0,20,0"  
                             SideBySideSeriesPlacement="False">
                             <chart:SfChart.PrimaryAxis>
-                                <chart:CategoryAxis>
+                                <chart:CategoryAxis ShowMajorGridLines="False">
                                     <chart:CategoryAxis.LabelStyle>
-                                        <chart:ChartAxisLabelStyle FontAttributes="Bold" />
+                                        <chart:ChartAxisLabelStyle FontAttributes="Bold" FontSize="12"/>
                                     </chart:CategoryAxis.LabelStyle>
                                 </chart:CategoryAxis>
                             </chart:SfChart.PrimaryAxis>
-                            <chart:SfChart.SecondaryAxis>
-                                <chart:NumericalAxis IsVisible="False"/>
+                            <chart:SfChart.SecondaryAxis >
+                                <chart:NumericalAxis Interval="50"/>
                             </chart:SfChart.SecondaryAxis>
                             <chart:SfChart.Legend>
                                 <chart:ChartLegend IconHeight="14" IconWidth="14" DockPosition="Bottom"/>
                             </chart:SfChart.Legend>
                             <chart:SfChart.Series>
                                 <chart:BarSeries
-
+                                    EnableTooltip="True"
                                     Label="{x:Static properties:AppResources.TotalCountOfVehicles}"
                                            ItemsSource="{Binding BarChartDataTotal}" 
                                        XBindingPath="Country" 
                                        YBindingPath="Count" >
                                     <chart:BarSeries.DataMarker>
-                                        <chart:ChartDataMarker ShowMarker="False">
-                                            <chart:ChartDataMarker.LabelStyle>
-                                                <chart:DataMarkerLabelStyle LabelPosition="Inner" BackgroundColor="Transparent" TextColor="White"/>
-                                            </chart:ChartDataMarker.LabelStyle>
+                                        <chart:ChartDataMarker ShowMarker="False" ShowLabel="False">
                                         </chart:ChartDataMarker>
                                     </chart:BarSeries.DataMarker>
                                 </chart:BarSeries>
@@ -534,7 +531,7 @@
                                     <chart:BarSeries.DataMarker>
                                         <chart:ChartDataMarker ShowMarker="False">
                                             <chart:ChartDataMarker.LabelStyle>
-                                                <chart:DataMarkerLabelStyle LabelPosition="Inner" BackgroundColor="Transparent" TextColor="White"/>
+                                                <chart:DataMarkerLabelStyle LabelPosition="Outer" BackgroundColor="Transparent" TextColor="#4f4838"/>
                                             </chart:ChartDataMarker.LabelStyle>
                                         </chart:ChartDataMarker>
                                     </chart:BarSeries.DataMarker>
