@@ -13,9 +13,9 @@
     <ContentPage.BindingContext>
         <local:MainPageViewModel/>
     </ContentPage.BindingContext>
-    
+
     <StackLayout Padding="0" Style="{StaticResource MainBackground}">
-        
+
         <!--Gradient section-->
         <Grid Padding="0">
             <!--Gradient image-->
@@ -509,7 +509,16 @@
 
                         <!--Researched vehicle table-->
                         <chart:SfChart>
-                            <chart:BarSeries ItemsSource ="{Binding DoughnutSeriesData}" XBindingPath="Name" YBindingPath="Value"/>
+                            <chart:SfChart.PrimaryAxis>
+                                <chart:CategoryAxis/>
+                            </chart:SfChart.PrimaryAxis>
+                            <chart:SfChart.SecondaryAxis>
+                                <chart:NumericalAxis/>
+                            </chart:SfChart.SecondaryAxis>
+                            <chart:BarSeries
+                                       ItemsSource="{Binding BarChartData}" 
+                                       XBindingPath="Country" 
+                                       YBindingPath="Count"/>
                         </chart:SfChart>
                     </StackLayout>
                 </Frame>

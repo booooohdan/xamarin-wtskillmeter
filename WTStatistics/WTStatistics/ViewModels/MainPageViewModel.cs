@@ -26,6 +26,7 @@ namespace WTStatistics.ViewModels
         public ICommand SearchButtonPressed { get; }
         public ICommand GamepadCommand { get; }
         public ObservableCollection<ChartDataModel> DoughnutSeriesData { get; set; }
+        public ObservableCollection<BarChartDataModel> BarChartData { get; set; }
         #endregion
 
         #region Constructor
@@ -41,6 +42,15 @@ namespace WTStatistics.ViewModels
             start_count++;
             Preferences.Set("start_count", start_count);
             ShowReview(start_count);
+
+            BarChartData = new ObservableCollection<BarChartDataModel>()
+        {
+            new BarChartDataModel("USA", 50),
+            new BarChartDataModel("Germany", 70),
+            new BarChartDataModel("USSR", 65),
+            new BarChartDataModel("Britain", 57),
+            new BarChartDataModel("Japan", 48),
+        };
         }
         #endregion
 
