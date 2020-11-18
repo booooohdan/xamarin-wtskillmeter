@@ -95,6 +95,12 @@
                          Value="{AppThemeBinding Dark={StaticResource MyLight}, Light={StaticResource MyDarkest}}"/>
             </Style>
 
+            <Style x:Key="hint" TargetType="Label">
+                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="TextColor" 
+                         Value="{AppThemeBinding Dark={StaticResource MyLight}, Light={StaticResource MyDarkest}}"/>
+            </Style>
+
         </ResourceDictionary>        
     </Application.Resources>
 </Application>

@@ -7,7 +7,8 @@
              xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
              xmlns:properties="clr-namespace:WTStatistics.Resx"
              NavigationPage.HasNavigationBar="False"
-             xmlns:local="clr-namespace:WTStatistics.ViewModels" xmlns:controls="clr-namespace:MarcTron.Plugin.Controls;assembly=Plugin.MtAdmob"
+             xmlns:local="clr-namespace:WTStatistics.ViewModels" 
+             xmlns:controls="clr-namespace:MarcTron.Plugin.Controls;assembly=Plugin.MtAdmob"
              ios:Page.UseSafeArea="true"
              x:Class="WTStatistics.Views.MainPage">
     <ContentPage.BindingContext>
@@ -457,7 +458,7 @@
 
                         <!--Favorite types of vehicles-->
                         <Label 
-                           Text="Favorite types of vehicles"
+                           Text="{x:Static properties:AppResources.FavoriteTypesOfVehicles}"
                            Style="{StaticResource labelStyle}"/>
 
                         <!--Grid definition-->

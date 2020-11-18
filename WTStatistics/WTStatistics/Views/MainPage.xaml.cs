@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using WTStatistics.Resx;
 using WTStatistics.ViewModels;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -24,7 +25,7 @@ namespace WTStatistics.Views
 
             if (current != NetworkAccess.Internet)
             {
-                Application.Current.MainPage.DisplayAlert("No Internet", "Please make sure the internet is available and try again", "OK");
+                Application.Current.MainPage.DisplayAlert(AppResources.NoInternet, AppResources.PleaseMakeSureTheInternetIsAvailableAndTryAgain, "OK");
                 return;
             }
 
@@ -64,9 +65,9 @@ namespace WTStatistics.Views
         private void ErrorHandler(string stringHTML)
         {
             if (stringHTML.Contains("Информации о пользователе недоступна"))
-                Application.Current.MainPage.DisplayAlert("Incorrect nickname", "Nickname doesn\'t exist.\nPlease enter correct nickname", "OK");
+                Application.Current.MainPage.DisplayAlert(AppResources.IncorrectNickname, AppResources.NicknameDesc, "OK");
             else
-                Application.Current.MainPage.DisplayAlert("Timeout", "Something went wrong.\nPlease try again later.", "OK");
+                Application.Current.MainPage.DisplayAlert(AppResources.Timeout, AppResources.SomethingWentWrongNPleaseTryAgainLater, "OK");
         }
     }
 }

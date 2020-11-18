@@ -106,11 +106,74 @@ namespace WTStatistics.Resx {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Attacker.
+        /// </summary>
+        internal static string Attacker {
+            get {
+                return ResourceManager.GetString("Attacker", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Average player.
+        /// </summary>
+        internal static string AveragePlayer {
+            get {
+                return ResourceManager.GetString("AveragePlayer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Bad player.
+        /// </summary>
+        internal static string BadPlayer {
+            get {
+                return ResourceManager.GetString("BadPlayer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Barge.
+        /// </summary>
+        internal static string Barge {
+            get {
+                return ResourceManager.GetString("Barge", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Boats.
+        /// </summary>
+        internal static string Boats {
+            get {
+                return ResourceManager.GetString("Boats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Bomber.
+        /// </summary>
+        internal static string Bomber {
+            get {
+                return ResourceManager.GetString("Bomber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Britain.
         /// </summary>
         internal static string Britain {
             get {
                 return ResourceManager.GetString("Britain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на If you have PS account, add @psn to end of your nickname. If you have Xbox account, add @live to end of your nickname. For example Player1@psn or Player1@live.
+        /// </summary>
+        internal static string ConsoleHint {
+            get {
+                return ResourceManager.GetString("ConsoleHint", resourceCulture);
             }
         }
         
@@ -124,11 +187,83 @@ namespace WTStatistics.Resx {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Contact us:.
+        /// </summary>
+        internal static string ContactUs {
+            get {
+                return ResourceManager.GetString("ContactUs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Download Charts.
+        /// </summary>
+        internal static string DownloadCharts {
+            get {
+                return ResourceManager.GetString("DownloadCharts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Download Versus.
+        /// </summary>
+        internal static string DownloadVersus {
+            get {
+                return ResourceManager.GetString("DownloadVersus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Download WoT Quiz.
+        /// </summary>
+        internal static string DownloadWoTQuiz {
+            get {
+                return ResourceManager.GetString("DownloadWoTQuiz", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Download WT Quiz.
+        /// </summary>
+        internal static string DownloadWTQuiz {
+            get {
+                return ResourceManager.GetString("DownloadWTQuiz", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Efficiency.
+        /// </summary>
+        internal static string Efficiency {
+            get {
+                return ResourceManager.GetString("Efficiency", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на kill to battle ratio. Don&apos;t confuse battle (1 respawn) and match (whole battle with many respawns).
+        /// </summary>
+        internal static string EfficiencyDesc {
+            get {
+                return ResourceManager.GetString("EfficiencyDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Enter nickname.
         /// </summary>
         internal static string EnterNickname {
             get {
                 return ResourceManager.GetString("EnterNickname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Excellent player.
+        /// </summary>
+        internal static string ExcellentPlayer {
+            get {
+                return ResourceManager.GetString("ExcellentPlayer", resourceCulture);
             }
         }
         
@@ -142,11 +277,56 @@ namespace WTStatistics.Resx {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Favorite mode.
+        /// </summary>
+        internal static string FavoriteMode {
+            get {
+                return ResourceManager.GetString("FavoriteMode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на the number of battles for each game mode.
+        /// </summary>
+        internal static string FavoriteModeDesc {
+            get {
+                return ResourceManager.GetString("FavoriteModeDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Favorite type of vehicle.
         /// </summary>
         internal static string FavoriteTypeOfVehicle {
             get {
                 return ResourceManager.GetString("FavoriteTypeOfVehicle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на the number of battles for each type of vehicle.
+        /// </summary>
+        internal static string FavoriteTypeOfVehicleDesc {
+            get {
+                return ResourceManager.GetString("FavoriteTypeOfVehicleDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Favorite type of vehicles.
+        /// </summary>
+        internal static string FavoriteTypesOfVehicles {
+            get {
+                return ResourceManager.GetString("FavoriteTypesOfVehicles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Fighter.
+        /// </summary>
+        internal static string Fighter {
+            get {
+                return ResourceManager.GetString("Fighter", resourceCulture);
             }
         }
         
@@ -178,6 +358,15 @@ namespace WTStatistics.Resx {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Frigate.
+        /// </summary>
+        internal static string Frigate {
+            get {
+                return ResourceManager.GetString("Frigate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Germany.
         /// </summary>
         internal static string Germany {
@@ -187,11 +376,83 @@ namespace WTStatistics.Resx {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Good player.
+        /// </summary>
+        internal static string GoodPlayer {
+            get {
+                return ResourceManager.GetString("GoodPlayer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Ground.
         /// </summary>
         internal static string Ground {
             get {
                 return ResourceManager.GetString("Ground", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на  h.
+        /// </summary>
+        internal static string H {
+            get {
+                return ResourceManager.GetString("H", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Heavy tanks.
+        /// </summary>
+        internal static string HeavyTanks {
+            get {
+                return ResourceManager.GetString("HeavyTanks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на total play time in all modes.
+        /// </summary>
+        internal static string HintClockDesc {
+            get {
+                return ResourceManager.GetString("HintClockDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на account registration date.
+        /// </summary>
+        internal static string HintEggDesc {
+            get {
+                return ResourceManager.GetString("HintEggDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на total number of earned silver lions.
+        /// </summary>
+        internal static string HintIconDesc {
+            get {
+                return ResourceManager.GetString("HintIconDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на total number of completed mission (match).
+        /// </summary>
+        internal static string HintSwordDesc {
+            get {
+                return ResourceManager.GetString("HintSwordDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Incorrect nickname.
+        /// </summary>
+        internal static string IncorrectNickname {
+            get {
+                return ResourceManager.GetString("IncorrectNickname", resourceCulture);
             }
         }
         
@@ -219,6 +480,60 @@ namespace WTStatistics.Resx {
         internal static string KillBattleRatio {
             get {
                 return ResourceManager.GetString("KillBattleRatio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Medium tanks.
+        /// </summary>
+        internal static string MediumTanks {
+            get {
+                return ResourceManager.GetString("MediumTanks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Nickname doesn&apos;t exist. Please enter correct nickname.
+        /// </summary>
+        internal static string NicknameDesc {
+            get {
+                return ResourceManager.GetString("NicknameDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на No Internet.
+        /// </summary>
+        internal static string NoInternet {
+            get {
+                return ResourceManager.GetString("NoInternet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Outstanding player.
+        /// </summary>
+        internal static string OutstandingPlayer {
+            get {
+                return ResourceManager.GetString("OutstandingPlayer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Please make sure the internet is available and try again.
+        /// </summary>
+        internal static string PleaseMakeSureTheInternetIsAvailableAndTryAgain {
+            get {
+                return ResourceManager.GetString("PleaseMakeSureTheInternetIsAvailableAndTryAgain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Rate this app:.
+        /// </summary>
+        internal static string RateUsInGooglePlay {
+            get {
+                return ResourceManager.GetString("RateUsInGooglePlay", resourceCulture);
             }
         }
         
@@ -268,11 +583,56 @@ namespace WTStatistics.Resx {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Ship destroyer.
+        /// </summary>
+        internal static string ShipDestroyer {
+            get {
+                return ResourceManager.GetString("ShipDestroyer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Something went wrong. Please try again later..
+        /// </summary>
+        internal static string SomethingWentWrongNPleaseTryAgainLater {
+            get {
+                return ResourceManager.GetString("SomethingWentWrongNPleaseTryAgainLater", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на SPAA.
+        /// </summary>
+        internal static string SPAA {
+            get {
+                return ResourceManager.GetString("SPAA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на squad clan tag.
+        /// </summary>
+        internal static string SquadClanTag {
+            get {
+                return ResourceManager.GetString("SquadClanTag", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Tank AB.
         /// </summary>
         internal static string TankAB {
             get {
                 return ResourceManager.GetString("TankAB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Tank destroyer.
+        /// </summary>
+        internal static string TankDestroyer {
+            get {
+                return ResourceManager.GetString("TankDestroyer", resourceCulture);
             }
         }
         
@@ -295,20 +655,11 @@ namespace WTStatistics.Resx {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Top planes.
+        ///   Ищет локализованную строку, похожую на Timeout.
         /// </summary>
-        internal static string TopPlanes {
+        internal static string Timeout {
             get {
-                return ResourceManager.GetString("TopPlanes", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Top tanks.
-        /// </summary>
-        internal static string TopTanks {
-            get {
-                return ResourceManager.GetString("TopTanks", resourceCulture);
+                return ResourceManager.GetString("Timeout", resourceCulture);
             }
         }
         
@@ -318,6 +669,33 @@ namespace WTStatistics.Resx {
         internal static string TotalCountOfVehicles {
             get {
                 return ResourceManager.GetString("TotalCountOfVehicles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Total number of researched vehicles.
+        /// </summary>
+        internal static string TotalNumberOfResearchedVehicles {
+            get {
+                return ResourceManager.GetString("TotalNumberOfResearchedVehicles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на the number of researched vehicles for each game nation.
+        /// </summary>
+        internal static string TotalNumberOfResearchedVehiclesDesc {
+            get {
+                return ResourceManager.GetString("TotalNumberOfResearchedVehiclesDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Try our apps:.
+        /// </summary>
+        internal static string TryOurApps {
+            get {
+                return ResourceManager.GetString("TryOurApps", resourceCulture);
             }
         }
         
@@ -345,6 +723,24 @@ namespace WTStatistics.Resx {
         internal static string Winrate {
             get {
                 return ResourceManager.GetString("Winrate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на just win rate for each mode.
+        /// </summary>
+        internal static string WinrateDesc {
+            get {
+                return ResourceManager.GetString("WinrateDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Winrate.
+        /// </summary>
+        internal static string WinrateHint {
+            get {
+                return ResourceManager.GetString("WinrateHint", resourceCulture);
             }
         }
     }

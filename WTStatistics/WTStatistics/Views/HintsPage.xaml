@@ -1,24 +1,247 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:WTStatistics.ViewModels"
-             NavigationPage.HasNavigationBar="False"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" xmlns:controls="clr-namespace:MarcTron.Plugin.Controls;assembly=Plugin.MtAdmob"
+             xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
+             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+             xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+             xmlns:properties="clr-namespace:WTStatistics.Resx"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:local="clr-namespace:WTStatistics.ViewModels"
              ios:Page.UseSafeArea="true"
              x:Class="WTStatistics.Views.HintsPage">
 
     <ContentPage.BindingContext>
         <local:HintsViewModel/>
     </ContentPage.BindingContext>
-    
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Hints will be added later!"
-                FontSize="Large"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <controls:MTAdView            
-                PersonalizedAds="True"
-                AdsId="ca-app-pub-3940256099942544/6300978111"/>
-        </StackLayout>
-    </ContentPage.Content>
+
+    <StackLayout Padding="0" Style="{StaticResource MainBackground}">
+
+        <!--Gradient section-->
+        <ScrollView>
+            <StackLayout>
+                <Grid Padding="0">
+                <!--Gradient image-->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Image
+                       Aspect="AspectFit"
+                       Source="grad_blue">
+                </Image>
+                    <StackLayout Padding="20, 10, 20, 0">
+                        <Label Style="{StaticResource hint}"
+                               TextColor="White">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Gradient colors: " FontAttributes="Bold"/>
+                                    <Span Text="  █" TextColor="Red" />
+                                    <Span Text=" – "/>
+                                    <Span Text="{x:Static properties:AppResources.BadPlayer}"/>
+                                    <Span Text="  █" TextColor="Yellow" />
+                                    <Span Text=" – "/>
+                                    <Span Text="{x:Static properties:AppResources.AveragePlayer}"/>
+                                    <Span Text="  █" TextColor="Green" />
+                                    <Span Text=" – "/>
+                                    <Span Text="{x:Static properties:AppResources.GoodPlayer}"/>
+                                    <Span Text="  █" TextColor="DeepSkyBlue" />
+                                    <Span Text=" – "/>
+                                    <Span Text="{x:Static properties:AppResources.ExcellentPlayer}"/>
+                                    <Span Text="  █" TextColor="DarkViolet" />
+                                    <Span Text=" – "/>
+                                    <Span Text="{x:Static properties:AppResources.OutstandingPlayer}"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Image 
+                            Source="egg.png" 
+                            HeightRequest="15"/>
+                        <Label Style="{StaticResource hint}"
+                            TextColor="White">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="– "/>
+                                    <Span Text="{x:Static properties:AppResources.HintEggDesc}"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Image 
+                            Source="team.png" 
+                            HeightRequest="15"/>
+                            <Label Style="{StaticResource hint}"
+                            TextColor="White">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="– "/>
+                                        <Span Text="{x:Static properties:AppResources.SquadClanTag}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Image 
+                        Source="battle.png" 
+                            HeightRequest="15"/>
+                            <Label Style="{StaticResource hint}"
+                            TextColor="White">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="– "/>
+                                        <Span Text="{x:Static properties:AppResources.HintSwordDesc}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Image 
+                            Source="time.png" 
+                            HeightRequest="15"/>
+                            <Label Style="{StaticResource hint}"
+                            TextColor="White">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="– "/>
+                                        <Span Text="{x:Static properties:AppResources.HintClockDesc}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Image 
+                           Source="lion.png" 
+                            HeightRequest="15"/>
+                            <Label Style="{StaticResource hint}"
+                            TextColor="White">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="– "/>
+                                        <Span Text="{x:Static properties:AppResources.HintIconDesc}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </StackLayout>
+
+                </StackLayout>
+                </Grid>
+
+        <!--Main section below gradient section-->
+            <StackLayout Spacing="10" Padding="20,-60,20,10">
+
+                <!--Winrate Frame-->
+                <Frame Style="{StaticResource frameStyle}">
+                        <StackLayout>
+
+                            <!--Winrate Label-->
+                            <Label 
+                           Text="{x:Static properties:AppResources.Winrate}"
+                           Style="{StaticResource labelStyle}"/>
+                            <Label Padding="20,0,20,10" Style="{StaticResource hint}">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{x:Static properties:AppResources.WinrateHint}" FontAttributes="Bold"/>
+                                        <Span Text=" – "/>
+                                        <Span Text= "{x:Static properties:AppResources.WinrateDesc}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </StackLayout>
+                    </Frame>
+
+                <!--Efficiency Frame-->
+                <Frame Style="{StaticResource frameStyle}">
+                    <StackLayout>
+
+                        <!--Kill/battle ratio Label-->
+                            <Label 
+                               Text="{x:Static properties:AppResources.KillBattleRatio}"
+                               Style="{StaticResource labelStyle}"/>
+                            <Label Padding="20,0,20,10" Style="{StaticResource hint}">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{x:Static properties:AppResources.Efficiency}"FontAttributes="Bold"/>
+                                        <Span Text=" – "/>
+                                        <Span Text= "{x:Static properties:AppResources.EfficiencyDesc}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>                        
+                        </StackLayout>
+                </Frame>
+
+                <!--Preference Frame-->
+                <Frame Style="{StaticResource frameStyle}">
+                    <StackLayout>
+
+                        <!--Preference Label-->
+                        <Label 
+                           Text="{x:Static properties:AppResources.FavoriteGameModes}"
+                           Style="{StaticResource labelStyle}"/>
+
+                        <!--Favorite game modes charts-->                        
+                            <Label Padding="20,0,20,10" Style="{StaticResource hint}">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{x:Static properties:AppResources.FavoriteMode}" FontAttributes="Bold"/>
+                                        <Span Text=" – "/>
+                                        <Span Text= "{x:Static properties:AppResources.FavoriteModeDesc}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </StackLayout>
+                </Frame>
+
+                <!--Favorite types of vehicles-->
+                <Frame Style="{StaticResource frameStyle}">
+                    <StackLayout>
+
+                        <!--Favorite types of vehicles-->
+                        <Label 
+                           Text="Favorite types of vehicles"
+                           Style="{StaticResource labelStyle}"/>
+
+                        <!--Grid definition-->                          
+                            <Label Padding="20,0,20,10" Style="{StaticResource hint}">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{x:Static properties:AppResources.FavoriteTypeOfVehicle}" FontAttributes="Bold"/>
+                                        <Span Text=" – "/>
+                                        <Span Text= "{x:Static properties:AppResources.FavoriteTypeOfVehicleDesc}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </StackLayout>
+                </Frame>
+
+                <!--Researched vehicle-->
+                <Frame Style="{StaticResource frameStyle}">
+
+                    <StackLayout>
+                        <!--Researched vehicle label-->
+                        <Label 
+                           Text="{x:Static properties:AppResources.ResearchedVehicles}"
+                           Style="{StaticResource labelStyle}"/>
+
+                        <!--Researched vehicle table-->                           
+                            <Label Padding="20,0,20,10" Style="{StaticResource hint}">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{x:Static properties:AppResources.TotalNumberOfResearchedVehicles}" FontAttributes="Bold"/>
+                                        <Span Text=" – "/>
+                                        <Span Text= "{x:Static properties:AppResources.TotalNumberOfResearchedVehiclesDesc}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </StackLayout>
+                </Frame>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
 </ContentPage>

@@ -4,6 +4,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:local="clr-namespace:WTStatistics.ViewModels"
              x:Class="WTStatistics.Views.FeedbackPage"
+             xmlns:properties="clr-namespace:WTStatistics.Resx"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.UseSafeArea="true"
              NavigationPage.HasNavigationBar="False"
@@ -18,7 +19,7 @@
         <Label
             FontSize="Title"
             TextColor="{AppThemeBinding Dark={StaticResource MyLight}, Light={StaticResource MyDarkest}}"
-               Text="Contact us:" />
+               Text="{x:Static properties:AppResources.ContactUs}" />
         <StackLayout Orientation="Horizontal">
             <Button Command="{Binding RedditCommand}"
                     Text="Reddit" 
@@ -46,7 +47,7 @@
             Padding="0, 20, 0,0"
             FontSize="Title"
             TextColor="{AppThemeBinding Dark={StaticResource MyLight}, Light={StaticResource MyDarkest}}"
-               Text="Rate us in Google Play:" />
+               Text="{x:Static properties:AppResources.RateUsInGooglePlay}"/>
 
         <rating:SfRating  
             ValueChanged="SfRating_ValueChanged"
@@ -86,7 +87,7 @@
             Padding="0, 20, 0,0"
             FontSize="Title"
             TextColor="{AppThemeBinding Dark={StaticResource MyLight}, Light={StaticResource MyDarkest}}"
-               Text="Try our apps:" />
+               Text="{x:Static properties:AppResources.TryOurApps}"/>
             <Image Grid.Column="0" Grid.Row="1"
               WidthRequest="80"
               HeightRequest="80"
@@ -102,13 +103,13 @@
                     Style="{StaticResource buttonStyle}"
                     TextColor="Red"
                     BorderColor="Red"
-                Text="Download Versus"/>
+                Text="{x:Static properties:AppResources.DownloadVersus}"/>
             <Button Command="{Binding ChartsCommand}"
                     Grid.Column="1" Grid.Row="2"
                     Style="{StaticResource buttonStyle}"
                     TextColor="Red"
                     BorderColor="Red"
-                Text="Download Charts"/>
+                Text="{x:Static properties:AppResources.DownloadCharts}"/>
 
             <Label Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2"
                                Padding="0, 20, 0,0"
@@ -129,13 +130,13 @@
                     Style="{StaticResource buttonStyle}"
                     TextColor="Red"
                     BorderColor="Red"
-                Text="Download WT Quiz"/>
+                Text="{x:Static properties:AppResources.DownloadWTQuiz}"/>
             <Button Command="{Binding WoTQuizCommand}"
                     Grid.Column="1" Grid.Row="5"
                     Style="{StaticResource buttonStyle}"
                     TextColor="Red"
                     BorderColor="Red"
-                Text="Download WoT Quiz"/>
+                Text="{x:Static properties:AppResources.DownloadWoTQuiz}"/>
         </Grid>
     </StackLayout>
     </ScrollView>

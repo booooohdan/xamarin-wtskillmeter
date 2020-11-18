@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
 using WTStatistics.Models;
+using WTStatistics.Resx;
 using Xamarin.Forms;
 
 namespace WTStatistics.Helpers
@@ -178,7 +179,7 @@ namespace WTStatistics.Helpers
             VehicleCalc();
             CountryCalc();
 
-            return "#" + ModesCalc() + " #" + VehicleCalc() + " #"+CountryCalc();
+            return "#" + ModesCalc() + " #" + player.FavoriteVehicle1 + " #"+CountryCalc();
         }
 
         //return string with preference game mode for hashtag
@@ -287,17 +288,17 @@ namespace WTStatistics.Helpers
         {
             var list = new List<Preference>()
             {
-                new Preference("Fighter", player.MissionFighter, "Fighter"),
-                new Preference("Attacker", player.MissionAttacker, "Attacker"),
-                new Preference("Bomber", player.MissionBomber, "Bomber"),
-                new Preference("Medium tanks", player.MissionMTank, "MiddleTank"),
-                new Preference("Heavy tanks", player.MissionHTank, "HeavyTank"),
-                new Preference("Tank destroyer", player.MissionDestroyer, "TankDestroyer"),
-                new Preference("SPAA", player.MissionSPAA, "SPAA"),
-                new Preference("Boats", player.MissionBoats, "Boat"),
-                new Preference("Barge", player.MissionBarge, "Barge"),
-                new Preference("Frigate", player.MissionFrigate, "Frigate"),
-                new Preference("Ship destroyer", player.MissionDestroyerShip, "ShipDestroyer")
+                new Preference(AppResources.Fighter, player.MissionFighter, "Fighter"),
+                new Preference(AppResources.Attacker, player.MissionAttacker, "Attacker"),
+                new Preference(AppResources.Bomber, player.MissionBomber, "Bomber"),
+                new Preference(AppResources.MediumTanks, player.MissionMTank, "MiddleTank"),
+                new Preference(AppResources.HeavyTanks, player.MissionHTank, "HeavyTank"),
+                new Preference(AppResources.TankDestroyer, player.MissionDestroyer, "TankDestroyer"),
+                new Preference(AppResources.SPAA, player.MissionSPAA, "SPAA"),
+                new Preference(AppResources.Boats, player.MissionBoats, "Boat"),
+                new Preference(AppResources.Barge, player.MissionBarge, "Barge"),
+                new Preference(AppResources.Frigate, player.MissionFrigate, "Frigate"),
+                new Preference(AppResources.ShipDestroyer, player.MissionDestroyerShip, "ShipDestroyer")
             };
             double sum = list.Sum(x => x.Count);
             var sorted = list.OrderByDescending(x => x.Count);
@@ -332,27 +333,27 @@ namespace WTStatistics.Helpers
             if (skill >= 0 & skill <= 0.6)
             {
                 player.SkillGradient = "grad_red.png";
-                player.SkillDescription = "Bad player";
+                player.SkillDescription = AppResources.BadPlayer;
             }
             if (skill > 0.6 & skill <= 0.9)
             {
                 player.SkillGradient = "grad_yellow.png";
-                player.SkillDescription = "Average player";
+                player.SkillDescription = AppResources.AveragePlayer;
             }
             if (skill > 0.9 & skill <= 1.1)
             {
                 player.SkillGradient = "grad_green.png";
-                player.SkillDescription = "Good player";
+                player.SkillDescription = AppResources.GoodPlayer;
             }
             if (skill > 1.1 & skill <= 1.5)
             {
                 player.SkillGradient = "grad_blue.png";
-                player.SkillDescription = "Excellent player";
+                player.SkillDescription = AppResources.ExcellentPlayer;
             }
             if (skill > 1.5)
             {
                 player.SkillGradient = "grad_violet.png";
-                player.SkillDescription = "Outstanding player";
+                player.SkillDescription = AppResources.OutstandingPlayer;
             }
         }
 
@@ -380,7 +381,7 @@ namespace WTStatistics.Helpers
             var lionEarned = (ToInt(listTableMain[21]) + ToInt(listTableMain[22]) + ToInt(listTableMain[23])).ToString();
 
             player.BattleFinished = battleFinished;
-            player.TotalTimeSpended = Math.Truncate(totalTime) + " h";
+            player.TotalTimeSpended = Math.Truncate(totalTime) +AppResources.H;
             player.LionEarned = ConvToM(lionEarned);
             player.SignUpDate = signUpDate[0].Substring(18);
             player.Squadron = squadron[0];

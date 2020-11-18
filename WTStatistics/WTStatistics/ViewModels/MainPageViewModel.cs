@@ -434,7 +434,7 @@ namespace WTStatistics.ViewModels
         private void HandleGamepadPressed(string obj)
         {
             Application.Current.MainPage.DisplayAlert(AppResources.ConsoleHintLabel,
-                "If you have PS account, add @psn to end of your nickname\nIf you have Xbox account, add @live to end of your nickname\nFor example \nPlayer1@psn\nPlayer1@live", "OK");
+                AppResources.ConsoleHint, "OK");
         }
 
         //Review request

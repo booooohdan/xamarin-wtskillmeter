@@ -132,15 +132,6 @@
   <data name="FavoriteGameModes" xml:space="preserve">
     <value>Favorite game modes</value>
   </data>
-  <data name="TopPlanes" xml:space="preserve">
-    <value>Top planes</value>
-  </data>
-  <data name="TopTanks" xml:space="preserve">
-    <value>Top tanks</value>
-  </data>
-  <data name="FavoriteTypeOfVehicle" xml:space="preserve">
-    <value>Favorite type of vehicle</value>
-  </data>
   <data name="AB" xml:space="preserve">
     <value>AB</value>
   </data>
@@ -212,5 +203,146 @@
   </data>
   <data name="Researched" xml:space="preserve">
     <value>Researched</value>
+  </data>
+  <data name="ExcellentPlayer" xml:space="preserve">
+    <value>Excellent player</value>
+  </data>
+  <data name="Fighter" xml:space="preserve">
+    <value>Fighter</value>
+  </data>
+  <data name="MediumTanks" xml:space="preserve">
+    <value>Medium tanks</value>
+  </data>
+  <data name="Boats" xml:space="preserve">
+    <value>Boats</value>
+  </data>
+  <data name="SPAA" xml:space="preserve">
+    <value>SPAA</value>
+  </data>
+  <data name="Bomber" xml:space="preserve">
+    <value>Bomber</value>
+  </data>
+  <data name="HintEggDesc" xml:space="preserve">
+    <value>account registration date</value>
+  </data>
+  <data name="FavoriteTypesOfVehicles" xml:space="preserve">
+    <value>Favorite type of vehicles</value>
+  </data>
+  <data name="HintIconDesc" xml:space="preserve">
+    <value>total number of earned silver lions</value>
+  </data>
+  <data name="HintClockDesc" xml:space="preserve">
+    <value>total play time in all modes</value>
+  </data>
+  <data name="HintSwordDesc" xml:space="preserve">
+    <value>total number of completed mission (match)</value>
+  </data>
+  <data name="BadPlayer" xml:space="preserve">
+    <value>Bad player</value>
+  </data>
+  <data name="AveragePlayer" xml:space="preserve">
+    <value>Average player</value>
+  </data>
+  <data name="GoodPlayer" xml:space="preserve">
+    <value>Good player</value>
+  </data>
+  <data name="OutstandingPlayer" xml:space="preserve">
+    <value>Outstanding player</value>
+  </data>
+  <data name="NoInternet" xml:space="preserve">
+    <value>No Internet</value>
+  </data>
+  <data name="PleaseMakeSureTheInternetIsAvailableAndTryAgain" xml:space="preserve">
+    <value>Please make sure the internet is available and try again</value>
+  </data>
+  <data name="IncorrectNickname" xml:space="preserve">
+    <value>Incorrect nickname</value>
+  </data>
+  <data name="NicknameDesc" xml:space="preserve">
+    <value>Nickname doesn't exist. Please enter correct nickname</value>
+  </data>
+  <data name="Timeout" xml:space="preserve">
+    <value>Timeout</value>
+  </data>
+  <data name="SomethingWentWrongNPleaseTryAgainLater" xml:space="preserve">
+    <value>Something went wrong. Please try again later.</value>
+  </data>
+  <data name="Attacker" xml:space="preserve">
+    <value>Attacker</value>
+  </data>
+  <data name="HeavyTanks" xml:space="preserve">
+    <value>Heavy tanks</value>
+  </data>
+  <data name="TankDestroyer" xml:space="preserve">
+    <value>Tank destroyer</value>
+  </data>
+  <data name="Barge" xml:space="preserve">
+    <value>Barge</value>
+  </data>
+  <data name="Frigate" xml:space="preserve">
+    <value>Frigate</value>
+  </data>
+  <data name="ShipDestroyer" xml:space="preserve">
+    <value>Ship destroyer</value>
+  </data>
+  <data name="H" xml:space="preserve">
+    <value> h</value>
+  </data>
+  <data name="ContactUs" xml:space="preserve">
+    <value>Contact us:</value>
+  </data>
+  <data name="RateUsInGooglePlay" xml:space="preserve">
+    <value>Rate this app:</value>
+  </data>
+  <data name="TryOurApps" xml:space="preserve">
+    <value>Try our apps:</value>
+  </data>
+  <data name="DownloadVersus" xml:space="preserve">
+    <value>Download Versus</value>
+  </data>
+  <data name="DownloadCharts" xml:space="preserve">
+    <value>Download Charts</value>
+  </data>
+  <data name="DownloadWTQuiz" xml:space="preserve">
+    <value>Download WT Quiz</value>
+  </data>
+  <data name="DownloadWoTQuiz" xml:space="preserve">
+    <value>Download WoT Quiz</value>
+  </data>
+  <data name="ConsoleHint" xml:space="preserve">
+    <value>If you have PS account, add @psn to end of your nickname. If you have Xbox account, add @live to end of your nickname. For example Player1@psn or Player1@live</value>
+  </data>
+  <data name="SquadClanTag" xml:space="preserve">
+    <value>squad clan tag</value>
+  </data>
+  <data name="WinrateHint" xml:space="preserve">
+    <value>Winrate</value>
+  </data>
+  <data name="WinrateDesc" xml:space="preserve">
+    <value>just win rate for each mode</value>
+  </data>
+  <data name="Efficiency" xml:space="preserve">
+    <value>Efficiency</value>
+  </data>
+  <data name="EfficiencyDesc" xml:space="preserve">
+    <value>kill to battle ratio. Don't confuse battle (1 respawn) and match (whole battle with many respawns)</value>
+  </data>
+  <data name="FavoriteMode" xml:space="preserve">
+    <value>Favorite mode</value>
+  </data>
+  <data name="FavoriteModeDesc" xml:space="preserve">
+    <value>the number of battles for each game mode</value>
+  </data>
+  <data name="FavoriteTypeOfVehicle" xml:space="preserve">
+    <value>Favorite type of vehicle</value>
+  </data>
+  <data name="FavoriteTypeOfVehicleDesc" xml:space="preserve">
+    <value>the number of battles for each type of vehicle</value>
+  </data>
+  <data name="TotalNumberOfResearchedVehicles" xml:space="preserve">
+    <value>Total number of researched vehicles</value>
+  </data>
+  <data name="TotalNumberOfResearchedVehiclesDesc" xml:space="preserve">
+    <value>the number of researched vehicles for each game nation</value>
   </data>
 </root>
