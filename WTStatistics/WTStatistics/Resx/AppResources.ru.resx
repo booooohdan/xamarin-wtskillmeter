@@ -117,4 +117,277 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ConsoleHintLabel" xml:space="preserve">
+    <value>Подсказка для игроков Xbox и PS</value>
+  </data>
+  <data name="Winrate" xml:space="preserve">
+    <value>Винрейт (АБ/РБ/СБ)</value>
+  </data>
+  <data name="EnterNickname" xml:space="preserve">
+    <value>Введите свой ник</value>
+  </data>
+  <data name="KillBattleRatio" xml:space="preserve">
+    <value>Результативность (k/b)</value>
+  </data>
+  <data name="FavoriteGameModes" xml:space="preserve">
+    <value>Любимый игровой режим</value>
+  </data>
+  <data name="AB" xml:space="preserve">
+    <value>АБ</value>
+  </data>
+  <data name="RB" xml:space="preserve">
+    <value>РБ</value>
+  </data>
+  <data name="SB" xml:space="preserve">
+    <value>СБ</value>
+  </data>
+  <data name="Air" xml:space="preserve">
+    <value>Авиа</value>
+  </data>
+  <data name="Ground" xml:space="preserve">
+    <value>Танки</value>
+  </data>
+  <data name="Sea" xml:space="preserve">
+    <value>Флот</value>
+  </data>
+  <data name="AirAB" xml:space="preserve">
+    <value>Авиа АБ</value>
+  </data>
+  <data name="AirRB" xml:space="preserve">
+    <value>Авиа РБ</value>
+  </data>
+  <data name="AirSB" xml:space="preserve">
+    <value>Авиа СБ</value>
+  </data>
+  <data name="TankAB" xml:space="preserve">
+    <value>Танк АБ</value>
+  </data>
+  <data name="TankRB" xml:space="preserve">
+    <value>Танк РБ</value>
+  </data>
+  <data name="TankSB" xml:space="preserve">
+    <value>Танк СБ</value>
+  </data>
+  <data name="FleetAB" xml:space="preserve">
+    <value>Флот АБ</value>
+  </data>
+  <data name="FleetRB" xml:space="preserve">
+    <value>Флот РБ</value>
+  </data>
+  <data name="USA" xml:space="preserve">
+    <value>США</value>
+  </data>
+  <data name="Germany" xml:space="preserve">
+    <value>Германия</value>
+  </data>
+  <data name="USSR" xml:space="preserve">
+    <value>СССР</value>
+  </data>
+  <data name="Britain" xml:space="preserve">
+    <value>Британия</value>
+  </data>
+  <data name="Japan" xml:space="preserve">
+    <value>Япония</value>
+  </data>
+  <data name="Italy" xml:space="preserve">
+    <value>Италия</value>
+  </data>
+  <data name="France" xml:space="preserve">
+    <value>Франция</value>
+  </data>
+  <data name="TotalCountOfVehicles" xml:space="preserve">
+    <value>Общее количество</value>
+  </data>
+  <data name="ResearchedVehicles" xml:space="preserve">
+    <value>Исследованная техника</value>
+  </data>
+  <data name="Researched" xml:space="preserve">
+    <value>Исследовано</value>
+  </data>
+  <data name="ExcellentPlayer" xml:space="preserve">
+    <value>Отличный игрок</value>
+  </data>
+  <data name="Fighter" xml:space="preserve">
+    <value>Истребитель</value>
+  </data>
+  <data name="MediumTanks" xml:space="preserve">
+    <value>Средний танк</value>
+  </data>
+  <data name="Boats" xml:space="preserve">
+    <value>Лодка</value>
+  </data>
+  <data name="SPAA" xml:space="preserve">
+    <value>ЗСУ</value>
+  </data>
+  <data name="Bomber" xml:space="preserve">
+    <value>Бомбардировщик</value>
+  </data>
+  <data name="HintEggDesc" xml:space="preserve">
+    <value>дата регистрации</value>
+  </data>
+  <data name="HintIconDesc" xml:space="preserve">
+    <value>общее количество заработанных серебряных львов</value>
+  </data>
+  <data name="HintClockDesc" xml:space="preserve">
+    <value>общее время игры во всех режимах</value>
+  </data>
+  <data name="HintSwordDesc" xml:space="preserve">
+    <value>общее количество завершенных миссий (матчей)</value>
+  </data>
+  <data name="BadPlayer" xml:space="preserve">
+    <value>Плохой игрок</value>
+  </data>
+  <data name="AveragePlayer" xml:space="preserve">
+    <value>Средний игрок</value>
+  </data>
+  <data name="GoodPlayer" xml:space="preserve">
+    <value>Хороший игрок</value>
+  </data>
+  <data name="OutstandingPlayer" xml:space="preserve">
+    <value>Исключительный игрок</value>
+  </data>
+  <data name="NoInternet" xml:space="preserve">
+    <value>Отсутствует подключение к Интернету</value>
+  </data>
+  <data name="PleaseMakeSureTheInternetIsAvailableAndTryAgain" xml:space="preserve">
+    <value>Убедитесь, что Интернет подключен и повторите попытку</value>
+  </data>
+  <data name="IncorrectNickname" xml:space="preserve">
+    <value>Неправильный никнейм</value>
+  </data>
+  <data name="NicknameDesc" xml:space="preserve">
+    <value>Никнейм не существует. Пожалуйста, введите правильный никнейм</value>
+  </data>
+  <data name="Timeout" xml:space="preserve">
+    <value>Превышено время ожидания</value>
+  </data>
+  <data name="SomethingWentWrongNPleaseTryAgainLater" xml:space="preserve">
+    <value>Что-то пошло не так. Пожалуйста, попробуйте позже</value>
+  </data>
+  <data name="Attacker" xml:space="preserve">
+    <value>Штурмовик</value>
+  </data>
+  <data name="HeavyTanks" xml:space="preserve">
+    <value>Тяжелый танк</value>
+  </data>
+  <data name="TankDestroyer" xml:space="preserve">
+    <value>САУ</value>
+  </data>
+  <data name="Barge" xml:space="preserve">
+    <value>Баржа</value>
+  </data>
+  <data name="Frigate" xml:space="preserve">
+    <value>Фрегат</value>
+  </data>
+  <data name="ShipDestroyer" xml:space="preserve">
+    <value>Эсминец</value>
+  </data>
+  <data name="H" xml:space="preserve">
+    <value> ч</value>
+  </data>
+  <data name="ContactUs" xml:space="preserve">
+    <value>Обратная связь:</value>
+  </data>
+  <data name="RateUsInGooglePlay" xml:space="preserve">
+    <value>Оцените приложение:</value>
+  </data>
+  <data name="TryOurApps" xml:space="preserve">
+    <value>Попробуйте наши приложения:</value>
+  </data>
+  <data name="DownloadVersus" xml:space="preserve">
+    <value>Скачать WT Versus</value>
+  </data>
+  <data name="DownloadCharts" xml:space="preserve">
+    <value>Скачать WT Анализатор</value>
+  </data>
+  <data name="DownloadWoTQuiz" xml:space="preserve">
+    <value>Скачать WoT викторину</value>
+  </data>
+  <data name="ConsoleHint" xml:space="preserve">
+    <value>Если у вас PS аккаунт, добавьте @psn в конец вашего никнейм. Если у вас Xbox аккаунт, добавьте @live в конец никнейма. Например, Player1@psn или Player1@live</value>
+  </data>
+  <data name="SquadClanTag" xml:space="preserve">
+    <value>клан тег</value>
+  </data>
+  <data name="WinrateHint" xml:space="preserve">
+    <value>Винрейт</value>
+  </data>
+  <data name="WinrateDesc" xml:space="preserve">
+    <value>винрейт для каждого режима</value>
+  </data>
+  <data name="Efficiency" xml:space="preserve">
+    <value>Эффективность</value>
+  </data>
+  <data name="EfficiencyDesc" xml:space="preserve">
+    <value>соотношение фрагов к боям. Не путайте бои (1 респаун) и матчи (полный бой с несколькими респаунами)</value>
+  </data>
+  <data name="FavoriteMode" xml:space="preserve">
+    <value>Любимый режим</value>
+  </data>
+  <data name="FavoriteModeDesc" xml:space="preserve">
+    <value>количество боев для каждого игрового режима</value>
+  </data>
+  <data name="FavoriteTypeOfVehicle" xml:space="preserve">
+    <value>Любимый тип техники</value>
+  </data>
+  <data name="FavoriteTypeOfVehicleDesc" xml:space="preserve">
+    <value>количество боев для каждого типа техники</value>
+  </data>
+  <data name="TotalNumberOfResearchedVehicles" xml:space="preserve">
+    <value>Общее количество исследованной техники</value>
+  </data>
+  <data name="TotalNumberOfResearchedVehiclesDesc" xml:space="preserve">
+    <value>количество исследованной техники для каждой игровой нации</value>
+  </data>
+  <data name="DownloadWTQuiz" xml:space="preserve">
+    <value>Скачать WT викторину</value>
+  </data>
+  <data name="TryOurGames" xml:space="preserve">
+    <value>Попробуйте наши игры:</value>
+  </data>
+  <data name="Hints" xml:space="preserve">
+    <value>Подсказки</value>
+  </data>
+  <data name="Feedback" xml:space="preserve">
+    <value>Обратная связь</value>
+  </data>
+  <data name="Statistics" xml:space="preserve">
+    <value>Статистика</value>
+  </data>
+  <data name="PlayerRB" xml:space="preserve">
+    <value>рбшник</value>
+  </data>
+  <data name="PlayerAB" xml:space="preserve">
+    <value>аркадник</value>
+  </data>
+  <data name="PlayerSB" xml:space="preserve">
+    <value>сбшник</value>
+  </data>
+  <data name="PlayerGermany" xml:space="preserve">
+    <value>немцефил</value>
+  </data>
+  <data name="PlayerUSA" xml:space="preserve">
+    <value>амерофил</value>
+  </data>
+  <data name="PlayerChina" xml:space="preserve">
+    <value>китайфил</value>
+  </data>
+  <data name="PlayerFrance" xml:space="preserve">
+    <value>францофил</value>
+  </data>
+  <data name="PlayerItaly" xml:space="preserve">
+    <value>италофил</value>
+  </data>
+  <data name="PlayerJapan" xml:space="preserve">
+    <value>японофил</value>
+  </data>
+  <data name="PlayerSweden" xml:space="preserve">
+    <value>шведофил</value>
+  </data>
+  <data name="PlayerUssr" xml:space="preserve">
+    <value>совколюб</value>
+  </data>
+  <data name="PlayerBritain" xml:space="preserve">
+    <value>британофил</value>
+  </data>
 </root>

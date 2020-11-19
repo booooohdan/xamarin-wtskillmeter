@@ -133,7 +133,7 @@
                 </Grid>
 
         <!--Main section below gradient section-->
-            <StackLayout Spacing="10" Padding="20,-60,20,10">
+            <StackLayout Spacing="10" Padding="20,-40,20,10">
 
                 <!--Winrate Frame-->
                 <Frame Style="{StaticResource frameStyle}">
@@ -166,7 +166,7 @@
                             <Label Padding="20,0,20,10" Style="{StaticResource hint}">
                                 <Label.FormattedText>
                                     <FormattedString>
-                                        <Span Text="{x:Static properties:AppResources.Efficiency}"FontAttributes="Bold"/>
+                                        <Span Text="{x:Static properties:AppResources.Efficiency}" FontAttributes="Bold"/>
                                         <Span Text=" – "/>
                                         <Span Text= "{x:Static properties:AppResources.EfficiencyDesc}"/>
                                     </FormattedString>

@@ -3,6 +3,7 @@
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"     
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core" 
             xmlns:pages="clr-namespace:WTStatistics.Views"
+            xmlns:properties="clr-namespace:WTStatistics.Resx"
             NavigationPage.HasNavigationBar="False"
             BarBackgroundColor="#2a2a2a"
             SelectedTabColor="White"
@@ -11,19 +12,19 @@
             x:Class="WTStatistics.MainTabbedPage">
 
     <TabbedPage.Children>
-        <NavigationPage Title="Statistics" IconImageSource="tab_statistics.png">
+        <NavigationPage Title="{x:Static properties:AppResources.Statistics}" IconImageSource="tab_statistics.png">
             <x:Arguments>
                 <pages:MainPage/>
             </x:Arguments>
         </NavigationPage>
 
-        <NavigationPage Title="Hints" IconImageSource="tab_question.png">
+        <NavigationPage Title="{x:Static properties:AppResources.Hints}" IconImageSource="tab_question.png">
             <x:Arguments>
                 <pages:HintsPage/>
             </x:Arguments>
         </NavigationPage>
 
-        <NavigationPage Title="Feedback" IconImageSource="tab_feedback.png">
+        <NavigationPage Title="{x:Static properties:AppResources.Feedback}" IconImageSource="tab_feedback.png">
             <x:Arguments>
                 <pages:FeedbackPage/>
             </x:Arguments>

@@ -176,10 +176,10 @@ namespace WTStatistics.Helpers
         private string SetHashTag()
         {
             ModesCalc();
-            VehicleCalc();
             CountryCalc();
-
-            return "#" + ModesCalc() + " #" + player.FavoriteVehicle1 + " #"+CountryCalc();
+            var hashtag = "#" + ModesCalc() + "  #" +CountryCalc() ;
+            hashtag = hashtag.ToLower();
+            return hashtag;
         }
 
         //return string with preference game mode for hashtag
@@ -191,37 +191,15 @@ namespace WTStatistics.Helpers
 
             if (ab > rb & ab > sb)
             {
-                return "ab";
+                return AppResources.PlayerAB;
             }
             if (rb > ab & rb > sb)
             {
-                return "rb";
+                return AppResources.PlayerRB;
             }
             if (sb > ab & sb > rb)
             {
-                return "sb";
-            }
-            return null;
-        }
-
-        //return string with preference vehicle for hashtag
-        private string VehicleCalc()
-        {
-            var avia = player.CountAAB + player.CountARB + player.CountASB;
-            var tank = player.CountTAB + player.CountTRB + player.CountTSB;
-            var ship = player.CountSAB + player.CountSRB;
-
-            if (avia > tank & avia > ship)
-            {
-                return "pilot";
-            }
-            if (tank > avia & tank > ship)
-            {
-                return "tankman";
-            }
-            if (ship > avia & ship > tank)
-            {
-                return "sailor";
+                return AppResources.PlayerSB;
             }
             return null;
         }
@@ -246,39 +224,39 @@ namespace WTStatistics.Helpers
                       
             if (country == player.ResearchedUSA)
             {
-                return "usa";
+                return AppResources.PlayerUSA;
             }
             if (country == player.ResearchedGermany)
             {
-                return "germany";
+                return AppResources.PlayerGermany;
             }
             if (country == player.ResearchedUSSR)
             {
-                return "ussr";
+                return AppResources.PlayerUssr;
             }
             if (country == player.ResearchedBritain)
             {
-                return "britain";
+                return AppResources.PlayerBritain;
             }
             if (country == player.ResearchedJapan)
             {
-                return "japan";
+                return AppResources.PlayerJapan;
             }
             if (country == player.ResearchedItaly)
             {
-                return "italy";
+                return AppResources.PlayerItaly;
             }
             if (country == player.ResearchedFrance)
             {
-                return "france";
+                return AppResources.PlayerFrance;
             }
             if (country == player.ResearchedChina)
             {
-                return "china";
+                return AppResources.PlayerChina;
             }
             if (country == player.ResearchedSweden)
             {
-                return "sweden";
+                return AppResources.PlayerSweden;
             }
 
             return null;

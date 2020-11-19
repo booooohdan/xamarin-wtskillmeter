@@ -225,9 +225,6 @@
   <data name="HintEggDesc" xml:space="preserve">
     <value>account registration date</value>
   </data>
-  <data name="FavoriteTypesOfVehicles" xml:space="preserve">
-    <value>Favorite type of vehicles</value>
-  </data>
   <data name="HintIconDesc" xml:space="preserve">
     <value>total number of earned silver lions</value>
   </data>
@@ -265,7 +262,7 @@
     <value>Timeout</value>
   </data>
   <data name="SomethingWentWrongNPleaseTryAgainLater" xml:space="preserve">
-    <value>Something went wrong. Please try again later.</value>
+    <value>Something went wrong. Please try again later</value>
   </data>
   <data name="Attacker" xml:space="preserve">
     <value>Attacker</value>
@@ -344,5 +341,53 @@
   </data>
   <data name="TotalNumberOfResearchedVehiclesDesc" xml:space="preserve">
     <value>the number of researched vehicles for each game nation</value>
+  </data>
+  <data name="TryOurGames" xml:space="preserve">
+    <value>Try our games:</value>
+  </data>
+  <data name="Statistics" xml:space="preserve">
+    <value>Statistics</value>
+  </data>
+  <data name="Hints" xml:space="preserve">
+    <value>Hints</value>
+  </data>
+  <data name="Feedback" xml:space="preserve">
+    <value>Feedback</value>
+  </data>
+  <data name="PlayerAB" xml:space="preserve">
+    <value>ab</value>
+  </data>
+  <data name="PlayerRB" xml:space="preserve">
+    <value>rb</value>
+  </data>
+  <data name="PlayerSB" xml:space="preserve">
+    <value>sb</value>
+  </data>
+  <data name="PlayerUSA" xml:space="preserve">
+    <value>usa</value>
+  </data>
+  <data name="PlayerGermany" xml:space="preserve">
+    <value>germany</value>
+  </data>
+  <data name="PlayerUssr" xml:space="preserve">
+    <value>ussr</value>
+  </data>
+  <data name="PlayerBritain" xml:space="preserve">
+    <value>britain</value>
+  </data>
+  <data name="PlayerJapan" xml:space="preserve">
+    <value>japan</value>
+  </data>
+  <data name="PlayerItaly" xml:space="preserve">
+    <value>italy</value>
+  </data>
+  <data name="PlayerFrance" xml:space="preserve">
+    <value>france</value>
+  </data>
+  <data name="PlayerChina" xml:space="preserve">
+    <value>china</value>
+  </data>
+  <data name="PlayerSweden" xml:space="preserve">
+    <value>sweden</value>
   </data>
 </root>

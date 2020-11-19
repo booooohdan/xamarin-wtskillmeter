@@ -313,11 +313,11 @@ namespace WTStatistics.Resx {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Favorite type of vehicles.
+        ///   Ищет локализованную строку, похожую на Feedback.
         /// </summary>
-        internal static string FavoriteTypesOfVehicles {
+        internal static string Feedback {
             get {
-                return ResourceManager.GetString("FavoriteTypesOfVehicles", resourceCulture);
+                return ResourceManager.GetString("Feedback", resourceCulture);
             }
         }
         
@@ -439,6 +439,15 @@ namespace WTStatistics.Resx {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Hints.
+        /// </summary>
+        internal static string Hints {
+            get {
+                return ResourceManager.GetString("Hints", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на total number of completed mission (match).
         /// </summary>
         internal static string HintSwordDesc {
@@ -520,6 +529,114 @@ namespace WTStatistics.Resx {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на ab.
+        /// </summary>
+        internal static string PlayerAB {
+            get {
+                return ResourceManager.GetString("PlayerAB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на britain.
+        /// </summary>
+        internal static string PlayerBritain {
+            get {
+                return ResourceManager.GetString("PlayerBritain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на china.
+        /// </summary>
+        internal static string PlayerChina {
+            get {
+                return ResourceManager.GetString("PlayerChina", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на france.
+        /// </summary>
+        internal static string PlayerFrance {
+            get {
+                return ResourceManager.GetString("PlayerFrance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на germany.
+        /// </summary>
+        internal static string PlayerGermany {
+            get {
+                return ResourceManager.GetString("PlayerGermany", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на italy.
+        /// </summary>
+        internal static string PlayerItaly {
+            get {
+                return ResourceManager.GetString("PlayerItaly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на japan.
+        /// </summary>
+        internal static string PlayerJapan {
+            get {
+                return ResourceManager.GetString("PlayerJapan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на rb.
+        /// </summary>
+        internal static string PlayerRB {
+            get {
+                return ResourceManager.GetString("PlayerRB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на sb.
+        /// </summary>
+        internal static string PlayerSB {
+            get {
+                return ResourceManager.GetString("PlayerSB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на sweden.
+        /// </summary>
+        internal static string PlayerSweden {
+            get {
+                return ResourceManager.GetString("PlayerSweden", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на usa.
+        /// </summary>
+        internal static string PlayerUSA {
+            get {
+                return ResourceManager.GetString("PlayerUSA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на ussr.
+        /// </summary>
+        internal static string PlayerUssr {
+            get {
+                return ResourceManager.GetString("PlayerUssr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Please make sure the internet is available and try again.
         /// </summary>
         internal static string PleaseMakeSureTheInternetIsAvailableAndTryAgain {
@@ -592,7 +709,7 @@ namespace WTStatistics.Resx {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Something went wrong. Please try again later..
+        ///   Ищет локализованную строку, похожую на Something went wrong. Please try again later.
         /// </summary>
         internal static string SomethingWentWrongNPleaseTryAgainLater {
             get {
@@ -615,6 +732,15 @@ namespace WTStatistics.Resx {
         internal static string SquadClanTag {
             get {
                 return ResourceManager.GetString("SquadClanTag", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Statistics.
+        /// </summary>
+        internal static string Statistics {
+            get {
+                return ResourceManager.GetString("Statistics", resourceCulture);
             }
         }
         
@@ -696,6 +822,15 @@ namespace WTStatistics.Resx {
         internal static string TryOurApps {
             get {
                 return ResourceManager.GetString("TryOurApps", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Try our games:.
+        /// </summary>
+        internal static string TryOurGames {
+            get {
+                return ResourceManager.GetString("TryOurGames", resourceCulture);
             }
         }
         

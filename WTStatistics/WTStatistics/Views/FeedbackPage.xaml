@@ -115,7 +115,7 @@
                                Padding="0, 20, 0,0"
             FontSize="Title"
             TextColor="{AppThemeBinding Dark={StaticResource MyLight}, Light={StaticResource MyDarkest}}"
-               Text="Try our games:" />
+               Text="{x:Static properties:AppResources.TryOurGames}" />
             <Image Grid.Column="0" Grid.Row="4"
                    WidthRequest="80"
                    HeightRequest="80"
