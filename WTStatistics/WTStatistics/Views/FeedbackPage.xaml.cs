@@ -28,6 +28,15 @@ namespace WTStatistics.Views
         // RatingBar value change handler
         private void SfRating_ValueChanged(object sender, Syncfusion.SfRating.XForms.ValueEventArgs e)
         {
+            switch (Device.RuntimePlatform)
+            {
+                case Device.Android:
+                    CrossStoreReview.Current.OpenStoreReviewPage("com.wave.skillmeter");
+                    break;
+                case Device.iOS:
+                    CrossStoreReview.Current.OpenStoreReviewPage("");
+                    break;
+            }                    
             CrossStoreReview.Current.RequestReview();
         }
     }
