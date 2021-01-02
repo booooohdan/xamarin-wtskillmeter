@@ -20,7 +20,7 @@ namespace WTStatistics.ViewModels
         string searchBatText;
         string url;
         int adsCount = 0;
-        int adsNum = 4;
+        int adsNum = 3;
         int start_count = Preferences.Get("start_count", 0);
 
         public ICommand SearchButtonPressed { get; }
@@ -450,9 +450,19 @@ namespace WTStatistics.ViewModels
         public void StartExtractData(string htmlString)
         {
             #region Intersitial Ad
-
+            
             adsCount++;
-            CrossMTAdmob.Current.LoadInterstitial("ca-app-pub-8211072909515345/8885441043");
+
+            switch (Device.RuntimePlatform)
+            {
+                case Device.Android:
+                    CrossMTAdmob.Current.LoadInterstitial("ca-app-pub-8211072909515345/8885441043");
+                    break;
+                case Device.iOS:
+                    CrossMTAdmob.Current.LoadInterstitial("ca-app-pub-8211072909515345/5805813104");
+                    break;
+            }
+
             if ((adsCount % adsNum) ==0)
             {
                 CrossMTAdmob.Current.ShowInterstitial();

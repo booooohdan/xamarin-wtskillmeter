@@ -34,7 +34,7 @@ namespace WTStatistics.Views
                     CrossStoreReview.Current.OpenStoreReviewPage("com.wave.skillmeter");
                     break;
                 case Device.iOS:
-                    CrossStoreReview.Current.OpenStoreReviewPage("com.wave.skillmeter");
+                    CrossStoreReview.Current.OpenStoreReviewPage("1542964380");
                     break;
             }                    
             CrossStoreReview.Current.RequestReview();
