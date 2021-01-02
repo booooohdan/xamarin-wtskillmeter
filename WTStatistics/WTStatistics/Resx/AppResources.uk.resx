@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+		Microsoft ResX Schema
+
+		Version 1.3
+
+		The primary goals of this format is to allow a simple XML format 
+		that is mostly human readable. The generation and parsing of the 
+		various data types are done through the TypeConverter classes 
+		associated with the data types.
+
+		Example:
+
+		... ado.net/XML headers & schema ...
+		<resheader name="resmimetype">text/microsoft-resx</resheader>
+		<resheader name="version">1.3</resheader>
+		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+		<data name="Name1">this is my long string</data>
+		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+			[base64 mime encoded serialized .NET Framework object]
+		</data>
+		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+			[base64 mime encoded string representing a byte array form of the .NET Framework object]
+		</data>
+
+		There are any number of "resheader" rows that contain simple 
+		name/value pairs.
+
+		Each data row contains a name, and value. The row also contains a 
+		type or mimetype. Type corresponds to a .NET class that support 
+		text/value conversion through the TypeConverter architecture. 
+		Classes that don't support this are serialized and stored with the 
+		mimetype set.
+
+		The mimetype is used for serialized objects, and tells the 
+		ResXResourceReader how to depersist the object. This is currently not 
+		extensible. For a given mimetype the value must be set accordingly:
+
+		Note - application/x-microsoft.net.object.binary.base64 is the format 
+		that the ResXResourceWriter will generate, however the reader can 
+		read any of the formats listed below.
+
+		mimetype: application/x-microsoft.net.object.binary.base64
+		value   : The object must be serialized with 
+			: System.Serialization.Formatters.Binary.BinaryFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.soap.base64
+		value   : The object must be serialized with 
+			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.bytearray.base64
+		value   : The object must be serialized into a byte array 
+			: using a System.ComponentModel.TypeConverter
+			: and then encoded with base64 encoding.
+	-->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AB" xml:space="preserve">
+    <value>АБ</value>
+  </data>
+  <data name="Air" xml:space="preserve">
+    <value>Авіа</value>
+  </data>
+  <data name="AirAB" xml:space="preserve">
+    <value>Авіа АБ</value>
+  </data>
+  <data name="AirRB" xml:space="preserve">
+    <value>Авіа РБ</value>
+  </data>
+  <data name="AirSB" xml:space="preserve">
+    <value>Авіа СБ</value>
+  </data>
+  <data name="Attacker" xml:space="preserve">
+    <value>Штурмовик</value>
+  </data>
+  <data name="AveragePlayer" xml:space="preserve">
+    <value>Середній гравець</value>
+  </data>
+  <data name="BadPlayer" xml:space="preserve">
+    <value>Поганий гравець</value>
+  </data>
+  <data name="Barge" xml:space="preserve">
+    <value>Баржа</value>
+  </data>
+  <data name="Boats" xml:space="preserve">
+    <value>Катер</value>
+  </data>
+  <data name="Bomber" xml:space="preserve">
+    <value>Бомбардувальник</value>
+  </data>
+  <data name="Britain" xml:space="preserve">
+    <value>Великобританія</value>
+  </data>
+  <data name="ConsoleHint" xml:space="preserve">
+    <value>Якщо у вас PS акаунт, додайте @psn в кінець вашого нікнейму. Якщо ж у вас Xbox акаунт, додайте @live в кінець нікнейму. Наприклад, Player1@psn або Player1@live</value>
+  </data>
+  <data name="ConsoleHintLabel" xml:space="preserve">
+    <value>Підказка для гравців Xbox і PS</value>
+  </data>
+  <data name="ContactUs" xml:space="preserve">
+    <value>Зворотній зв'язок:</value>
+  </data>
+  <data name="DownloadCharts" xml:space="preserve">
+    <value>Завантажити WT Аналізатор</value>
+  </data>
+  <data name="DownloadVersus" xml:space="preserve">
+    <value>Завантажити WT Versus</value>
+  </data>
+  <data name="DownloadWoTQuiz" xml:space="preserve">
+    <value>Завантажити WoT вікторину</value>
+  </data>
+  <data name="DownloadWTQuiz" xml:space="preserve">
+    <value>Завантажити WT вікторину</value>
+  </data>
+  <data name="Efficiency" xml:space="preserve">
+    <value>Ефективність</value>
+  </data>
+  <data name="EfficiencyDesc" xml:space="preserve">
+    <value>співвідношення фрагів до боїв. Не плутайте бої (1 респаун) і матчі (повний бій кількома респаунами)</value>
+  </data>
+  <data name="EnterNickname" xml:space="preserve">
+    <value>Введість свій нікнейм</value>
+  </data>
+  <data name="ExcellentPlayer" xml:space="preserve">
+    <value>Відмінний гравець</value>
+  </data>
+  <data name="FavoriteGameModes" xml:space="preserve">
+    <value>Улюблений ігровий режим</value>
+  </data>
+  <data name="FavoriteMode" xml:space="preserve">
+    <value>Улюблений режим</value>
+  </data>
+  <data name="FavoriteModeDesc" xml:space="preserve">
+    <value>кількість боїв для кожного ігрового режиму</value>
+  </data>
+  <data name="FavoriteTypeOfVehicle" xml:space="preserve">
+    <value>Улюблений тип техніки</value>
+  </data>
+  <data name="FavoriteTypeOfVehicleDesc" xml:space="preserve">
+    <value>кількість боїв для кожного типу техніки</value>
+  </data>
+  <data name="Feedback" xml:space="preserve">
+    <value>Зворотній зв'язок</value>
+  </data>
+  <data name="Fighter" xml:space="preserve">
+    <value>Винищувач</value>
+  </data>
+  <data name="FleetAB" xml:space="preserve">
+    <value>Флот АБ</value>
+  </data>
+  <data name="FleetRB" xml:space="preserve">
+    <value>Флот РБ</value>
+  </data>
+  <data name="France" xml:space="preserve">
+    <value>Франція</value>
+  </data>
+  <data name="Frigate" xml:space="preserve">
+    <value>Фрегат</value>
+  </data>
+  <data name="Germany" xml:space="preserve">
+    <value>Німеччина</value>
+  </data>
+  <data name="GoodPlayer" xml:space="preserve">
+    <value>Хороший гравець</value>
+  </data>
+  <data name="Ground" xml:space="preserve">
+    <value>Танки</value>
+  </data>
+  <data name="H" xml:space="preserve">
+    <value> г</value>
+  </data>
+  <data name="HeavyTanks" xml:space="preserve">
+    <value>Важкий танк</value>
+  </data>
+  <data name="HintClockDesc" xml:space="preserve">
+    <value>загальний час у всіх режимах</value>
+  </data>
+  <data name="HintEggDesc" xml:space="preserve">
+    <value>дата реєстрації</value>
+  </data>
+  <data name="HintIconDesc" xml:space="preserve">
+    <value>загальна кількість зароблених срібних левів</value>
+  </data>
+  <data name="Hints" xml:space="preserve">
+    <value>Підказки</value>
+  </data>
+  <data name="HintSwordDesc" xml:space="preserve">
+    <value>загальна кількість завершених місій</value>
+  </data>
+  <data name="IncorrectNickname" xml:space="preserve">
+    <value>Неправильний нікнейм</value>
+  </data>
+  <data name="Italy" xml:space="preserve">
+    <value>Італія</value>
+  </data>
+  <data name="Japan" xml:space="preserve">
+    <value>Японія</value>
+  </data>
+  <data name="KillBattleRatio" xml:space="preserve">
+    <value>Результативність (k/b)</value>
+  </data>
+  <data name="MediumTanks" xml:space="preserve">
+    <value>Середній танк</value>
+  </data>
+  <data name="NicknameDesc" xml:space="preserve">
+    <value>Нікнейм не існує. Будь ласка введіть правильний нікнейм</value>
+  </data>
+  <data name="NoInternet" xml:space="preserve">
+    <value>Відсутнє підключення до інтернету</value>
+  </data>
+  <data name="OutstandingPlayer" xml:space="preserve">
+    <value>Неперевершений гравець</value>
+  </data>
+  <data name="PlayerAB" xml:space="preserve">
+    <value>аркадник</value>
+  </data>
+  <data name="PlayerBritain" xml:space="preserve">
+    <value>британофіл</value>
+  </data>
+  <data name="PlayerChina" xml:space="preserve">
+    <value>китайфіл</value>
+  </data>
+  <data name="PlayerFrance" xml:space="preserve">
+    <value>францофіл</value>
+  </data>
+  <data name="PlayerGermany" xml:space="preserve">
+    <value>німцефіл</value>
+  </data>
+  <data name="PlayerItaly" xml:space="preserve">
+    <value>італофіл</value>
+  </data>
+  <data name="PlayerJapan" xml:space="preserve">
+    <value>японофіл</value>
+  </data>
+  <data name="PlayerRB" xml:space="preserve">
+    <value>рбшник</value>
+  </data>
+  <data name="PlayerSB" xml:space="preserve">
+    <value>сбшник</value>
+  </data>
+  <data name="PlayerSweden" xml:space="preserve">
+    <value>шведофіл</value>
+  </data>
+  <data name="PlayerUSA" xml:space="preserve">
+    <value>амерофіл</value>
+  </data>
+  <data name="PlayerUssr" xml:space="preserve">
+    <value>совкофіл</value>
+  </data>
+  <data name="PleaseMakeSureTheInternetIsAvailableAndTryAgain" xml:space="preserve">
+    <value>Переконайтесь, що інтернет підключений і повторіть спробу</value>
+  </data>
+  <data name="RateUsInGooglePlay" xml:space="preserve">
+    <value>Оцініть додаток:</value>
+  </data>
+  <data name="RB" xml:space="preserve">
+    <value>РБ</value>
+  </data>
+  <data name="Researched" xml:space="preserve">
+    <value>Досліджено</value>
+  </data>
+  <data name="ResearchedVehicles" xml:space="preserve">
+    <value>Досліджено техніки</value>
+  </data>
+  <data name="SB" xml:space="preserve">
+    <value>СБ</value>
+  </data>
+  <data name="Sea" xml:space="preserve">
+    <value>Флот</value>
+  </data>
+  <data name="ShipDestroyer" xml:space="preserve">
+    <value>Есмінець</value>
+  </data>
+  <data name="SomethingWentWrongNPleaseTryAgainLater" xml:space="preserve">
+    <value>Щось пішло не так. Будь ласка, спробуйте пізніше</value>
+  </data>
+  <data name="SPAA" xml:space="preserve">
+    <value>ЗСУ</value>
+  </data>
+  <data name="SquadClanTag" xml:space="preserve">
+    <value>клан тег</value>
+  </data>
+  <data name="Statistics" xml:space="preserve">
+    <value>Статистика</value>
+  </data>
+  <data name="TankAB" xml:space="preserve">
+    <value>Танк АБ</value>
+  </data>
+  <data name="TankDestroyer" xml:space="preserve">
+    <value>САУ</value>
+  </data>
+  <data name="TankSB" xml:space="preserve">
+    <value>Танк СБ</value>
+  </data>
+  <data name="TankRB" xml:space="preserve">
+    <value>Танк РБ</value>
+  </data>
+  <data name="Timeout" xml:space="preserve">
+    <value>Перевищено час очікування</value>
+  </data>
+  <data name="TotalCountOfVehicles" xml:space="preserve">
+    <value>Загальна кількість</value>
+  </data>
+  <data name="TotalNumberOfResearchedVehicles" xml:space="preserve">
+    <value>Загальна кількість дослідженої техніки</value>
+  </data>
+  <data name="TotalNumberOfResearchedVehiclesDesc" xml:space="preserve">
+    <value>кількість дослідженої техніки для кожної ігрової нації</value>
+  </data>
+  <data name="TryOurApps" xml:space="preserve">
+    <value>Спробуйте наші додатки:</value>
+  </data>
+  <data name="TryOurGames" xml:space="preserve">
+    <value>Спробуйте наші ігри:</value>
+  </data>
+  <data name="USA" xml:space="preserve">
+    <value>США</value>
+  </data>
+  <data name="USSR" xml:space="preserve">
+    <value>СРСР</value>
+  </data>
+  <data name="Winrate" xml:space="preserve">
+    <value>Вінрейт (АБ/РБ/СБ)</value>
+  </data>
+  <data name="WinrateDesc" xml:space="preserve">
+    <value>вінрейт для кожного режиму</value>
+  </data>
+  <data name="WinrateHint" xml:space="preserve">
+    <value>Вінрейт</value>
+  </data>
+</root>
