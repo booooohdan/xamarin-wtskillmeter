@@ -101,6 +101,14 @@
                          Value="{AppThemeBinding Dark={StaticResource MyLight}, Light={StaticResource MyDarkest}}"/>
             </Style>
 
+            <Style TargetType="controls:MTAdView">
+                <Setter Property="HeightRequest">
+                    <Setter.Value>
+                        <x:OnIdiom Phone="50" Tablet="90"/>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
         </ResourceDictionary>        
     </Application.Resources>
 </Application>

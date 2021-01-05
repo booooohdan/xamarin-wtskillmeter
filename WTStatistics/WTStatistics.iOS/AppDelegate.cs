@@ -9,6 +9,8 @@ using System.Linq;
 using Foundation;
 using UIKit;
 using Google.MobileAds;
+using Syncfusion.SfBusyIndicator.iOS;
+using Syncfusion.SfBusyIndicator.XForms.iOS;
 
 namespace WTStatistics.iOS
 {
@@ -28,13 +30,14 @@ namespace WTStatistics.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
-global::Xamarin.Forms.Forms.Init();
-SfRatingRenderer.Init();
-SfChartRenderer.Init();
-SfBorderRenderer.Init();
-SfGaugeRenderer.Init();
-MobileAds.SharedInstance.Start(CompletionHandler);
-void CompletionHandler(InitializationStatus status){}
+            global::Xamarin.Forms.Forms.Init();
+            SfRatingRenderer.Init();
+            SfChartRenderer.Init();
+            SfBorderRenderer.Init();
+            SfGaugeRenderer.Init();
+            new SfBusyIndicatorRenderer();
+            MobileAds.SharedInstance.Start(CompletionHandler);
+            void CompletionHandler(InitializationStatus status){}
             LoadApplication(new App());
             return base.FinishedLaunching(app, options);
         }
