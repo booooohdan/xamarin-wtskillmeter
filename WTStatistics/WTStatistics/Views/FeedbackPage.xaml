@@ -61,8 +61,9 @@
             </rating:SfRating.RatingSettings>
         </rating:SfRating>
 
-        <Grid ColumnSpacing="30">
+        <Grid ColumnSpacing="10">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
@@ -83,56 +84,70 @@
             </Grid.IsVisible>
 
 
-            <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"
+            <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3"
             Padding="0, 20, 0,0"
             FontSize="Title"
             TextColor="{AppThemeBinding Dark={StaticResource MyLight}, Light={StaticResource MyDarkest}}"
                Text="{x:Static properties:AppResources.TryOurApps}"/>
             <Image Grid.Column="0" Grid.Row="1"
-              WidthRequest="80"
-              HeightRequest="80"
+              WidthRequest="90"
+              HeightRequest="90"
               Source="Versus"/>
             <Image Grid.Column="1" Grid.Row="1"
-               WidthRequest="80"
-               HeightRequest="80"
+               WidthRequest="90"
+               HeightRequest="90"
                Source="Charts"/>
+            <Image Grid.Column="2" Grid.Row="1"
+            WidthRequest="90"
+            HeightRequest="90"
+            Source="MapGuide"/>
 
-
-            <Button Command="{Binding VersusCommand}"
-                    Grid.Column="0" Grid.Row="2"
+                <Button Command="{Binding VersusCommand}"
+                    Grid.Column="0" Grid.Row="2" 
+                    FontSize="12"
                     Style="{StaticResource buttonStyle}"
                     TextColor="Red"
                     BorderColor="Red"
                 Text="{x:Static properties:AppResources.DownloadVersus}"/>
             <Button Command="{Binding ChartsCommand}"
                     Grid.Column="1" Grid.Row="2"
+                    FontSize="12"
                     Style="{StaticResource buttonStyle}"
                     TextColor="Red"
                     BorderColor="Red"
                 Text="{x:Static properties:AppResources.DownloadCharts}"/>
+            <Button Command="{Binding ChartsCommand}"
+                Grid.Column="2" Grid.Row="2"
+                FontSize="12"
+                Style="{StaticResource buttonStyle}"
+                TextColor="Red"
+                BorderColor="Red"
+            Text="{x:Static properties:AppResources.WTMapGuide}"/>
 
-            <Label Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2"
+                <Label Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3"
                                Padding="0, 20, 0,0"
             FontSize="Title"
             TextColor="{AppThemeBinding Dark={StaticResource MyLight}, Light={StaticResource MyDarkest}}"
                Text="{x:Static properties:AppResources.TryOurGames}" />
             <Image Grid.Column="0" Grid.Row="4"
-                   WidthRequest="80"
-                   HeightRequest="80"
+                   WidthRequest="90"
+                   HeightRequest="90"
                 Source="WTQuiz"/>
             <Image Grid.Column="1" Grid.Row="4"
-                   WidthRequest="80"
-                   HeightRequest="80"
+                   WidthRequest="90"
+                   HeightRequest="90"
                 Source="WoTQuiz"/>
 
             <Button Command="{Binding WTQuizCommand}"
                     Grid.Column="0" Grid.Row="5"
+                    FontSize="12"
                     Style="{StaticResource buttonStyle}"
                     TextColor="Red"
                     BorderColor="Red"
                 Text="{x:Static properties:AppResources.DownloadWTQuiz}"/>
             <Button Command="{Binding WoTQuizCommand}"
                     Grid.Column="1" Grid.Row="5"
+                    FontSize="12"
                     Style="{StaticResource buttonStyle}"
                     TextColor="Red"
                     BorderColor="Red"

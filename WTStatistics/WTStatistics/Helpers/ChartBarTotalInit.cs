@@ -12,13 +12,13 @@ namespace WTStatistics.Helpers
         {
             var collection = new ObservableCollection<BarChartDataModel>
             {
-                new BarChartDataModel("", 125),
-                new BarChartDataModel("", 141),
-                new BarChartDataModel("", 192),
-                new BarChartDataModel("", 242),
-                new BarChartDataModel("", 329),
+                new BarChartDataModel("", 128),
+                new BarChartDataModel("", 147),
+                new BarChartDataModel("", 195),
+                new BarChartDataModel("", 248),
+                new BarChartDataModel("", 337),
                 new BarChartDataModel("", 297),
-                new BarChartDataModel("", 282)
+                new BarChartDataModel("", 285)
             };
             return collection;
         }

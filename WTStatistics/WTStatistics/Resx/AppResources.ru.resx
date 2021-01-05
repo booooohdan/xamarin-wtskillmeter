@@ -295,13 +295,13 @@
     <value>Попробуйте наши приложения:</value>
   </data>
   <data name="DownloadVersus" xml:space="preserve">
-    <value>Скачать WT Versus</value>
+    <value>WT Versus</value>
   </data>
   <data name="DownloadCharts" xml:space="preserve">
-    <value>Скачать WT Анализатор</value>
+    <value>WT Анализатор</value>
   </data>
   <data name="DownloadWoTQuiz" xml:space="preserve">
-    <value>Скачать WoT викторину</value>
+    <value>WoT викторина</value>
   </data>
   <data name="ConsoleHint" xml:space="preserve">
     <value>Если у вас PS аккаунт, добавьте @psn в конец вашего никнейм. Если у вас Xbox аккаунт, добавьте @live в конец никнейма. Например, Player1@psn или Player1@live</value>
@@ -340,7 +340,7 @@
     <value>количество исследованной техники для каждой игровой нации</value>
   </data>
   <data name="DownloadWTQuiz" xml:space="preserve">
-    <value>Скачать WT викторину</value>
+    <value>WT викторина</value>
   </data>
   <data name="TryOurGames" xml:space="preserve">
     <value>Попробуйте наши игры:</value>
@@ -389,5 +389,8 @@
   </data>
   <data name="PlayerBritain" xml:space="preserve">
     <value>британофил</value>
+  </data>
+  <data name="WTMapGuide" xml:space="preserve">
+    <value>В разработке</value>
   </data>
 </root>

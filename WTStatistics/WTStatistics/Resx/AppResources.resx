@@ -295,16 +295,16 @@
     <value>Try our apps:</value>
   </data>
   <data name="DownloadVersus" xml:space="preserve">
-    <value>Download Versus</value>
+    <value>WT Versus</value>
   </data>
   <data name="DownloadCharts" xml:space="preserve">
-    <value>Download Charts</value>
+    <value>WT Analyzer</value>
   </data>
   <data name="DownloadWTQuiz" xml:space="preserve">
-    <value>Download WT Quiz</value>
+    <value>WT Quiz</value>
   </data>
   <data name="DownloadWoTQuiz" xml:space="preserve">
-    <value>Download WoT Quiz</value>
+    <value>WoT Quiz</value>
   </data>
   <data name="ConsoleHint" xml:space="preserve">
     <value>If you have PS account, add @psn to end of your nickname. If you have Xbox account, add @live to end of your nickname. For example Player1@psn or Player1@live</value>
@@ -389,5 +389,8 @@
   </data>
   <data name="PlayerSweden" xml:space="preserve">
     <value>sweden</value>
+  </data>
+  <data name="WTMapGuide" xml:space="preserve">
+    <value>In development</value>
   </data>
 </root>

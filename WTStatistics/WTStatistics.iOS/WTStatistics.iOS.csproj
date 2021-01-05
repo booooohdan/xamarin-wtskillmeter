@@ -323,4 +323,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\TankDestroyer.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\MapGuide.png" />
+  </ItemGroup>
 </Project>

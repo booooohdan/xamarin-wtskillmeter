@@ -196,7 +196,7 @@ namespace WTStatistics.Resx {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Download Charts.
+        ///   Ищет локализованную строку, похожую на WT Analyzer.
         /// </summary>
         internal static string DownloadCharts {
             get {
@@ -205,7 +205,7 @@ namespace WTStatistics.Resx {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Download Versus.
+        ///   Ищет локализованную строку, похожую на WT Versus.
         /// </summary>
         internal static string DownloadVersus {
             get {
@@ -214,7 +214,7 @@ namespace WTStatistics.Resx {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Download WoT Quiz.
+        ///   Ищет локализованную строку, похожую на WoT Quiz.
         /// </summary>
         internal static string DownloadWoTQuiz {
             get {
@@ -223,7 +223,7 @@ namespace WTStatistics.Resx {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Download WT Quiz.
+        ///   Ищет локализованную строку, похожую на WT Quiz.
         /// </summary>
         internal static string DownloadWTQuiz {
             get {
@@ -876,6 +876,15 @@ namespace WTStatistics.Resx {
         internal static string WinrateHint {
             get {
                 return ResourceManager.GetString("WinrateHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на In development.
+        /// </summary>
+        internal static string WTMapGuide {
+            get {
+                return ResourceManager.GetString("WTMapGuide", resourceCulture);
             }
         }
     }

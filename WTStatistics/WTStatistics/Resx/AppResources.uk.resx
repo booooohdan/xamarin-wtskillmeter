@@ -143,16 +143,16 @@
     <value>Зворотній зв'язок:</value>
   </data>
   <data name="DownloadCharts" xml:space="preserve">
-    <value>Завантажити WT Аналізатор</value>
+    <value>WT Аналізатор</value>
   </data>
   <data name="DownloadVersus" xml:space="preserve">
-    <value>Завантажити WT Versus</value>
+    <value>WT Versus</value>
   </data>
   <data name="DownloadWoTQuiz" xml:space="preserve">
-    <value>Завантажити WoT вікторину</value>
+    <value>WoT вікторина</value>
   </data>
   <data name="DownloadWTQuiz" xml:space="preserve">
-    <value>Завантажити WT вікторину</value>
+    <value>WT вікторина</value>
   </data>
   <data name="Efficiency" xml:space="preserve">
     <value>Ефективність</value>
@@ -369,5 +369,8 @@
   </data>
   <data name="WinrateHint" xml:space="preserve">
     <value>Вінрейт</value>
+  </data>
+  <data name="WTMapGuide" xml:space="preserve">
+    <value>В розробці</value>
   </data>
 </root>
