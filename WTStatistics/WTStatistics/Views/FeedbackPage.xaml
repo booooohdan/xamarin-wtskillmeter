@@ -116,7 +116,7 @@
                     TextColor="Red"
                     BorderColor="Red"
                 Text="{x:Static properties:AppResources.DownloadCharts}"/>
-            <Button Command="{Binding ChartsCommand}"
+            <Button
                 Grid.Column="2" Grid.Row="2"
                 FontSize="12"
                 Style="{StaticResource buttonStyle}"
