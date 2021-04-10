@@ -113,7 +113,7 @@
     <value>Авіа СБ</value>
   </data>
   <data name="Attacker" xml:space="preserve">
-    <value>Штурмовик</value>
+    <value>Ударний винищувач</value>
   </data>
   <data name="AveragePlayer" xml:space="preserve">
     <value>Середній гравець</value>
@@ -372,5 +372,8 @@
   </data>
   <data name="WTMapGuide" xml:space="preserve">
     <value>В розробці</value>
+  </data>
+  <data name="FavoriteTypesOfVehicles" xml:space="preserve">
+    <value>Улюблений тип техніки</value>
   </data>
 </root>

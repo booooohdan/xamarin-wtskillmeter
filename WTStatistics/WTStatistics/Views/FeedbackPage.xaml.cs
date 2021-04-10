@@ -37,7 +37,7 @@ namespace WTStatistics.Views
                     CrossStoreReview.Current.OpenStoreReviewPage("1542964380");
                     break;
             }                    
-            CrossStoreReview.Current.RequestReview();
+            CrossStoreReview.Current.RequestReview(false);
         }
     }
 }

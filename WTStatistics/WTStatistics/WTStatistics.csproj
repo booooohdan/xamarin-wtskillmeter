@@ -7,17 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MarcTron.Admob" Version="1.5.8" />
-    <PackageReference Include="Plugin.StoreReview" Version="2.0.0.5" />
+    <PackageReference Include="MarcTron.Admob" Version="1.6.1" />
+    <PackageReference Include="Plugin.StoreReview" Version="3.1.0" />
     <PackageReference Include="Syncfusion.Licensing" Version="18.3.0.38" />
     <PackageReference Include="Syncfusion.Xamarin.Core" Version="18.3.0.38" />
     <PackageReference Include="Syncfusion.Xamarin.SfBusyIndicator" Version="18.3.0.38" />
     <PackageReference Include="Syncfusion.Xamarin.SfChart" Version="18.3.0.38" />
     <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="18.3.0.38" />
     <PackageReference Include="Syncfusion.Xamarin.SfRating" Version="18.3.0.38" />
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.1487-pre1" />  
-    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />  
-    <PackageReference Include="Xamarin.Google.iOS.MobileAds" Version="7.57.0" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />  
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />  
+    <PackageReference Include="Xamarin.Google.iOS.MobileAds" Version="7.66.0" />
   </ItemGroup>
 
   <ItemGroup>

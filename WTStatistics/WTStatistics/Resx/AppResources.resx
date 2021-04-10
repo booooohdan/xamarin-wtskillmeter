@@ -265,7 +265,7 @@
     <value>Something went wrong. Please try again later</value>
   </data>
   <data name="Attacker" xml:space="preserve">
-    <value>Attacker</value>
+    <value>Strike Fighter</value>
   </data>
   <data name="HeavyTanks" xml:space="preserve">
     <value>Heavy tanks</value>
@@ -392,5 +392,8 @@
   </data>
   <data name="WTMapGuide" xml:space="preserve">
     <value>In development</value>
+  </data>
+  <data name="FavoriteTypesOfVehicles" xml:space="preserve">
+    <value>Favorite types of vehicles</value>
   </data>
 </root>

@@ -26,8 +26,7 @@
             </chart:ChartColorCollection>
 
             <Style x:Key="MainBackground" TargetType="StackLayout">
-                <Setter Property="BackgroundColor" 
-                        Value="{AppThemeBinding Dark={StaticResource MyDarkest}, Light={StaticResource MyLight}}"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource MyLight}"/>
             </Style>
 
             <Style x:Key="rightHeaderText" TargetType="Label">
@@ -47,16 +46,14 @@
                 <Setter Property="BorderWidth" Value="1" />
                 <Setter Property="CornerRadius" Value="15" />
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />
-                <Setter Property="BackgroundColor"  
-                        Value="{AppThemeBinding Dark={StaticResource MyDarkest}, Light={StaticResource MyLight}}"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource MyLight}"/>
             </Style>
             
             <Style x:Key="labelStyle" TargetType="Label">
                 <Setter Property="Padding" Value="20, 10, 0, 0" />
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="FontSize" Value="Medium" />
-                <Setter Property="TextColor" 
-                        Value="{AppThemeBinding Dark={StaticResource MyLight}, Light={StaticResource MyDarkest}}"/>
+                <Setter Property="TextColor" Value="{StaticResource MyDarkest}"/>
             </Style>
             
             <Style x:Key="labelKDStyle" TargetType="Label">
@@ -64,7 +61,7 @@
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="FontSize" Value="Medium" />
                 <Setter Property="TextColor" 
-                        Value="{AppThemeBinding Dark={StaticResource MyLight}, Light={StaticResource MyDarkest}}"/>
+                        Value="{StaticResource MyDarkest}"/>
 
             </Style>
             
@@ -73,32 +70,32 @@
                 <Setter Property="Padding" Value="0" />
                 <Setter Property="HasShadow" Value="False" />
                 <Setter Property="BackgroundColor" 
-                         Value="{AppThemeBinding Dark={StaticResource MyDark}, Light={StaticResource MyWhite}}"/>
+                         Value="{StaticResource MyWhite}"/>
             </Style>
 
             <Style x:Key="ladelInDevStyle" TargetType="Label">
                 <Setter Property="Padding" Value="20,10,0,10" />
                 <Setter Property="Text" Value="In development" />
                 <Setter Property="TextColor" 
-                         Value="{AppThemeBinding Dark={StaticResource MyLight}, Light={StaticResource MyDarkest}}"/>
+                         Value="{StaticResource MyDarkest}"/>
             </Style>
 
             <Style x:Key="ladeEfficiencyStyle" TargetType="Label">
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="TextColor" 
-                         Value="{AppThemeBinding Dark={StaticResource MyLight}, Light={StaticResource MyDarkest}}"/>
+                         Value="{StaticResource MyDarkest}"/>
             </Style>
 
             <Style x:Key="ladeEfficiency2Style" TargetType="Label">
                 <Setter Property="FontSize" Value="Medium" />
                 <Setter Property="TextColor" 
-                         Value="{AppThemeBinding Dark={StaticResource MyLight}, Light={StaticResource MyDarkest}}"/>
+                         Value="{StaticResource MyDarkest}"/>
             </Style>
 
             <Style x:Key="hint" TargetType="Label">
                 <Setter Property="FontSize" Value="Small" />
                 <Setter Property="TextColor" 
-                         Value="{AppThemeBinding Dark={StaticResource MyLight}, Light={StaticResource MyDarkest}}"/>
+                         Value="{StaticResource MyDarkest}"/>
             </Style>
 
             <Style TargetType="controls:MTAdView">

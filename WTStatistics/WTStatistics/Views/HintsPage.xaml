@@ -203,7 +203,7 @@
 
                         <!--Favorite types of vehicles-->
                         <Label 
-                           Text="Favorite types of vehicles"
+                           Text="{x:Static properties:AppResources.FavoriteTypesOfVehicles}"
                            Style="{StaticResource labelStyle}"/>
 
                         <!--Grid definition-->                          

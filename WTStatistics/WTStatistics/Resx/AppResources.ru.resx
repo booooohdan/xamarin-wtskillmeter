@@ -265,7 +265,7 @@
     <value>Что-то пошло не так. Пожалуйста, попробуйте позже</value>
   </data>
   <data name="Attacker" xml:space="preserve">
-    <value>Штурмовик</value>
+    <value>Ударный Истребитель</value>
   </data>
   <data name="HeavyTanks" xml:space="preserve">
     <value>Тяжелый танк</value>
@@ -392,5 +392,8 @@
   </data>
   <data name="WTMapGuide" xml:space="preserve">
     <value>В разработке</value>
+  </data>
+  <data name="FavoriteTypesOfVehicles" xml:space="preserve">
+    <value>Любимый тип техники</value>
   </data>
 </root>
