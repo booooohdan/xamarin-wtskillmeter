@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Essentials;
@@ -10,58 +9,102 @@ namespace WTStatistics.ViewModels
 {
     public class FeedbackViewModel : BaseViewModel
     {
+        public ICommand GmailCommand { get; }
         public ICommand RedditCommand { get; }
-        public ICommand VKCommand { get; }
-        public ICommand GMailCommand { get; }
+        public ICommand VkCommand { get; }
+        public ICommand PatreonCommand { get; }
         public ICommand VersusCommand { get; }
-        public ICommand ChartsCommand { get; }
+        public ICommand AnalyzerCommand { get; }
         public ICommand WTQuizCommand { get; }
         public ICommand WoTQuizCommand { get; }
 
         public FeedbackViewModel()
         {
+            GmailCommand = new Command(GmailHandler);
             RedditCommand = new Command(RedditHandler);
-            VKCommand = new Command(VKHandler);
-            GMailCommand = new Command(GMailHandler);
+            VkCommand = new Command(VkHandler);
+            PatreonCommand = new Command(PatreonHandler);
             VersusCommand = new Command(VersusHandler);
-            ChartsCommand = new Command(ChartsHandler);
-            WTQuizCommand = new Command(WTQuizHandler);
-            WoTQuizCommand = new Command(WoTQuizHandler);
+            AnalyzerCommand = new Command(AnalyzerMeterHandler);
+            WTQuizCommand = new Command(WtQuizHandler);
+            WoTQuizCommand = new Command(WotQuizHandler);
         }
-
-        private void RedditHandler(object obj)
+        private async void RedditHandler(object obj)
         {
-            Launcher.OpenAsync(new Uri("https://www.reddit.com/r/wave_app/"));
+            var uri = "https://www.reddit.com/r/wave_app/";
+            await Browser.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
         }
 
-        private void VKHandler(object obj)
+        private async void VkHandler(object obj)
         {
-            Launcher.OpenAsync(new Uri("https://www.vk.com/wave_app/"));
+            var uri = "https://www.vk.com/wave_app/";
+            await Browser.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
         }
 
-        private void GMailHandler(object obj)
+        private void GmailHandler(object obj)
         {
             Launcher.OpenAsync(new Uri("mailto:waveappfeedback@gmail.com"));
         }
 
+        private async void PatreonHandler(object obj)
+        {
+            var uri = "https://www.patreon.com/wave_app";
+            await Browser.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
+        }
+
         private void VersusHandler(object obj)
         {
-            Launcher.OpenAsync(new Uri("https://play.google.com/store/apps/details?id=com.wave.wtversus"));
+            switch (Device.RuntimePlatform)
+            {
+                case Device.Android:
+                    Launcher.OpenAsync(new Uri("https://play.google.com/store/apps/details?id=com.wave.wtversus"));
+                    break;
+                case Device.iOS:
+                    //Launcher.OpenAsync(new Uri("https://apps.apple.com/us/app/id1542964380"));
+                    //TODO: Replace on AppStore id
+                    break;
+            }
         }
 
-        private void ChartsHandler(object obj)
+        private void AnalyzerMeterHandler(object obj)
         {
-            Launcher.OpenAsync(new Uri("https://play.google.com/store/apps/details?id=com.wtwave.wtinsider"));
+            switch (Device.RuntimePlatform)
+            {
+                case Device.Android:
+                    Launcher.OpenAsync(new Uri("https://play.google.com/store/apps/details?id=com.wtwave.wtinsider"));
+                    break;
+                case Device.iOS:
+                    Launcher.OpenAsync(new Uri("https://apps.apple.com/us/app/id1559216412"));
+                    break;
+            }
         }
 
-        private void WTQuizHandler(object obj)
+        private void WtQuizHandler(object obj)
         {
-            Launcher.OpenAsync(new Uri("https://play.google.com/store/apps/details?id=com.wave.wtquiz"));
+            switch (Device.RuntimePlatform)
+            {
+                case Device.Android:
+                    Launcher.OpenAsync(new Uri("https://play.google.com/store/apps/details?id=com.wave.wtquiz"));
+                    break;
+                case Device.iOS:
+                    //Launcher.OpenAsync(new Uri("https://apps.apple.com/us/app/id1542964380"));
+                    //TODO: Replace on AppStore id
+                    break;
+            }
         }
 
-        private void WoTQuizHandler(object obj)
+        private void WotQuizHandler(object obj)
         {
-            Launcher.OpenAsync(new Uri("https://play.google.com/store/apps/details?id=com.wave.wotquiz"));
+            switch (Device.RuntimePlatform)
+            {
+                case Device.Android:
+                    Launcher.OpenAsync(new Uri("https://play.google.com/store/apps/details?id=com.wave.wotquiz"));
+                    break;
+                case Device.iOS:
+                    //Launcher.OpenAsync(new Uri("https://apps.apple.com/us/app/id1542964380"));
+                    //TODO: Replace on AppStore id
+                    break;
+            }
         }
     }
 }

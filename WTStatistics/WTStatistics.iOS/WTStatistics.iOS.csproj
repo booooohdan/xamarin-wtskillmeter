@@ -327,4 +327,34 @@
   <ItemGroup>
     <BundleResource Include="Resources\MapGuide.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tab_about.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Analyzer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Gmail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Patreon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Privacy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Rate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Reddit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Share.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\SkillMeter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Vk.png" />
+  </ItemGroup>
 </Project>

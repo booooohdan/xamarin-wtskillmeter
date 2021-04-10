@@ -288,8 +288,8 @@
   <data name="ContactUs" xml:space="preserve">
     <value>Contact us:</value>
   </data>
-  <data name="RateUsInGooglePlay" xml:space="preserve">
-    <value>Rate this app:</value>
+  <data name="RateTheApp" xml:space="preserve">
+    <value>Rate the app</value>
   </data>
   <data name="TryOurApps" xml:space="preserve">
     <value>Try our apps:</value>
@@ -395,5 +395,44 @@
   </data>
   <data name="FavoriteTypesOfVehicles" xml:space="preserve">
     <value>Favorite types of vehicles</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="CheckThisCoolApp" xml:space="preserve">
+    <value>Check this cool app for War Thunder</value>
+  </data>
+  <data name="ShareWithFriends" xml:space="preserve">
+    <value>Share with friends</value>
+  </data>
+  <data name="WTSkillMeterAboutText" xml:space="preserve">
+    <value>War Thunder Skill Meter is an unofficial, must-have app for all War Thunder players. The app shows advanced statistics of game profile</value>
+  </data>
+  <data name="WTSkillMeterAboutTextIOS" xml:space="preserve">
+    <value>War Thunder Skill Meter is an unofficial, must-have app for popular war game players. The app shows advanced statistics of game profile</value>
+  </data>
+  <data name="PrivacyPolicy" xml:space="preserve">
+    <value>PrivacyPolicy</value>
+  </data>
+  <data name="AppForAnalyzeWarVehicle" xml:space="preserve">
+    <value>App for analyze of war vehicles</value>
+  </data>
+  <data name="ReportABug" xml:space="preserve">
+    <value>Report a bug</value>
+  </data>
+  <data name="FollowTheNewsAskQuestion" xml:space="preserve">
+    <value>Follow the news, make suggest</value>
+  </data>
+  <data name="AppForVehiclesComparison" xml:space="preserve">
+    <value>App for vehicles comparison</value>
+  </data>
+  <data name="TriviaGameWithWarThunderVehicles" xml:space="preserve">
+    <value>Trivia game with War Thunder vehicles</value>
+  </data>
+  <data name="TriviaGameWithWorldOfTanksVehicles" xml:space="preserve">
+    <value>Trivia game with World of Tanks vehicles</value>
   </data>
 </root>

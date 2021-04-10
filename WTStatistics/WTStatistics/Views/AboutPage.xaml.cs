@@ -5,12 +5,12 @@ using Xamarin.Forms.Xaml;
 namespace WTStatistics.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class FeedbackPage : ContentPage
+    public partial class AboutPage : ContentPage
     {
-        public FeedbackPage()
+        public AboutPage()
         {
             InitializeComponent();
-            BindingContext = new FeedbackViewModel();
+            BindingContext = new AboutViewModel();
         }
     }
 }

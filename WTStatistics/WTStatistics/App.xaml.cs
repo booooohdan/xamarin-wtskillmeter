@@ -14,7 +14,7 @@ namespace WTStatistics
         {
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(Helpers.License.Key());
             InitializeComponent();
-            MainPage = new MainTabbedPage();
+            MainPage = new AppShell();
         }
 
         protected override void OnStart()

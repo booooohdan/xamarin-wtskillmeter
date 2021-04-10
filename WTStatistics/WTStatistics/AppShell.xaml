@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WTStatistics.AppShell"
+             xmlns:properties="clr-namespace:WTStatistics.Resx"
+             xmlns:menu="clr-namespace:WTStatistics.Views"
+              Title="WTSkillMeter"
+              Shell.NavBarIsVisible="False">
+            <!-- 
+               Styles and Resources 
+           -->
+            <Shell.Resources>
+                <ResourceDictionary>
+                    <Style x:Key="BaseStyle" TargetType="Element">
+                        <Setter Property="Shell.BackgroundColor" Value="#2a2a2a" />
+                        <Setter Property="Shell.ForegroundColor" Value="White" />
+                        <Setter Property="Shell.TitleColor" Value="White" />
+                        <Setter Property="Shell.DisabledColor" Value="Gray" />
+                        <Setter Property="Shell.UnselectedColor" Value="Gray" />
+                        <Setter Property="Shell.TabBarBackgroundColor" Value="#2a2a2a" />
+                        <Setter Property="Shell.TabBarUnselectedColor" Value="Gray"/>
+                        <Setter Property="Shell.TabBarTitleColor" Value="White"/>
+                    </Style>
+                    <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+                    <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+                </ResourceDictionary>
+            </Shell.Resources>
+
+    <!-- Tabs Pages -->
+    <TabBar Route="tabs">
+        <Tab
+            Icon="tab_statistics"
+            Title="{x:Static properties:AppResources.Statistics}">
+            <ShellContent  
+                Route="mainpage"
+                ContentTemplate="{DataTemplate menu:MainPage}" />
+        </Tab>
+        
+        <Tab
+            Icon="tab_question"
+            Title="{x:Static properties:AppResources.Hints}">
+            <ShellContent  
+                Route="hints"
+                ContentTemplate="{DataTemplate menu:HintsPage}" />
+        </Tab>
+        
+        <Tab
+            Icon="tab_about"
+            Title="{x:Static properties:AppResources.About}">
+            <ShellContent 
+                Route="about"
+                Title="{x:Static properties:AppResources.About}"
+                ContentTemplate="{DataTemplate menu:AboutPage}" />
+            <ShellContent  
+                Route="feedback"
+                Title="{x:Static properties:AppResources.Feedback}"
+                ContentTemplate="{DataTemplate menu:FeedbackPage}" />
+        </Tab>
+    </TabBar>
+</Shell>

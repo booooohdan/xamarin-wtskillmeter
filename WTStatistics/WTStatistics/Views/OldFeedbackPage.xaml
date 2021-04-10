@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:rating="clr-namespace:Syncfusion.SfRating.XForms;assembly=Syncfusion.SfRating.XForms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:WTStatistics.ViewModels"
+             x:Class="WTStatistics.Views.OldFeedbackViewModel"
+             xmlns:properties="clr-namespace:WTStatistics.Resx"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true"
+             NavigationPage.HasNavigationBar="False"
+             x:Name="BrowseItemsPage">
+
+    <ContentPage.BindingContext>
+        <local:FeedbackViewModel/>
+    </ContentPage.BindingContext>
+    <ScrollView>
+        <StackLayout Padding="20" Style="{StaticResource MainBackground}">
+
+        <Label
+            FontSize="Title"
+            TextColor="{AppThemeBinding Dark={StaticResource MyLight}, Light={StaticResource MyDarkest}}"
+               Text="{x:Static properties:AppResources.ContactUs}" />
+        <StackLayout Orientation="Horizontal">
+            <Button Command="{Binding RedditCommand}"
+                    Text="Reddit" 
+                    HorizontalOptions="FillAndExpand"
+                    TextColor="OrangeRed"
+                    BorderColor="OrangeRed"
+                    Style="{StaticResource buttonStyle}"/>
+
+            <Button Command="{Binding VkCommand}"
+                    Text="VK" 
+                    HorizontalOptions="FillAndExpand"
+                    TextColor="RoyalBlue"
+                    BorderColor="RoyalBlue"
+                    Style="{StaticResource buttonStyle}"/>
+
+            <Button Command="{Binding GmailCommand}"
+                    Text="GMail" 
+                    HorizontalOptions="FillAndExpand"
+                    TextColor="DarkRed"
+                    BorderColor="DarkRed"
+                    Style="{StaticResource buttonStyle}"/>
+        </StackLayout>
+
+
+        <rating:SfRating  
+            ValueChanged="SfRating_ValueChanged"
+            ItemSize="35">
+            <rating:SfRating.RatingSettings>
+                <rating:SfRatingSettings 
+                    RatedFill="Gold" 
+                    UnRatedFill="Wheat" 
+                    RatedStrokeWidth="0" 
+                    UnRatedStrokeWidth="0" />
+            </rating:SfRating.RatingSettings>
+        </rating:SfRating>
+
+        <Grid ColumnSpacing="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="60" />
+            </Grid.RowDefinitions>
+            
+            <!--Hide on iOS-->
+            <Grid.IsVisible>
+                <OnPlatform x:TypeArguments="x:Boolean"
+                            iOS="false"
+                            Android="true"/>
+            </Grid.IsVisible>
+
+
+            <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3"
+            Padding="0, 20, 0,0"
+            FontSize="Title"
+            TextColor="{AppThemeBinding Dark={StaticResource MyLight}, Light={StaticResource MyDarkest}}"
+               Text="{x:Static properties:AppResources.TryOurApps}"/>
+            <Image Grid.Column="0" Grid.Row="1"
+              WidthRequest="90"
+              HeightRequest="90"
+              Source="Versus"/>
+            <Image Grid.Column="1" Grid.Row="1"
+               WidthRequest="90"
+               HeightRequest="90"
+               Source="Charts"/>
+            <Image Grid.Column="2" Grid.Row="1"
+            WidthRequest="90"
+            HeightRequest="90"
+            Source="MapGuide"/>
+
+                <Button Command="{Binding VersusCommand}"
+                    Grid.Column="0" Grid.Row="2" 
+                    FontSize="12"
+                    Style="{StaticResource buttonStyle}"
+                    TextColor="Red"
+                    BorderColor="Red"
+                Text="{x:Static properties:AppResources.DownloadVersus}"/>
+            <Button Command="{Binding ChartsCommand}"
+                    Grid.Column="1" Grid.Row="2"
+                    FontSize="12"
+                    Style="{StaticResource buttonStyle}"
+                    TextColor="Red"
+                    BorderColor="Red"
+                Text="{x:Static properties:AppResources.DownloadCharts}"/>
+            <Button
+                Grid.Column="2" Grid.Row="2"
+                FontSize="12"
+                Style="{StaticResource buttonStyle}"
+                TextColor="Red"
+                BorderColor="Red"
+            Text="{x:Static properties:AppResources.WTMapGuide}"/>
+
+                <Label Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3"
+                               Padding="0, 20, 0,0"
+            FontSize="Title"
+            TextColor="{AppThemeBinding Dark={StaticResource MyLight}, Light={StaticResource MyDarkest}}"
+               Text="{x:Static properties:AppResources.TryOurGames}" />
+            <Image Grid.Column="0" Grid.Row="4"
+                   WidthRequest="90"
+                   HeightRequest="90"
+                Source="WTQuiz"/>
+            <Image Grid.Column="1" Grid.Row="4"
+                   WidthRequest="90"
+                   HeightRequest="90"
+                Source="WoTQuiz"/>
+
+            <Button Command="{Binding WTQuizCommand}"
+                    Grid.Column="0" Grid.Row="5"
+                    FontSize="12"
+                    Style="{StaticResource buttonStyle}"
+                    TextColor="Red"
+                    BorderColor="Red"
+                Text="{x:Static properties:AppResources.DownloadWTQuiz}"/>
+            <Button Command="{Binding WoTQuizCommand}"
+                    Grid.Column="1" Grid.Row="5"
+                    FontSize="12"
+                    Style="{StaticResource buttonStyle}"
+                    TextColor="Red"
+                    BorderColor="Red"
+                Text="{x:Static properties:AppResources.DownloadWoTQuiz}"/>
+        </Grid>
+    </StackLayout>
+    </ScrollView>
+</ContentPage>

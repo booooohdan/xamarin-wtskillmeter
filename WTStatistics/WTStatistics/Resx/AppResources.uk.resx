@@ -292,8 +292,8 @@
   <data name="PleaseMakeSureTheInternetIsAvailableAndTryAgain" xml:space="preserve">
     <value>Переконайтесь, що інтернет підключений і повторіть спробу</value>
   </data>
-  <data name="RateUsInGooglePlay" xml:space="preserve">
-    <value>Оцініть додаток:</value>
+  <data name="RateTheApp" xml:space="preserve">
+    <value>Оцініть додаток</value>
   </data>
   <data name="RB" xml:space="preserve">
     <value>РБ</value>
@@ -375,5 +375,44 @@
   </data>
   <data name="FavoriteTypesOfVehicles" xml:space="preserve">
     <value>Улюблений тип техніки</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>Про програму</value>
+  </data>
+  <data name="PrivacyPolicy" xml:space="preserve">
+    <value>Політика конфіденційності</value>
+  </data>
+  <data name="ShareWithFriends" xml:space="preserve">
+    <value>Поділіться з друзями</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Версія</value>
+  </data>
+  <data name="CheckThisCoolApp" xml:space="preserve">
+    <value>Оціни цей крутий додаток для War Thunder</value>
+  </data>
+  <data name="AppForAnalyzeWarVehicle" xml:space="preserve">
+    <value>Додаток для порівняння військової техніки</value>
+  </data>
+  <data name="WTSkillMeterAboutText" xml:space="preserve">
+    <value>War Thunder Skill Meter - це неофіційна, обов’язкова програма для всіх гравців War Thunder. Додаток показує розширену статистику ігрового профілю</value>
+  </data>
+  <data name="WTSkillMeterAboutTextIOS" xml:space="preserve">
+    <value>War Thunder Skill Meter - це неофіційна, обов’язкова програма для популярних військових гравців. Додаток відображає розширену статистику ігрового профілю</value>
+  </data>
+  <data name="ReportABug" xml:space="preserve">
+    <value>Повідомте про баг</value>
+  </data>
+  <data name="FollowTheNewsAskQuestion" xml:space="preserve">
+    <value>Слідкуйте за новинами, подавайте пропозиції</value>
+  </data>
+  <data name="AppForVehiclesComparison" xml:space="preserve">
+    <value>Додаток для порівняння техніки</value>
+  </data>
+  <data name="TriviaGameWithWarThunderVehicles" xml:space="preserve">
+    <value>Вікторина з технікою гри War Thunder</value>
+  </data>
+  <data name="TriviaGameWithWorldOfTanksVehicles" xml:space="preserve">
+    <value>Вікторина з технікою гри World of Tanks</value>
   </data>
 </root>

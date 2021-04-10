@@ -70,6 +70,15 @@ namespace WTStatistics.Resx {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на About.
+        /// </summary>
+        internal static string About {
+            get {
+                return ResourceManager.GetString("About", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Air.
         /// </summary>
         internal static string Air {
@@ -102,6 +111,24 @@ namespace WTStatistics.Resx {
         internal static string AirSB {
             get {
                 return ResourceManager.GetString("AirSB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на App for analyze of war vehicles.
+        /// </summary>
+        internal static string AppForAnalyzeWarVehicle {
+            get {
+                return ResourceManager.GetString("AppForAnalyzeWarVehicle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на App for vehicles comparison.
+        /// </summary>
+        internal static string AppForVehiclesComparison {
+            get {
+                return ResourceManager.GetString("AppForVehiclesComparison", resourceCulture);
             }
         }
         
@@ -165,6 +192,15 @@ namespace WTStatistics.Resx {
         internal static string Britain {
             get {
                 return ResourceManager.GetString("Britain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Check this cool app for War Thunder.
+        /// </summary>
+        internal static string CheckThisCoolApp {
+            get {
+                return ResourceManager.GetString("CheckThisCoolApp", resourceCulture);
             }
         }
         
@@ -354,6 +390,15 @@ namespace WTStatistics.Resx {
         internal static string FleetRB {
             get {
                 return ResourceManager.GetString("FleetRB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Follow the news, make suggest.
+        /// </summary>
+        internal static string FollowTheNewsAskQuestion {
+            get {
+                return ResourceManager.GetString("FollowTheNewsAskQuestion", resourceCulture);
             }
         }
         
@@ -655,11 +700,20 @@ namespace WTStatistics.Resx {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Rate this app:.
+        ///   Ищет локализованную строку, похожую на PrivacyPolicy.
         /// </summary>
-        internal static string RateUsInGooglePlay {
+        internal static string PrivacyPolicy {
             get {
-                return ResourceManager.GetString("RateUsInGooglePlay", resourceCulture);
+                return ResourceManager.GetString("PrivacyPolicy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Rate the app.
+        /// </summary>
+        internal static string RateTheApp {
+            get {
+                return ResourceManager.GetString("RateTheApp", resourceCulture);
             }
         }
         
@@ -669,6 +723,15 @@ namespace WTStatistics.Resx {
         internal static string RB {
             get {
                 return ResourceManager.GetString("RB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Report a bug.
+        /// </summary>
+        internal static string ReportABug {
+            get {
+                return ResourceManager.GetString("ReportABug", resourceCulture);
             }
         }
         
@@ -705,6 +768,15 @@ namespace WTStatistics.Resx {
         internal static string Sea {
             get {
                 return ResourceManager.GetString("Sea", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Share with friends.
+        /// </summary>
+        internal static string ShareWithFriends {
+            get {
+                return ResourceManager.GetString("ShareWithFriends", resourceCulture);
             }
         }
         
@@ -826,6 +898,24 @@ namespace WTStatistics.Resx {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Trivia game with War Thunder vehicles.
+        /// </summary>
+        internal static string TriviaGameWithWarThunderVehicles {
+            get {
+                return ResourceManager.GetString("TriviaGameWithWarThunderVehicles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Trivia game with World of Tanks vehicles.
+        /// </summary>
+        internal static string TriviaGameWithWorldOfTanksVehicles {
+            get {
+                return ResourceManager.GetString("TriviaGameWithWorldOfTanksVehicles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Try our apps:.
         /// </summary>
         internal static string TryOurApps {
@@ -862,6 +952,15 @@ namespace WTStatistics.Resx {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Version.
+        /// </summary>
+        internal static string Version {
+            get {
+                return ResourceManager.GetString("Version", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Winrate (AB/RB/SB).
         /// </summary>
         internal static string Winrate {
@@ -894,6 +993,24 @@ namespace WTStatistics.Resx {
         internal static string WTMapGuide {
             get {
                 return ResourceManager.GetString("WTMapGuide", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на War Thunder Skill Meter is an unofficial, must-have app for all War Thunder players. The app shows advanced statistics of game profile.
+        /// </summary>
+        internal static string WTSkillMeterAboutText {
+            get {
+                return ResourceManager.GetString("WTSkillMeterAboutText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на War Thunder Skill Meter is an unofficial, must-have app for popular war game players. The app shows advanced statistics of game profile.
+        /// </summary>
+        internal static string WTSkillMeterAboutTextIOS {
+            get {
+                return ResourceManager.GetString("WTSkillMeterAboutTextIOS", resourceCulture);
             }
         }
     }
