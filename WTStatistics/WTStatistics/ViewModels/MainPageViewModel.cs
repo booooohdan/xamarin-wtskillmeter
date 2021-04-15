@@ -29,11 +29,6 @@ namespace WTStatistics.ViewModels
         public ObservableCollection<BarChartDataModel> BarChartData { get; set; }
         public ObservableCollection<BarChartDataModel> BarChartDataTotal { get; set; }
 
-        public bool FirstRun
-        {
-            get => Preferences.Get(nameof(FirstRun), true);
-            set => Preferences.Set(nameof(FirstRun), value);
-        }
         #endregion
 
         #region Constructor
@@ -50,22 +45,8 @@ namespace WTStatistics.ViewModels
             start_count++;
             Preferences.Set("start_count", start_count);
             ShowReview(start_count);
-
-            if (FirstRun)
-            {
-                AppTrackingShowAsync();
-                FirstRun = false;
-            }
         }
 
-        private async System.Threading.Tasks.Task AppTrackingShowAsync()
-        {
-            if (Device.RuntimePlatform == Device.iOS && DeviceInfo.Version.Major >= 14)
-            {
-                var status = await DependencyService.Get<IAppTracking>().IsAuthorized();
-                CrossMTAdmob.Current.UserPersonalizedAds = await DependencyService.Get<IAppTracking>().RequestAuthorizationAsync();
-            }
-        }
         #endregion
 
         #region Properties
